@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://www.ngi.eu/wp-content/uploads/sites/48/2020/02/191205-eSSIF-Lab-logo-NGI_Tag-rgb.jpg">
+</p>
+
 # Working Package Summary
 
 Working Package: 3
