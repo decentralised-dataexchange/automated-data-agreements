@@ -66,8 +66,8 @@ These use cases are consideration for future phases:
 
 These are some of the work surrounding consent and data agreement to be consulted during development of the project.
 
-[1]    Infrastructure-oriented Open Call: Function Specification (ADA)
-    ADD LINK WHEN AVAILABLE
+[1]    Infrastructure-oriented Open Call: Interface Specification (ADA)
+    https://gitlab.grnet.gr/essif-lab/infrastructure_2/igrantio/deliverables/-/blob/master/interface_specification.md
 
 [2]    Verifiable Consent    https://essif-lab.pages.grnet.gr/interoperability/verifierapis/#verifiable-consent 
 
