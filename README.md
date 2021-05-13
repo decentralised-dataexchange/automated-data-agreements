@@ -95,6 +95,9 @@ Privacy technologies — Consent record information structure
     https://www.iso.org/standard/80392.html
     (Note this standard is under development and not shared publicly)
 
+[8]    Contract Exchange Extension 1.0 - Draft 3
+    https://www.sakimura.org/uploads/openid-cx.draft-3.html
+
 
 ## Participate:
 
