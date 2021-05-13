@@ -21,11 +21,10 @@ Type | Name | Contact Name | Contact email
 Coordinator | iGrant.io | Jan Lindquist | jan@linaltec.com
 Implementor | iGrant.io | Lal Chandran | lal@igrant.io
 Implementor | Gataca | Jose San Juan |jose@gataca.io
-Collaborator | LetsTrust.org | Dominik Phil | dominik@letstrust.id phil@letstrust.id 
 Implementor | Visions | matthias | matthias@visionspol.eu
+Implementor | HumanColossus | Paul Knowles | paul.knowles@humancolossus.org
+Collaborator | LetsTrust.org | Dominik Phil | dominik@letstrust.id phil@letstrust.id 
 Integrator | TBD | TBD | TBD
-
-
 
 # Terminology
 
@@ -46,7 +45,7 @@ The data agreement has the following main requirements:
 - Machine readable receipt
 - Fully auditable
 
-For the machine readable receipt the Kantara Consent Receipt Specification v 1.1.0 will be used as starting point. The human readability and auditability form of the data agreement will follow the  Richardian contract [6] which is a signed recording of a legal contract. 
+For the machine readable receipt the Kantara Consent Receipt Specification v 1.1.0 will be used as starting point. The human readability and auditability form of the data agreement will follow the  Richardian contract [6] which is a signed recording of a legal contract. The presentation of the human readable form may be of PDF, HTML or native GUI format. 
 
 ## Use Cases
 
@@ -90,6 +89,9 @@ https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0167-data-consent
 [5]    GConsent: A consent ontology based on the GDPR by Trinity College Dublin    http://openscience.adaptcentre.ie/ontologies/GConsent/docs/ontology 
 
 [6]    Ricardian contract: https://en.wikipedia.org/wiki/Ricardian_contract 
+
+[7]    
+    https://www.iso.org/standard/80392.html
 
 
 ## Participate:
