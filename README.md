@@ -101,4 +101,4 @@ Privacy technologies — Consent record information structure
 
 ## Participate:
 
-If you are interesting in the work package please contact the coordinator of the work package and 
+If you are interesting in the work package please contact the coordinator of the work package: Jan Lindquist
