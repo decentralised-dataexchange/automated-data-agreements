@@ -90,8 +90,10 @@ https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0167-data-consent
 
 [6]    Ricardian contract: https://en.wikipedia.org/wiki/Ricardian_contract 
 
-[7]    
+[7]    ISO/IEC WD TS 27560.2
+Privacy technologies — Consent record information structure
     https://www.iso.org/standard/80392.html
+    (Note this standard is under development and not shared publicly)
 
 
 ## Participate:
