@@ -24,7 +24,7 @@ Implementor | Gataca | Jose San Juan |jose@gataca.io
 Implementor | Visions | matthias | matthias@visionspol.eu
 Implementor | HumanColossus | Paul Knowles | paul.knowles@humancolossus.org
 Collaborator | LetsTrust.org | Dominik Phil | dominik@letstrust.id phil@letstrust.id 
-Integrator | TBD | TBD | TBD
+Integrator | Ubicua | Andrei Mikhin | andrei@ubicua.com
 
 # Terminology
 
