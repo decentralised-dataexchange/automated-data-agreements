@@ -47,7 +47,11 @@
   * [8.2  Key deliverables](#82key-deliverables)
   * [8.3  Schedule and project phases](#83schedule-and-project-phases)
 - [Glossary](#glossary)
-- [References](#references)
+- [References](#references) 
+- [Appendix A: Data agreement schema](#appendix-a-data-agreement-schema)
+- [Appendix B: Data agreement DID method and protocol](#appendix-b-data-agreement-did-method-and-protocol)
+  * [DID method](#did-method)
+  * [DIDComm protocol](#didcomm-protocol)
 
 # 1.0 Background
 Market research firm IDC estimates that 2.3 trillion USD will be spent on digital transformation worldwide in 2023. While a technology like SSI is an effective way to enable digitalisation, it needs to ensure compliance to data regulatory requirements in order for businesses to adopt it. The Data Governance Act is an example of how the EU encourages digitalisation in a privacy-preserving manner. 
@@ -434,3 +438,61 @@ Below table summarises the terminology translations across communities or standa
 9. Sovrin whitepaper on guardianship: https://sovrin.org/library/guardianship-white-paper/ 
 10. SSI PoC on guardianship: https://www.brightlands.com/brightlands-smart-services-campus/evenement/techruption-stagegate-meeting-ssi-guardianship-poc 
 11. Richardian contract: https://en.wikipedia.org/wiki/Ricardian_contract 
+
+# Appendix A: Data agreement schema
+
+```json 
+{
+  "@id": "b589c166-e0f0-44eb-9b41-ee2c09b26bec",
+  "@type": "https://didcomm.org/data-agreements/1.0/create-data-agreement",
+  "data-agreement": {
+	"usage_purpose": "Customized shopping experience",
+	"usage_purpose_description": "Collecting user data for offering custom tailored shopping experience",
+	"data_policy": {
+  	"data_retention_period": "365"
+	},
+	"personal_data": {
+  	"attribute_names": [
+    	"Name",
+    	"Age"
+  	]
+	},
+	"code_of_conduct": {
+  	"dpia_conducted": true,
+  	"dpia_passed": true,
+  	"dpia_date": "2021-05-08T08:41:59+0000",
+  	"dpia_verification_url": "https://org.com/dpia_results.html"
+	},
+	"data_sharing": {
+  	"exchange": true,
+  	"role": "null/issuer/verifier"
+	}
+  },
+  "data-agreement-meta": {
+	"version": "1.0",
+	"creation_time": "2021-05-09T10:39:50+0000"
+  }
+}
+```
+
+Note: This schema will further be worked on to align with Kantara that includes listing mandatory fields.
+
+# Appendix B: Data agreement DID method and protocol
+## DID method
+This project proposes a new DID method that can be used during the data agreement workflow. The primarily target is to ensure the following functions:
+
+* Allow individuals to sign data agreements
+* Ensure authenticity of the data agreements
+* Ensure integrity of the data agreements
+
+The proposed encryption used is ED25519.
+
+## DIDComm protocol
+The steps involved in the process are:
+
+1. The data agreement is initiated by the data source and cryptographically signs it. 
+2. The individual is presented with the data agreement, signs it and a data agreement is generated.
+3. Data agreement is returned back to the data source. Both parties now have a copy of the data agreement that is signed and counter signed by both parties and this is the data agreement receipt. This may be located in an immutable data store such as distributed ledger for non-repudiation and is then independently verifiable.
+4. Whenever the data exchange happens, the hash of the signed agreement shall demonstrate that an agreement exists between the parties. For example, the data using service can independently calculate the hash of signed data agreement and check it against the incoming hash. This ensures that the data using service does not have the liability of using the said data. 
+
+The proposed algorithm for hashing is SHA256
