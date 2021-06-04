@@ -2,7 +2,9 @@
 
 ## Abstract
 
-A Data Agreement exists between organisations and individuals in the use of personal data. This agreement can have any legal basis that is outlined according to any data protection regulation, such as the GDPR.
+A Data Agreement exists between organisations and individuals in the use of personal data. This agreement can have any legal basis that is outlined according to any data protection regulation, such as the GDPR. 
+
+This document specifies methods for creating and editing Decentralized IDs (DIDs) suitable for use with Data Agreements connecting Data Protection Impact Assessments (DPIA) to data sharing and exchange. It conforms to the requirements specified in the DID specification currently published by the W3C Credentials Community Group. 
 
 ## Status of This Document
 
@@ -25,7 +27,7 @@ Version 1.0
 
 ## 1.	Introduction
 
-This document proposes a new DID method that allows different objects in iGrant.io automated data agreements (ADA) specification to be treated as valid DIDs. Some of the functionalities available for DID subjects to perform once they own a DID are the following:
+This document proposes a new DID method that allows different objects in iGrant.io automated data agreements (ADA) specification to be treated as valid DIDs. The functionalities available for DID subjects to perform once they own a DID are the following:
 
 *   Sign Data Agreement (s)
 *   Authenticate and verify proof chain in Data Agreement VC
