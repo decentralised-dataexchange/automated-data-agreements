@@ -6,7 +6,7 @@ A Data Agreement exists between organisations and individuals in the use of pers
 
 ## Status of This Document
 
-Draft: Work in progress
+Version 1.0
 
 ## Table of Contents
 
