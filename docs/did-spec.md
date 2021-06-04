@@ -9,19 +9,19 @@ A Data Agreement exists between organisations and individuals in the use of pers
 Draft: Work in progress
 
 ## Table of Contents
-- [1.    Introduction](#1----introduction)
-- [2.    The `did:mydata` Format](#2----the--did-mydata--format)
-- [3.    DID document](#3----did-document)
-- [4.    DID Operation Definitions](#4----did-operation-definitions)
-  * [4.1  Create (Register)](#41--create--register-)
-  * [4.2  Read (Resolve)](#42--read--resolve-)
-  * [4.3  Update](#43--update)
-  * [4.4  Delete](#44--delete)
-- [5.    Security Considerations](#5----security-considerations)
-- [6.    Privacy Considerations](#6----privacy-considerations)
-- [7.    Reference Implementation](#7----reference-implementation)
-- [8.    Resources](#8----resources)
 
+- [1.    Introduction](#1introduction)
+- [2.    The `did:mydata` Format](#2the-didmydata-format)
+- [3.    DID document](#3did-document)
+- [4.    DID Operation Definitions](#4did-operation-definitions)
+  * [4.1  Create (Register)](#41create-register)
+  * [4.2  Read (Resolve)](#42read-resolve)
+  * [4.3  Update](#43update)
+  * [4.4  Delete](#44delete)
+- [5.    Security Considerations](#5security-considerations)
+- [6.    Privacy Considerations](#6privacy-considerations)
+- [7.    Reference Implementation](#7reference-implementation)
+- [8.    Resources](#8resources)
 
 ## 1.	Introduction
 
