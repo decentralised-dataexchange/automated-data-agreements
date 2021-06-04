@@ -100,7 +100,6 @@ Example of MyData/iGrant.io DID document:
 }
 ```
 
-
 The property `service` is optional. The service defined with type `DIDComm` describes an agent that supports DIDComm capabilities which may or may not be iGrant.io specific DIDComm protocols. For e.g. A Data Subject could trigger a `revoke-notification` DIDComm message to inform a Data Using Service’s service endpoint that a Data Agreement is added to the revocation list.
 
 ## 4.	DID Operation Definitions
@@ -214,9 +213,9 @@ To resolve a DID and fetch the associated DID document from the DID registry, a 
 }
 ```
 
-The **<code>did</code></strong> attribute in the message body represents the DID that will be resolved.
+The <code>did</code></strong> attribute in the message body represents the DID that will be resolved.
 
-The above example requests ADA service to resolve `did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E` Notice the message json+ld doesn’t contain a **<code>from</code></strong> key, since the read operation can be performed without owning a DID. The packing algorithm used for constructing the DIDComm encryption envelope should be anoncrypt.
+The above example requests ADA service to resolve `did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E` Notice the message json+ld doesn’t contain a <code>from</code></strong> key, since the read operation can be performed without owning a DID. The packing algorithm used for constructing the DIDComm encryption envelope should be anoncrypt.
 
 The ADA service will respond to the above DIDComm message with an encryption envelope (JWE) which when unpacked will contain a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/read-did-response](https://didcomm.org/mydata-did/1.0/create-did-response). An example is given below:
 
@@ -286,7 +285,7 @@ In the current version of this specification, delete is relevant only when trigg
 }
 ```
 
-The **<code>did</code></strong> attribute in the message body represents the DID that will be marked as revoked.
+The <code>did</code></strong> attribute in the message body represents the DID that will be marked as revoked.
 
 The packing algorithm used for constructing the DIDComm encryption envelope should be authcrypt.
 
