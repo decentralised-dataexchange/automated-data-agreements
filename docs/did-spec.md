@@ -113,7 +113,7 @@ Creation of the DID follows the sequence below:
 
 1. The (Public key, Private key) pair is created based on `Ed25519Signature2018` suite which is specified in Linked Data Cryptographic Suite Registry [5]. Ed25519 algorithm is available in common crypto libraries, for example NACL. 
 2. Multicodec [3] prefix for Ed25519 public key is concatenated to raw public key bytes and encoded using base58-btc encoding to obtain the Multibase [2] value (`mb-value`).
-3. Create the DID document based on the format specified in [Section 3 (DID document)](#).
+3. Create the DID document based on the format specified in [Section 3 (DID document)](#3did-document).
 4. Construct a DIDComm plaintext message conforming to DIDComm message specification [4] with type - [https://didcomm.org/mydata-did/1.0/create-did](https://didcomm.org/mydata-did/1.0/create-did) as given in the example is given below:
 
 ```
