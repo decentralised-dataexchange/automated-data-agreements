@@ -1,4 +1,4 @@
-# Planned deliverables
+# ADA Project Deliverables
 
 This is the open source repo towards NGI eSSIF-Lab deliverables from iGrant.io, Linaltec and PrivacyAnt. More details on the project at NGI eSSIF-Lab page: https://essif-lab.eu/automated-data-agreements-to-simplify-ssi-work-flows-by-igrant-io/
 
