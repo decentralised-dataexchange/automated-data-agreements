@@ -347,7 +347,7 @@ DID documents in did:mydata does not include any PII, as required by the DID cor
 
 ## 7.	Reference Implementation
 
-Work in progress
+Work in progress as part of NGI-Trust eSSIF-Lab [ADA Project](https://essif-lab.eu/automated-data-agreements-to-simplify-ssi-work-flows-by-igrant-io/).
 
 ## 8.	Resources
 
