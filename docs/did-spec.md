@@ -51,8 +51,8 @@ mb-value = z[a-km-zA-HJ-NP-Z1-9]+
 *   0 - represents a **Data Source**, an organisation collecting personal data
 *   1 - represents a **Data Subject** or **Individual**
 *   2 - represents a **Data Using Service**, an organisation processing personal data from one or more data sources to deliver a service
-*   3 - represents an** Assessor **who reviews the practices of an organisation**, **conducts a DPIA and drafts data agreements and intercompany agreements for third parties
-*   4 - represents an** Auditor** who may be called in to review the data agreements and ensure they are in place in case of data breaches or regular inspection.
+*   3 - represents an **Assessor** who reviews the practices of an organisation, conducts a DPIA and drafts data agreements and intercompany agreements for third parties
+*   4 - represents an **Auditor** who may be called in to review the data agreements and ensure they are in place in case of data breaches or regular inspection.
 
 Example, a valid MyData/iGrant.io DID could be:
 
