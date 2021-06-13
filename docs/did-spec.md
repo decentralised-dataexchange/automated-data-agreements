@@ -79,7 +79,7 @@ Example of MyData/iGrant.io DID document:
       "id": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E#1",
       "type": "Ed25519VerificationKey2018",
       "controller": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-      "publicKeyMultibase": "z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E"
+      "publicKeyBase58": "z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E"
     }
   ],
   "authentication": [
