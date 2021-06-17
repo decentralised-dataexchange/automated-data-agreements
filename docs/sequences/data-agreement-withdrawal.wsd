@@ -1,0 +1,18 @@
+@startuml
+
+title Data Agreement Withdrawal
+
+actor Individual
+participant "Data Subject"
+participant "Data Source or DUS"
+
+Individual -> "Data Subject": Open Holder app
+note over "Individual", "Data Subject": Choose to withdraw Data Agreement
+"Data Subject" -> "Data Source or DUS": request withdrawal of Data Agreement
+note over "Data Source or DUS": sign Data Agreement (reject)
+"Data Subject" <- "Data Source or DUS": offer-data-agreement+signed DA
+note over "Data Subject": co-sign Data Agreement
+"Data Subject" -> "Data Source or DUS": accept-data-agreement+co-signed DA
+"Data Source or DUS" -> "ADA Service": store co-signed DA as receipt of withdrawal
+
+@enduml

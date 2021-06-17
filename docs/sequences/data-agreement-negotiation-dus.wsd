@@ -1,0 +1,24 @@
+@startuml
+
+title SSI Data Agreement and verifying credential
+
+actor Individual
+participant "DUS"
+participant "ADA Service"
+
+opt Proof presentation and co-sign DA
+opt First time connection and no signed DA
+    Individual <-> "DUS": First time connect with Verifier
+end
+
+note over "DUS": sign Data Agreement
+Individual <- "DUS": request-presentation (offer-data-agreement+signed DA)
+
+note over Individual: review and accept DA
+note over Individual: co-sign Data Agreement
+note over Individual: review proof request and fill proof
+Individual -> "DUS": presentation (accept-data-agreement+co-signed DA)
+Individual -> "ADA Service": store co-signed DA as receipt
+note over "DUS": successfully verify presentation and revocation list
+
+@enduml

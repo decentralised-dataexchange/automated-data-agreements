@@ -1,0 +1,34 @@
+@startuml
+
+title Data Agreement Audit
+
+actor Auditor
+participant "Data Source or DUS"
+participant "ADA Service"
+
+ref over Auditor, "Data Source or DUS": create data agreement \nthrough regular VC process
+
+"Auditor" -> "ADA Service": read-data-agreement
+"Auditor" <- "ADA Service": read-data-agreement-response
+
+note over Auditor: Verify data agreement in place
+
+"Auditor" -> "ADA Service": read-did
+"Auditor" <- "ADA Service": read-did-response
+
+note over Auditor: Verify DID digitial signature
+
+ref over Auditor, "Data Source or DUS": withdraw data agreement
+
+"Auditor" -> "ADA Service": read-data-agreement
+"Auditor" <- "ADA Service": read-data-agreement-response
+
+note over Auditor: Verify data agreement withdrawal
+
+"Auditor" -> "ADA Service": read-did
+note over "ADA Service": Resolve DID
+"Auditor" <- "ADA Service": read-did-response
+
+note over Auditor: Verify DID digitial signature
+
+@enduml
