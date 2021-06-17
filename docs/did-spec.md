@@ -11,12 +11,12 @@ This document specifies methods for creating and editing Decentralized IDs (DIDs
 Version 1.0
 
 ## Authors
-Mr. George Padayatti (iGrant.io, Sweden)
-Mr. Lal Chandran (iGrant.io, Sweden)
+Mr. George Padayatti (iGrant.io, Sweden)  
+Mr. Lal Chandran (iGrant.io, Sweden)  
 
 ## Contributors and Reviwers
-Mr. Jan Linquist (Linaltec, Sweden)
-Ms. Lotta Lundin (iGrant.io, Sweden)
+Mr. Jan Linquist (Linaltec, Sweden)  
+Ms. Lotta Lundin (iGrant.io, Sweden)  
 
 ## Table of Contents
 
