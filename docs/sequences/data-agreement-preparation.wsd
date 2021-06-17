@@ -1,0 +1,45 @@
+@startuml
+
+title Data Agreement Definition and Preparation
+
+actor Assessor
+participant "DPIA tool"
+participant "Data Source or DUS"
+participant "Data Subject or Data Source or DUS"
+participant "ADA Service"
+
+"Data Source or DUS" -> "Data Source or DUS": Initialise Data Agreement
+
+opt External assessment
+    Assessor -> "DPIA tool": Record result of DPIA
+    note over "DPIA tool": Register and finalise DPIA report
+    "DPIA tool" -> "Data Source or DUS": Import DPIA and update Data Agreement
+else Internal assessment
+    "Data Source or DUS" -> "Data Source or DUS": Update Data Agreement
+end
+
+note over "Data Source or DUS": Complete Data Agreement preparation
+"Data Source or DUS" -> "Data Source or DUS": Finalise Data Agreement preparation
+
+
+opt CRUD Support - Data Agreement
+else Create
+    "Data Source or DUS" -> "ADA Service": create-data-agreement
+    note over "ADA Service": Data Agreement created
+    "Data Source or DUS" <- "ADA Service": create-data-agreement-response
+else Read
+    "Data Source or DUS" -> "ADA Service": read-data-agreement
+    "Data Source or DUS" <- "ADA Service": read-data-agreement-response
+else Update
+    "Data Source or DUS" -> "ADA Service": update-data-agreement
+    note over "ADA Service": Updated with new version of Data Agreement
+    "Data Source or DUS" <- "ADA Service": update-data-agreement-response
+else Delete
+    "Data Source or DUS" -> "ADA Service": delete-data-agreement
+    "Data Source or DUS" <- "ADA Service": delete-data-agreement-response
+    note over "ADA Service": marks the data agreement as revoked
+end
+
+ref over "Data Source or DUS", "ADA Service": Ready for Negotation/Capture Phase
+
+@enduml

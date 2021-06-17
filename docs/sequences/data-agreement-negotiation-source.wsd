@@ -1,0 +1,26 @@
+@startuml
+
+title SSI Data Agreement and issuing credentials
+
+actor Individual
+participant "Data Source"
+participant "ADA Service"
+
+
+opt Create credential and co-sign DA
+opt First time connection and no signed DA
+    Individual <-> "Data Source": First time connect with Issuer
+end
+
+note over "Data Source": sign Data Agreement
+Individual <- "Data Source": offer-credential (offer-data-agreement+signed DA)
+
+note over Individual: review and accept DA
+note over Individual: co-sign Data Agreement
+note over Individual: review offer credential
+note over Individual: accept credential offer
+Individual -> "Data Source": request-credential (accept-data-agreement+co-signed DA)
+Individual -> "ADA Service": store co-signed DA as receipt
+Individual <- "Data Source": issuer-credential
+
+@enduml
