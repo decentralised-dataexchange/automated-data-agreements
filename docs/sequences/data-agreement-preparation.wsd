@@ -5,7 +5,6 @@ title Data Agreement Definition and Preparation
 actor Assessor
 participant "DPIA tool"
 participant "Data Source or DUS"
-participant "Data Subject or Data Source or DUS"
 participant "ADA Service"
 
 "Data Source or DUS" -> "Data Source or DUS": Initialise Data Agreement
