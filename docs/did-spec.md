@@ -15,7 +15,7 @@ Mr. George Padayatti (iGrant.io, Sweden)
 Mr. Lal Chandran (iGrant.io, Sweden)  
 
 ## Contributors and Reviwers
-Mr. Jan Linquist (Linaltec, Sweden)  
+Mr. Mr. Jan Lindquist (Linaltec, Sweden)  
 Ms. Lotta Lundin (iGrant.io, Sweden)  
 
 ## Table of Contents
@@ -40,6 +40,8 @@ This document proposes a new DID method that allows different objects in iGrant.
 *   Sign Data Agreement (s)
 *   Authenticate and verify proof chain in Data Agreement VC
 *   Bind data exchange transactions to Data Agreement (s) which can be verified by an independent auditor or any one else
+
+For more details on Data Agreements, refer [Data Agreement Specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/data-agreement-specification.md)
 
 
 ## 2.	The `did:mydata` Format
@@ -369,3 +371,4 @@ Work in progress as part of NGI-Trust eSSIF-Lab [ADA Project](https://essif-lab.
 7. Aries RFC 0019: Encryption Envelope: [https://github.com/hyperledger/aries-rfcs/tree/master/features/0019-encryption-envelope](https://github.com/hyperledger/aries-rfcs/tree/master/features/0019-encryption-envelope)
 8. IETF RFC 7516 - JSON Web Encryption: [https://datatracker.ietf.org/doc/html/rfc7516](https://datatracker.ietf.org/doc/html/rfc7516) 
 9. Aries RFC 0035 - Report Problem Protocol 1.0: [https://github.com/hyperledger/aries-rfcs/tree/master/features/0035-report-problem](https://github.com/hyperledger/aries-rfcs/tree/master/features/0035-report-problem)
+10. [Data Agreement Specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/data-agreement-specification.md)
