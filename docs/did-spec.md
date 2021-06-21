@@ -2,13 +2,11 @@
 
 ## Abstract
 
-A Data Agreement exists between organisations and individuals in the use of personal data. This agreement can have any legal basis that is outlined according to any data protection regulation, such as the GDPR. 
-
-This document specifies methods for creating and editing Decentralized IDs (DIDs) suitable for use with Data Agreements connecting Data Protection Impact Assessments (DPIA) to data sharing and exchange. It conforms to the requirements specified in the DID specification currently published by the W3C Credentials Community Group. 
+A Data Agreement (DA) exists between organisations and individuals in the use of personal data. This agreement can have any legal basis that is outlined according to any data protection regulation, such as the GDPR. This proposal envisions an associated Data Agreement for any personal data usage. 
 
 ## Status of This Document
 
-Version 1.0
+Version 1.1
 
 ## Authors
 Mr. George Padayatti (iGrant.io, Sweden)  
@@ -35,18 +33,23 @@ Ms. Lotta Lundin (iGrant.io, Sweden)
 
 ## 1.	Introduction
 
-This document proposes a new DID method that allows different objects in iGrant.io automated data agreements (ADA) specification to be treated as valid DIDs. The functionalities available for DID subjects to perform once they own a DID are the following:
+This document proposes a new DID method that allows different objects in iGrant.io automated data agreements (ADA) specifications to be treated as a valid identifier. 
 
-*   Sign Data Agreement (s)
-*   Authenticate and verify proof chain in Data Agreement VC
-*   Bind data exchange transactions to Data Agreement (s) which can be verified by an independent auditor or any one else
+Some of the functionalities available to actors (aka the DID subjects) are:
+
+* Sign Data Agreement(s) including that of data exchange
+* Authenticate and verify proof chain in Data Agreement VC
+* Associate data exchange transactions to Data Agreement(s)
+
+The Data Agreement could be the result of a Data Protection Impact Assessments (DPIA) or similar activity. The use of a resolvable unique identifier ensures traceability and auditability for any Data Agreement that is signed between an individual and an organisation. A signed Data Agreement  can be verified by an independent auditor or any one else.  
+
+This document specifies methods for creating and editing Decentralized IDs (DIDs) suitable for use with Data Agreements. It conforms to the requirements specified in the DID specification currently published by the W3C Credentials Community Group.
 
 For more details on Data Agreements, refer [Data Agreement Specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/data-agreement-specification.md)
 
-
 ## 2.	The `did:mydata` Format
 
-The format for the `did:mydata` method conforms to the DID core specification [1]. It consists of the `did:mydata` prefix, followed by `did-type-integer` value, followed by the `mb-value` value.
+The format for the `did:mydata` method conforms to the DID core specification [1] as outlined by W3C. It consists of the `did:mydata` prefix, followed by `did-type-integer` value, followed by the `mb-value` value.
 
 The `mb-value` is a Multibase [2] `base58-btc` encoded value of the Multicodec [3] identifier for Ed25519 public key concatenated with raw Ed25519 public key bytes. The iGrant.io DID scheme is defined by the following ABNF:
 
@@ -371,4 +374,4 @@ Work in progress as part of NGI-Trust eSSIF-Lab [ADA Project](https://essif-lab.
 7. Aries RFC 0019: Encryption Envelope: [https://github.com/hyperledger/aries-rfcs/tree/master/features/0019-encryption-envelope](https://github.com/hyperledger/aries-rfcs/tree/master/features/0019-encryption-envelope)
 8. IETF RFC 7516 - JSON Web Encryption: [https://datatracker.ietf.org/doc/html/rfc7516](https://datatracker.ietf.org/doc/html/rfc7516) 
 9. Aries RFC 0035 - Report Problem Protocol 1.0: [https://github.com/hyperledger/aries-rfcs/tree/master/features/0035-report-problem](https://github.com/hyperledger/aries-rfcs/tree/master/features/0035-report-problem)
-10. [Data Agreement Specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/data-agreement-specification.md)
+10. [Data Agreement Specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/data-agreement-specification.md), ADA Project, eSSIF-Lab Infrastructure 
