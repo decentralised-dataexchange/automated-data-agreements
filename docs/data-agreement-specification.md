@@ -6,7 +6,7 @@ A Data Agreement records the conditions for an organization to process personal 
 
 ## Status of This Document
 
-Version 2.0
+Version 2.1
 
 ## Authors
 Mr. Jan Linquist (Linaltec, Sweden)  
