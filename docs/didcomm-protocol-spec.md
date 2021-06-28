@@ -8,8 +8,6 @@ A Data Agreement (DA) records the conditions for an organization to process pers
 
 Version 1.0
 
-Version 1.1
-
 ## Authors
 Mr. George Padayatti (iGrant.io, Sweden)  
 Mr. Lal Chandran (iGrant.io, Sweden)  
