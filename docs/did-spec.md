@@ -12,7 +12,7 @@ Version 1.1
 Mr. George Padayatti (iGrant.io, Sweden)  
 Mr. Lal Chandran (iGrant.io, Sweden)  
 
-## Contributors and Reviwers
+## Contributors and Reviewers
 Mr. Mr. Jan Lindquist (Linaltec, Sweden)  
 Ms. Lotta Lundin (iGrant.io, Sweden)  
 
