@@ -1,0 +1,352 @@
+openapi: 3.0.0
+info:
+  title: VUI Data Agreement API
+  description: Proposed API for a Verifier to offer Data Agreement capabilities. Intended for interop testing
+  version: 1.0.0
+servers:
+  - url: https://vui.gataca.io/api/v1
+    description: Gataca's implementor server
+  - url: http://data-agreements.igrant.io/api/v1
+    description: IGrantio Data Agreements Server
+
+paths:
+  /health:
+    get:
+      summary: Returns if the service is up and running.
+      description: Optional extended description in CommonMark or HTML.
+      tags:
+        - Integration
+      responses:
+        '200':    # status code
+          description: Server UP
+  /version:
+    get:
+      summary: Returns the current version of the service.
+      description: Optional extended description in CommonMark or HTML.
+      tags:
+        - Integration
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  version:
+                    type: string
+                  releaseDate:
+                    type: string
+                    format: date       
+  /data-agreements/templates:
+    post:
+      summary: Create a new data agreement to perform a credential exchange
+      tags:
+        - Administration #Definition and preparation
+      description: An organisation intending to create a data agreement must construct the prepared document
+      security:
+        - {}
+        - ApiKeyAuth: [] #optional
+        - basicAuth: [] #optional
+        - bearerAuth: [] #optional
+      requestBody:
+            description: Data to create a new data agreement; without id
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/data_agreement'
+      responses:
+        '200':
+          description: Generated data agreement
+          headers: #optional
+            X-RateLimit-Limit:
+              required: false
+              schema:
+                type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              required: false
+              schema:
+                type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              required: false
+              schema:
+                type: string
+                format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: id of data agreement
+                    example: 32f54163-7166-48f1-93d8-ff217bdb0653
+        '400':
+          description: "Request body malformed"
+        '403': #optional
+          description: "Unauthorized to create a new data agreement"
+        '413': #optional
+          description: "Request body too large to be processed"
+        '429': #optional
+          description: "Rate limit to create data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+  /data-agreements/templates/{template_id}:
+    get:
+      summary: Retrieve the data_agreement to evaluate it.
+      description: An organisation can perform a read operation on a data agreement to retrieve a data agreement by ID.
+      tags:
+        - Administration #Definition and preparation
+      responses:
+        '200': 
+          description: Requested data agreement
+          headers: #optional
+            X-RateLimit-Limit:
+              required: false
+              schema:
+                type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              required: false
+              schema:
+                type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              required: false
+              schema:
+                type: string
+                format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+            Token:
+              required: false
+              schema:
+                type: string
+              description: Bearer token to use to submit the verifiable presentation
+          content:
+            application/json:
+              schema: 
+                description: Requested data agreement
+                $ref: '#/components/schemas/data_agreement'
+        '403': #optional
+          description: "Data agreement with that Id cannot be retrieved anymore with your rights"
+        '404':
+          description: "No existing data agreement with that Id"
+        '429': #optional
+          description: "Rate limit to read data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+    patch:
+      summary: Update an existing data_agreement.
+      description: When an organisation performs an update operation on a data agreement, a copy of the data agreement is created and the updates are applied to the copy. The version number is incremented to represent the change.
+      tags:
+        - Administration #Definition and preparation
+      security:
+        - {}
+        - ApiKeyAuth: [] #optional
+        - basicAuth: [] #optional
+        - bearerAuth: [] #optional
+      requestBody:
+            description: Data to create a new data agreement
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/data_agreement'
+      responses:
+        '200':
+          description: Updated data agreement
+          headers: #optional
+            X-RateLimit-Limit:
+              required: false
+              schema:
+                type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              required: false
+              schema:
+                type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              required: false
+              schema:
+                type: string
+                format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+          content:
+            application/json:
+              schema: 
+                description: Deleted data agreement
+                $ref: '#/components/schemas/data_agreement'
+        '400':
+          description: "Request body malformed"
+        '403': #optional
+          description: "Unauthorized to update the data agreement"
+        '404':
+          description: "No existing data agreement with that Id"
+        '413': #optional
+          description: "Request body too large to be processed"
+        '429': #optional
+          description: "Rate limit to create data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+    delete:
+      summary: Delete an existing data_agreement.
+      description: When an organisation performs a delete operation on a data agreement, the delete operation doesn’t remove the data agreement from the persistence, instead it marks the data agreement as revoked.
+      tags:
+        - Administration #Definition and preparation
+      security:
+        - {}
+        - ApiKeyAuth: [] #optional
+        - basicAuth: [] #optional
+        - bearerAuth: [] #optional
+      responses:
+        '200':
+          description: Deleted data agreement
+          headers: #optional
+            X-RateLimit-Limit:
+              required: false
+              schema:
+                type: integer
+              description: Request limit per hour.
+            X-RateLimit-Remaining:
+              required: false
+              schema:
+                type: integer
+              description: The number of requests left for the time window.
+            X-RateLimit-Reset:
+              required: false
+              schema:
+                type: string
+                format: date-time
+              description: The UTC date/time at which the current rate limit window resets.
+          content:
+            application/json:
+              schema: 
+                description: Deleted data agreement
+                $ref: '#/components/schemas/data_agreement'
+        '400':
+          description: "Request body malformed"
+        '403': #optional
+          description: "Unauthorized to delete the data agreement"
+        '404':
+          description: "No existing data agreement with that Id"
+        '429': #optional
+          description: "Rate limit to delete data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+  /data-agreements/templates/{template_id}/negotiation:
+    get:
+      summary: Request a data agreement offer
+      description: For interop testing, start the negotiation by requesting a data agreement offer
+      tags:
+        - Negotiation
+      responses:
+        '200': 
+          description: Offered data agreement with a specific negotiation id
+          content:
+            application/json:
+              schema: 
+                  $ref: '#/components/schemas/data_agreement_offer'
+  /data-agreements/accept/{negotiation_id}:
+    post:
+      summary: Accept a data agreement offer
+      description: After receiving an offer, the user may accept it by sending the signed and filled data agreement
+      tags:
+        - Negotiation
+      security:
+        - {}
+        - bearerAuth: [] #optional
+      requestBody:
+            description: Submitted data_agreement matching the requested proposal
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/data_agreement_acceptance'
+      responses:
+        '200':    # status code
+          description: Accepted data agreement offer
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/data_agreement_acceptance'
+        '400':
+          description: "Request body malformed"
+        '403': #optional
+          description: "Data agreement acceptanced can't be trusted from that source"
+        '404':
+          description: "No data agreement negotiation associated to that id"
+        '409': #optional
+          description: "Data Agreement on that negotiation already accepted or rejected"
+        '413': #optional
+          description: "Request body too large to be processed"
+        '429': #optional
+          description: "Rate limit to accept data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+  /data-agreements/decline/{negotiation_id}:
+    post:
+      summary: Decline a data agreement offer
+      description: After receiving an offer, the user may decline it by sending a declination response, indicating the causes for declination.
+      tags:
+        - Negotiation
+      security:
+        - {}
+        - bearerAuth: [] #optional
+      requestBody:
+            description: Declination of the offer with the causes
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/data_agreement_declination'
+      responses:
+        '200':    # status code
+          description: Rejected data agreement
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/data_agreement_acceptance'
+        '400':
+          description: "Request body malformed"
+        '403': #optional
+          description: "Data agreement rejection can't be trusted from that source"
+        '404':
+          description: "No data agreement negotiation associated to that id"
+        '409': #optional
+          description: "Data Agreement on that negotiation already accepted or rejected"
+        '413': #optional
+          description: "Request body too large to be processed"
+        '429': #optional
+          description: "Rate limit to reject data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+  
+
+components:
+  schemas:
+    data_agreement: 
+      type: object
+    data_agreement_offer: 
+      type: object
+    data_agreement_acceptance: 
+      type: object
+    data_agreement_declination: 
+      type: object
+      
+  securitySchemes:
+    ApiKeyAuth:       
+      type: apiKey
+      in: header       # can be "header", "query" or "cookie"
+      name: X-API-KEY  # name of the header, query parameter or cookie
+    basicAuth:    
+      type: http
+      scheme: basic
+    bearerAuth:      
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
