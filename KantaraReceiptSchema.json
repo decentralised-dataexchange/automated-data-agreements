@@ -1,0 +1,177 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "jurisdiction": {
+            "type": "string"
+        },
+        "consentTimestamp": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "collectionMethod": {
+            "type": "string"
+        },
+        "consentReceiptID": {
+            "type": "string"
+        },
+        "publicKey": {
+            "type": "string"
+        },
+        "language": {
+            "type": "string"
+        },
+        "piiPrincipalId": {
+            "type": "string"
+        },
+        "piiControllers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "piiController": {
+                        "type": "string"
+                    },
+                    "onBehalf": {
+                        "type": "boolean"
+                    },
+                    "contact": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "object"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "piiControllerUrl": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "piiController",
+                    "contact",
+                    "address",
+                    "email",
+                    "phone"
+                ]
+            }
+        },
+        "policyUrl": {
+            "type": "string"
+        },
+        "services": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "service": {
+                        "type": "string"
+                    },
+                    "purposes": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "purpose": {
+                                    "type": "string"
+                                },
+                                "consentType": {
+                                    "type": "string"
+                                },
+                                "purposeCategory": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "piiCategory": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "primaryPurpose": {
+                                    "type": "boolean"
+                                },
+                                "termination": {
+                                    "type": "string"
+                                }
+                            },
+                            "oneOf": [{
+                                    "properties": {
+                                        "thirdPartyDisclosure": {
+                                            "type": "boolean",
+                                            "enum": [
+                                                false
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "thirdPartyDisclosure"
+                                    ]
+                                },
+                                {
+                                    "properties": {
+                                        "thirdPartyDisclosure": {
+                                            "type": "boolean",
+                                            "enum": [
+                                                true
+                                            ]
+                                        },
+                                        "thirdPartyName": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "thirdPartyDisclosure",
+                                        "thirdPartyName"
+                                    ]
+                                }
+                            ],
+                            "required": [
+                                "consentType",
+                                "purposeCategory",
+                                "piiCategory",
+                                "termination",
+                                "thirdPartyDisclosure"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "service",
+                    "purposes"
+                ]
+            }
+        },
+        "sensitive": {
+            "type": "boolean"
+        },
+        "spiCat": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "version",
+        "jurisdiction",
+        "consentTimestamp",
+        "collectionMethod",
+        "consentReceiptID",
+        "piiPrincipalId",
+        "piiControllers",
+        "services",
+        "policyUrl",
+        "sensitive",
+        "spiCat"
+    ]
+}

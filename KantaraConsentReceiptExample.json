@@ -1,0 +1,237 @@
+{
+    "version": "Duis do consectetur",
+    "jurisdiction": "exercitation",
+    "consentTimestamp": 19568270,
+    "collectionMethod": "irure aute ad",
+    "consentReceiptID": "est",
+    "piiPrincipalId": "amet in deserunt",
+    "piiControllers": [
+      {
+        "piiController": "velit incididunt Duis fugiat nostrud",
+        "contact": "sit",
+        "address": {
+          "elit4": 87607655.47151318,
+          "pariatur72f": -89354069.01362039,
+          "occaecatb8": true
+        },
+        "email": "fugiat aliquip velit commodo reprehenderit",
+        "phone": "qui minim",
+        "piiControllerUrl": "pariatur officia id sint",
+        "onBehalf": true
+      },
+      {
+        "piiController": "pariatur",
+        "contact": "voluptate dolor id eu proident",
+        "address": {
+          "nostrudec": -19882027.781480044,
+          "proident_": true,
+          "eu_ce9": "aliqua velit magna dolore culpa",
+          "eiusmod_6a": -29797710.437758654
+        },
+        "email": "dolor ut pariatur eu esse",
+        "phone": "do veniam dolore ea",
+        "piiControllerUrl": "pariatur in aliquip exercitation",
+        "onBehalf": true
+      },
+      {
+        "piiController": "cupidatat enim Lorem ex incididunt",
+        "contact": "Duis",
+        "address": {
+          "amet_6": "magna laboris"
+        },
+        "email": "nisi incididunt tempor in",
+        "phone": "incididunt",
+        "piiControllerUrl": "id nostrud sunt aliqua Lorem",
+        "onBehalf": false
+      },
+      {
+        "piiController": "occaecat et eiusmod",
+        "contact": "ipsum dolore dolor",
+        "address": {
+          "do09": true,
+          "labore__6c": 46767188,
+          "aute_7a": -49335442.463926785,
+          "in_43": 54006928
+        },
+        "email": "sunt amet quis",
+        "phone": "officia aute",
+        "onBehalf": true,
+        "piiControllerUrl": "consequat"
+      }
+    ],
+    "services": [
+      {
+        "service": "ea voluptate mollit reprehenderit nulla",
+        "purposes": [
+          {
+            "consentType": "aliqua et Excepteur enim Lorem",
+            "purposeCategory": [
+              "Duis in in aliquip"
+            ],
+            "piiCategory": [
+              "id quis",
+              "sed nostrud commodo",
+              "do magna reprehenderit voluptate"
+            ],
+            "termination": "cupidatat ullamco",
+            "thirdPartyDisclosure": true,
+            "thirdPartyName": "nostrud cupidatat",
+            "primaryPurpose": false
+          },
+          {
+            "consentType": "quis nisi dolore",
+            "purposeCategory": [
+              "Ut aute tempor laboris exercitation",
+              "fugiat adipisicing",
+              "minim",
+              "labore occaecat quis qui"
+            ],
+            "piiCategory": [
+              "reprehenderit sint enim",
+              "veniam consectetur cupidatat consequat",
+              "in cillum"
+            ],
+            "termination": "dolore eiusmod deserunt",
+            "thirdPartyDisclosure": false,
+            "primaryPurpose": false,
+            "purpose": "commodo"
+          }
+        ]
+      },
+      {
+        "service": "Duis",
+        "purposes": [
+          {
+            "consentType": "Ut commodo",
+            "purposeCategory": [
+              "nisi in aliquip non ex",
+              "ad minim",
+              "sed officia commodo eu",
+              "nisi ut ex",
+              "cupidatat eiusmod"
+            ],
+            "piiCategory": [
+              "Excepteur anim eu",
+              "ad in commodo ullamco id",
+              "elit mollit dolore"
+            ],
+            "termination": "mollit velit occaecat esse ullamco",
+            "thirdPartyDisclosure": true,
+            "thirdPartyName": "enim reprehenderit ut eu",
+            "purpose": "labore aute ut nisi ad",
+            "primaryPurpose": true
+          },
+          {
+            "consentType": "in fugiat dolore",
+            "purposeCategory": [
+              "elit",
+              "culpa voluptate veniam",
+              "ex qui in proident aliquip",
+              "dolor ad ex occaecat deserunt"
+            ],
+            "piiCategory": [
+              "commodo in anim",
+              "aliqua ex",
+              "culpa"
+            ],
+            "termination": "Excepteur consectetur consequat aliqua",
+            "thirdPartyDisclosure": true,
+            "thirdPartyName": "cillum",
+            "primaryPurpose": false
+          },
+          {
+            "consentType": "culpa irure dolor velit",
+            "purposeCategory": [
+              "minim",
+              "quis ipsum",
+              "et id exercitation"
+            ],
+            "piiCategory": [
+              "ut",
+              "qui dolor"
+            ],
+            "termination": "Lorem in officia in ut",
+            "thirdPartyDisclosure": true,
+            "thirdPartyName": "Duis anim",
+            "purpose": "sint magna tempor est",
+            "primaryPurpose": false
+          },
+          {
+            "consentType": "sunt Lorem",
+            "purposeCategory": [
+              "incididunt magna id Lorem minim",
+              "laborum",
+              "aute ullamco sint"
+            ],
+            "piiCategory": [
+              "veniam quis",
+              "do deserunt elit culpa qui",
+              "pariatur enim eiusmod Ut"
+            ],
+            "termination": "Lorem labore enim adipisicing",
+            "thirdPartyDisclosure": true,
+            "thirdPartyName": "est",
+            "primaryPurpose": true,
+            "purpose": "ut dolore sint anim"
+          },
+          {
+            "consentType": "anim sint ea",
+            "purposeCategory": [
+              "dolore aliqua amet"
+            ],
+            "piiCategory": [
+              "ad Lorem occaecat ut ea",
+              "ipsum dolore",
+              "Ut magna eu"
+            ],
+            "termination": "labore",
+            "thirdPartyDisclosure": true,
+            "thirdPartyName": "mollit nulla Ut pariatur",
+            "purpose": "Excepteur Ut dolore in reprehenderit",
+            "primaryPurpose": true
+          }
+        ]
+      },
+      {
+        "service": "velit",
+        "purposes": [
+          {
+            "consentType": "proident adipisicing laborum consequat",
+            "purposeCategory": [
+              "ex ut proident laborum adipisicing"
+            ],
+            "piiCategory": [
+              "anim in nisi est",
+              "dolor sed aliqua ea"
+            ],
+            "termination": "deserunt occaecat aliquip",
+            "thirdPartyDisclosure": true,
+            "thirdPartyName": "est voluptate amet sunt"
+          },
+          {
+            "consentType": "qui eu magna Excepteur",
+            "purposeCategory": [
+              "ut",
+              "culpa amet"
+            ],
+            "piiCategory": [
+              "in proident",
+              "amet"
+            ],
+            "termination": "sed nostrud ex",
+            "thirdPartyDisclosure": false,
+            "primaryPurpose": false,
+            "purpose": "pariatur ex aute laborum velit"
+          }
+        ]
+      }
+    ],
+    "policyUrl": "culpa cupidatat in exercitation mollit",
+    "sensitive": false,
+    "spiCat": [
+      "adipisicing ex sed non",
+      "consectetur Duis id ut quis"
+    ],
+    "publicKey": "exercitation amet Lorem dolore",
+    "language": "tempor"
+  }
