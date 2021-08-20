@@ -1,0 +1,25 @@
+//taken from example of create data agreement in https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md#3321create-data-agreement
+{
+    "@context": "https://schema.igrant.io/data-agreements/v1",
+    "usage_purpose": "Customized shopping experience",
+    "usage_purpose_description": "Collecting user data for offering custom tailored shopping experience",
+    "data_policy": {
+        "data_retention_period": "365"
+    },
+    "personal_data": {
+        "attribute_names": [
+            "Name",
+            "Age"
+        ]
+    },
+    "code_of_conduct": {
+        "dpia_conducted": true,
+        "dpia_passed": true,
+        "dpia_date": "2021-05-08T08:41:59+0000",
+        "dpia_verification_url": "https://org.com/dpia_results.html"
+    },
+    "data_sharing": {
+        "exchange": true,
+        "role": "<null/issuer/verifier>"
+    }
+}

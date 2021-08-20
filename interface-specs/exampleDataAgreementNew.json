@@ -1,0 +1,76 @@
+//The example didn't match the Data Agreement schema as defined in https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/data-agreement-specification.md#appendix-a--data-agreement-schema
+// So I added what seemed to be missing and took some of what was. Just a first suggestion.
+{
+    "@context": "https://schema.igrant.io/data-agreements/v1",
+    "id": "dag:example:9134dhsag28gt759h32",
+    "template_id": "dagt:example:i9ihga7q8745q37q8",
+    "version": "0",
+    "policyUrl": "https://example.org/policy",
+    "processing": {
+        "methodOfUse": "as is| after processing | combined | automated decision making",
+        "data_retention_period": 365,
+        "jurisdiction": "EU",
+        "withdrawalUrl": "https://dataAgreeements.org/withdraw",
+        "sensitivePii": ["Name"],
+        "code_of_conduct": "https://example.org/CodeOfConduct", //optional
+        "assessmentPerformed": { //optional
+            "dpia_conducted": true,
+            "dpia_passed": true,
+            "dpia_date": "2021-05-08T08:41:59+0000",
+            "dpia_verification_url": "https://org.com/dpia_results.html"
+        }
+    },
+    "record": {
+        "dataController": {
+            "id":"did:example:123",
+            "url":"",
+            "postal":"", //optional
+            "email": "", //optional
+            "phone":"" //optional
+        },
+        "dataSubject": "did:example:987",
+        "timestamp": "1629463540",
+        "service": "Example Service", //moved from purpose to complete agreement. The policy is usually linked to a full service
+        "consentDuration": 365,
+        "formOfConsent": "explicit | implicit",
+        "terminationTimestamp": "1660992340" // Optional: if present, this would mean this consent has been terminated at that point
+    },
+    "purposes": [{
+        "id": "shoppingCustomized",
+        "purpose": "Customized shopping experience",
+        "purpose_description": "Collecting user data for offering custom tailored shopping experience",
+        "purposeCategory":"Service Personalisation"
+    },
+    {
+        "id": "marketing",
+        "purpose": "Marketing campaigns",
+        "purpose_description": "Profile users to provide them with personalized marketing campaigns",
+        "purposeCategory":"Marketing"
+    }],
+    "personal_data": [{
+            "id":"cred:example:aohtiruahauira", //optional, filled by the user
+            "piiCategory": "Name",
+            "sensitive": true,
+            "purposes": ["shoppingCustomized"],
+            "transfers": [] //moved from processing, specific to a single category
+        },
+        {
+            "id":"cred:example:askjbfai3y46q87q3fa4", //optional, filled by the user
+            "piiCategory": "Age",
+            "sensitive": false,
+            "purposes": ["shoppingCustomized", "marketing"],
+            "transfers": [{
+                "exchange": true,
+                "third_party_name":["*", "did:example:456"] //List of receivers identified by their unique ids
+            }]
+        }
+    ],
+    "proofChain": [{
+        "type": "Ed25519Signature2018",
+        "created": "2020-04-02T18:28:08Z",
+        "verificationMethod": "did:example:987#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN",
+        "proofPurpose": "assertionMethod",
+        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..YtqjEYnFENT7fNW-COD0HAACxeuQxPKAmp4nIl8jYAu__6IH2FpSxv81w-l5PvE1og50tS9tH8WyXMlXyo45CA"
+    }]
+
+}
