@@ -16,9 +16,9 @@
   <a href="#licensing">Licensing</a>
 </p>
 
-# About
+## About
 
-This repository contains the the deliverables for Automated Data Agreement (ADA) Project. This is part of NGI-eSSIF-Lab project that has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 871932.
+This repository contains the deliverables for Automated Data Agreement (ADA) Project. This is part of NGI-eSSIF-Lab project that has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 871932.
 
 This ADA project is an open source conrtibution lead by iGrant.io (Sweden), Linaltec (Sweden) and PrivacyAnt (Finland). Read more on the project at NGI eSSIF-Lab page: https://essif-lab.eu/automated-data-agreements-to-simplify-ssi-work-flows-by-igrant-io/
 
@@ -37,7 +37,7 @@ The key deliverables of the project are as given. The table summarises the relea
 Feel free to improve the plugin and send us a pull request. If you found any problems, please create an issue in this repo.
 
 ## Licensing
-Copyright (c) 2021 LCubed AB (iGrant.io), Sweden
+Copyright (c) 2021-22 LCubed AB (iGrant.io), Sweden
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 
