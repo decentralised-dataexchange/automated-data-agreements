@@ -330,7 +330,7 @@ The below sequence diagram shows how the steps of issuing a credential can be us
 1. A Data Source offers to issue data and adds a reference to a signed Data Agreement.
 2. Once the user agrees to the data offer and accepts it, the agreement is counter signed and a receipt is created. 
 
-![SSI Data Agreement and issuing credentials](sequences/data-agreement-negotiation-dus.svg)
+![SSI Data Agreement and issuing credentials](sequences/data-agreement-negotiation-source.svg)
 
 The following diagram is from [Aries 0036 Issue Credential](https://github.com/hyperledger/aries-rfcs/tree/master/features/0036-issue-credential) and the text in red represents how a Data Agreement is processed as part of a credentia offer when it is accepted or rejected.
 
