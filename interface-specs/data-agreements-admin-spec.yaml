@@ -1,0 +1,586 @@
+---
+openapi: 3.0.0
+info:
+  title: Automated Data Agreements
+  description: This specification is documented in OpenAPI format, it describes the RESTFul APIs of ADA component
+  contact:
+    email: support@igrant.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.1
+servers:
+- url: https://virtserver.swaggerhub.com/LCubedAB/ADA/1.0.1
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: organisations
+  description: Operations available for organisations.
+- name: individuals
+  description: Operations available to individuals.
+- name: auditor
+  description: Operations available for auditors
+paths:
+  /dataagreement:
+    post:
+      tags:
+      - organisations
+      description: Create a data agreement.
+      operationId: Create a data agreement.
+      requestBody:
+        description: Data agreement structure
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataAgreement'
+      responses:
+        "201":
+          description: Data agreement created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_201'
+        "400":
+          description: invalid input, object invalid
+  /dataagreement/{agreementId}:
+    get:
+      tags:
+      - organisations
+      description: Fetch a data agreement
+      operationId: Fetch a data agreement
+      parameters:
+      - name: agreementId
+        in: path
+        description: Data agreement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
+      responses:
+        "200":
+          description: Returns data agreement
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataAgreement'
+        "404":
+          description: Data agreement not found
+    delete:
+      tags:
+      - organisations
+      description: Delete a data agreement
+      operationId: Delete a data agreement
+      parameters:
+      - name: agreementId
+        in: path
+        description: Data agreement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
+      responses:
+        "204":
+          description: Data agreement deleted
+        "404":
+          description: Data agreement not found
+    patch:
+      tags:
+      - organisations
+      description: Update a data agreement
+      operationId: Update a data agreement
+      parameters:
+      - name: agreementId
+        in: path
+        description: Data agreement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
+      requestBody:
+        description: Data agreement structure
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataAgreement'
+      responses:
+        "200":
+          description: Returns updated data agreement
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataAgreement'
+        "404":
+          description: Data agreement not found
+        "400":
+          description: invalid input, object invalid
+  /dataagreement/{agreementId}/publish:
+    post:
+      tags:
+      - organisations
+      description: Publish a data agreement
+      operationId: Publish a data agreement
+      parameters:
+      - name: agreementId
+        in: path
+        description: Data agreement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
+      responses:
+        "204":
+          description: Data agreement published
+        "404":
+          description: Data agreement not found
+  /dataagreement/{agreementId}/unpublish:
+    post:
+      tags:
+      - organisations
+      description: Unpublish a data agreement
+      operationId: Unpublish a data agreement
+      parameters:
+      - name: agreementId
+        in: path
+        description: Data agreement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
+      responses:
+        "204":
+          description: Data agreement unpublished
+        "404":
+          description: Data agreement not found
+  /mydata-did/transaction-records:
+    get:
+      tags:
+      - individuals
+      summary: Fetch MyData DID registry transaction records
+      parameters:
+      - name: connection_id
+        in: query
+        description: Connection identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uuid
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: state
+        in: query
+        description: MyData DID registry transaction state
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - sent
+          - received
+          - failed
+          - success
+      - name: thread_id
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          description: Thread identifier
+          format: uuid
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: transaction_type
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          description: Transaction type
+          enum:
+          - create-did
+          - read-did
+          - delete-did
+      responses:
+        "200":
+          description: List of transactions against DID registry
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V10MyDataDIDRegistryTransactionList'
+  /mydata-did/transaction-records/{mydata_did_registry_transaction_id}:
+    get:
+      tags:
+      - individuals
+      summary: Fetch a single MyData DID registry transaction record
+      parameters:
+      - name: mydata_did_registry_transaction_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
+          type: string
+          description: MyData DID registry transaction identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "200":
+          description: DID registry transaction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V10MyDataDIDRegistryTransaction'
+    delete:
+      tags:
+      - individuals
+      summary: Remove an existing MyData DID registry transaction record
+      parameters:
+      - name: mydata_did_registry_transaction_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
+          type: string
+          description: MyData DID registry transaction identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "204":
+          description: Deleted DID registry transaction record
+  /mydata-did/create-did:
+    post:
+      tags:
+      - individuals
+      summary: Send create-did message
+      requestBody:
+        description: DID document
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DIDVerificationMethod'
+      responses:
+        "200":
+          description: Sent DIDComm message to DID registry to register DID
+  /mydata-did/read-did:
+    post:
+      tags:
+      - individuals
+      - auditor
+      summary: Send read-did message
+      requestBody:
+        description: Decentralised identifier to be resolved
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V10ReadDIDQueryString'
+      responses:
+        "200":
+          description: Sent DIDComm message to DID registry to resolve DID
+  /mydata-did/delete-did:
+    post:
+      tags:
+      - individuals
+      summary: Send delete-did message
+      requestBody:
+        description: Decentralised identifier to be deleted
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V10ReadDIDQueryString'
+      responses:
+        "200":
+          description: Sent DIDComm message to DID registry to delete DID
+  /mydata-did/verified:
+    get:
+      tags:
+      - organisations
+      summary: Fetch all verified MyData DID
+      parameters: []
+      responses:
+        "200":
+          description: Verified decentralised identifiers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifiedMyDataList'
+  /mydata-did/verified/{did}:
+    get:
+      tags:
+      - organisations
+      summary: Fetch verified MyData DID record
+      parameters:
+      - name: did
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          description: MyData decentralised identifier
+      responses:
+        "200":
+          description: Verified decentralised identifier record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifiedMyDataRecord'
+  /mydata-did/did-records:
+    get:
+      tags:
+      - individuals
+      summary: Fetch MyData DID records
+      parameters:
+      - name: did
+        in: query
+        description: MyData decentralised identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: ^did:mydata(:?(0|1|2|3|4))?:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+      - name: state
+        in: query
+        description: MyData DID registry transaction state
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - verified
+          - revoked
+      responses:
+        "200":
+          description: List of decentralised identifiers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V10MyDataDIDRecordsList'
+components:
+  schemas:
+    DataAgreement:
+      required:
+      - code_of_conduct
+      - data_policy
+      - personal_data
+      - usage_purpose
+      - usage_purpose_description
+      type: object
+      properties:
+        usage_purpose:
+          type: string
+          example: Customized shopping experience
+        usage_purpose_description:
+          type: string
+          example: Collecting user data for offering custom tailored shopping experience
+        data_policy:
+          $ref: '#/components/schemas/DataAgreement_data_policy'
+        personal_data:
+          $ref: '#/components/schemas/DataAgreement_personal_data'
+        code_of_conduct:
+          $ref: '#/components/schemas/DataAgreement_code_of_conduct'
+    V10ReadDIDQueryString:
+      required:
+      - connection_id
+      - did
+      type: object
+      properties:
+        connection_id:
+          type: string
+          description: Registry connection identifier
+          format: uuid
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        did:
+          type: string
+          description: MyData decentralised identifier
+    VerifiedMyDataList:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Verified MyData DID records
+          items:
+            $ref: '#/components/schemas/VerifiedMyDataRecord'
+    VerifiedMyDataRecord:
+      type: object
+      properties:
+        did:
+          pattern: ^did:mydata(:?(0|1|2|3|4))?:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+          description: MyData decentralised identifier
+          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        diddoc:
+          type: object
+          description: MyData DID document
+    V10MyDataDIDRegistryTransaction:
+      type: object
+      properties:
+        connection_id:
+          type: string
+          description: Connection identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        create_did_request_dict:
+          type: object
+          description: Serialized create-did message dict
+        create_did_response_dict:
+          type: object
+          description: Serialised create-did-response message dict
+        created_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
+          type: string
+          description: Time of record creation
+          example: 2021-09-19 14:06:14Z
+        delete_did_request_dict:
+          type: object
+          description: Serialized delete-did message dict
+        delete_did_response_dict:
+          type: object
+          description: Serialised delete-did-response message dict
+        error_msg:
+          type: string
+          description: Error message
+          example: Invalid structure
+        mydata_did_registry_transaction_id:
+          type: string
+          description: MyData registry transaction identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        read_did_request_dict:
+          type: object
+          description: Serialized read-did message dict
+        read_did_response_dict:
+          type: object
+          description: Serialised read-did-response message dict
+        record_type:
+          type: string
+          description: MyData transaction record type
+          example: create-did
+        state:
+          type: string
+          description: MyData transaction state
+          example: success
+        their_connection_id:
+          type: string
+          description: Their connection identifier (Connection ID for which MyData DID will be used for ADA messages)
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        thread_id:
+          type: string
+          description: Thread identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        trace:
+          type: boolean
+          description: Record trace information, based on agent configuration
+        updated_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
+          type: string
+          description: Time of last record update
+          example: 2021-09-19 14:06:14Z
+    V10MyDataDIDRegistryTransactionList:
+      type: object
+      properties:
+        results:
+          type: array
+          description: MyData DID registry transaction records
+          items:
+            $ref: '#/components/schemas/V10MyDataDIDRegistryTransaction'
+    V10MyDataDIDRecord:
+      type: object
+      properties:
+        created_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
+          type: string
+          description: Time of record creation
+          example: 2021-09-19 14:06:14Z
+        did:
+          pattern: ^did:mydata(:?(0|1|2|3|4))?:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+          description: MyData decentralised identifier
+          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        mydata_did_record_id:
+          type: string
+          description: MyData DID record
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        state:
+          type: string
+          description: MyData DID record state
+          example: verified
+        trace:
+          type: boolean
+          description: Record trace information, based on agent configuration
+        updated_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
+          type: string
+          description: Time of last record update
+          example: 2021-09-19 14:06:14Z
+    V10MyDataDIDRecordsList:
+      type: object
+      properties:
+        results:
+          type: array
+          description: MyData DID records
+          items:
+            $ref: '#/components/schemas/V10MyDataDIDRecord'
+    DIDVerificationMethod:
+      required:
+      - recipient_connection_id
+      - registry_connection_id
+      type: object
+      properties:
+        recipient_connection_id:
+          type: string
+          description: Recipient connection ID
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        registry_connection_id:
+          type: string
+          description: ADA registry service connection ID
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+    inline_response_201:
+      type: object
+      properties:
+        agreementId:
+          type: string
+          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
+    DataAgreement_data_policy:
+      type: object
+      properties:
+        data_retention_period:
+          type: string
+          example: "365"
+    DataAgreement_personal_data:
+      type: object
+      properties:
+        attribute_names:
+          type: array
+          example:
+          - Name
+          - Age
+          items:
+            type: string
+    DataAgreement_code_of_conduct:
+      type: object
+      properties:
+        dpia_conducted:
+          type: boolean
+          example: true
+        dpia_passed:
+          type: boolean
+          example: true
+        dpia_date:
+          type: string
+          example: 2021-05-08T08:41:59+0000
+        dpia_verification_url:
+          type: string
+          example: https://org.com/dpia_results.html
