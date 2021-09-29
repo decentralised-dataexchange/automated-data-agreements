@@ -1,0 +1,153 @@
+openapi: 3.0.0
+info:
+  title: VUI Data Agreement API
+  description: Proposed API for a Verifier to offer Data Agreement capabilities that must be implemented for holders to interact with them. Intended for interop testing
+  version: 1.0.0
+servers:
+  - url: https://vui.gataca.io/api/v1
+    description: Gataca's implementor server
+  - url: http://data-agreements.igrant.io/api/v1
+    description: IGrantio Data Agreements Server
+
+paths:
+  /health:
+    get:
+      summary: Returns if the service is up and running.
+      description: Optional extended description in CommonMark or HTML.
+      tags:
+        - Integration
+      responses:
+        '200':    # status code
+          description: Server UP
+  /version:
+    get:
+      summary: Returns the current version of the service.
+      description: Optional extended description in CommonMark or HTML.
+      tags:
+        - Integration
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  version:
+                    type: string
+                  releaseDate:
+                    type: string
+                    format: date       
+
+  /data-agreements/templates/{template_id}/negotiation:
+    get:
+      summary: Request a data agreement offer
+      description: For interop testing, start the negotiation by requesting a data agreement offer
+      tags:
+        - Negotiation
+      responses:
+        '200': 
+          description: Offered data agreement with a specific negotiation id
+          content:
+            application/json:
+              schema: 
+                  $ref: '#/components/schemas/data_agreement_offer'
+  /data-agreements/accept/{negotiation_id}:
+    post:
+      summary: Accept a data agreement offer
+      description: After receiving an offer, the user may accept it by sending the signed and filled data agreement
+      tags:
+        - Negotiation
+      security:
+        - {}
+        - bearerAuth: [] #optional
+      requestBody:
+            description: Submitted data_agreement matching the requested proposal
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/data_agreement_acceptance'
+      responses:
+        '200':    # status code
+          description: Accepted data agreement offer
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/data_agreement_acceptance'
+        '400':
+          description: "Request body malformed"
+        '403': #optional
+          description: "Data agreement acceptanced can't be trusted from that source"
+        '404':
+          description: "No data agreement negotiation associated to that id"
+        '409': #optional
+          description: "Data Agreement on that negotiation already accepted or rejected"
+        '413': #optional
+          description: "Request body too large to be processed"
+        '429': #optional
+          description: "Rate limit to accept data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+  /data-agreements/decline/{negotiation_id}:
+    post:
+      summary: Decline a data agreement offer
+      description: After receiving an offer, the user may decline it by sending a declination response, indicating the causes for declination.
+      tags:
+        - Negotiation
+      security:
+        - {}
+        - bearerAuth: [] #optional
+      requestBody:
+            description: Declination of the offer with the causes
+            required: true
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/data_agreement_declination'
+      responses:
+        '200':    # status code
+          description: Rejected data agreement
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/data_agreement_acceptance'
+        '400':
+          description: "Request body malformed"
+        '403': #optional
+          description: "Data agreement rejection can't be trusted from that source"
+        '404':
+          description: "No data agreement negotiation associated to that id"
+        '409': #optional
+          description: "Data Agreement on that negotiation already accepted or rejected"
+        '413': #optional
+          description: "Request body too large to be processed"
+        '429': #optional
+          description: "Rate limit to reject data agreements is exceeded"
+        '500':
+          description: "Server error processing the request"
+  
+
+components:
+  schemas:
+    data_agreement: 
+      type: object
+    data_agreement_offer: 
+      type: object
+    data_agreement_acceptance: 
+      type: object
+    data_agreement_declination: 
+      type: object
+      
+  securitySchemes:
+    ApiKeyAuth:       
+      type: apiKey
+      in: header       # can be "header", "query" or "cookie"
+      name: X-API-KEY  # name of the header, query parameter or cookie
+    basicAuth:    
+      type: http
+      scheme: basic
+    bearerAuth:      
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 

@@ -1,0 +1,296 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "template_id": {
+      "type": "string"
+    },
+    "template_version": {
+      "type": "string"
+    },
+    "usage_purposes": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "legal_basis": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "description",
+            "legal_basis",
+            "category"
+          ]
+        }
+      ]
+    },
+    "data_policy": {
+      "type": "object",
+      "properties": {
+        "policy_URL": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": "string"
+        },
+        "industry_scope": {
+          "type": "string"
+        },
+        "data_retention_period": {
+          "type": "integer"
+        },
+        "geographic_restriction": {
+          "type": "string"
+        },
+        "geo_location": {
+          "type": "string"
+        },
+        "privacy_rights_URL": {
+          "type": "string"
+        },
+        "code_of_conduct": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policy_URL",
+        "jurisdiction",
+        "industry_scope",
+        "data_retention_period",
+        "geographic_restriction",
+        "geo_location",
+        "privacy_rights_URL",
+        "code_of_conduct"
+      ]
+    },
+    "personal_data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "attribute_id": {
+              "type": "string"
+            },
+            "attribute_name": {
+              "type": "string"
+            },
+            "attribute_mandatory": {
+              "type": "boolean"
+            },
+            "attribute_category": {
+              "type": "string"
+            },
+            "purposes": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "exchange": {
+              "type": "boolean"
+            },
+            "third_party_name": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "attribute_id",
+            "attribute_name",
+            "attribute_mandatory",
+            "attribute_category",
+            "purposes",
+            "exchange",
+            "third_party_name"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "attribute_id": {
+              "type": "string"
+            },
+            "attribute_name": {
+              "type": "string"
+            },
+            "attribute_mandatory": {
+              "type": "boolean"
+            },
+            "attribute_category": {
+              "type": "string"
+            },
+            "purposes": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "exchange": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "attribute_id",
+            "attribute_name",
+            "attribute_mandatory",
+            "attribute_category",
+            "purposes",
+            "exchange"
+          ]
+        }
+      ]
+    },
+    "dpia": {
+      "type": "object",
+      "properties": {
+        "dpia_conducted": {
+          "type": "boolean"
+        },
+        "dpia_passed": {
+          "type": "boolean"
+        },
+        "dpia_date": {
+          "type": "string"
+        },
+        "dpia_verification_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dpia_conducted",
+        "dpia_passed",
+        "dpia_date",
+        "dpia_verification_url"
+      ]
+    },
+    "data_receiver": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "postal": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "postal",
+        "email",
+        "phone"
+      ]
+    },
+    "data_subject": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "service": {
+      "type": "string"
+    },
+    "consent_duration": {
+      "type": "integer"
+    },
+    "form_of_consent": {
+      "type": "string"
+    },
+    "termination_timestamp": {
+      "type": "string"
+    },
+    "proofChain": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "created": {
+              "type": "string"
+            },
+            "verificationMethod": {
+              "type": "string"
+            },
+            "proofPurpose": {
+              "type": "string"
+            },
+            "jws": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "created",
+            "verificationMethod",
+            "proofPurpose",
+            "jws"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "@context",
+    "id",
+    "version",
+    "template_id",
+    "template_version",
+    "usage_purposes",
+    "data_policy",
+    "personal_data",
+    "dpia",
+    "data_receiver",
+    "data_subject",
+    "timestamp",
+    "service",
+    "consent_duration",
+    "form_of_consent",
+    "termination_timestamp",
+    "proofChain"
+  ]
+}
