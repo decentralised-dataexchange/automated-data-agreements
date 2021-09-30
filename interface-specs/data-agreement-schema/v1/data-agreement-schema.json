@@ -1,57 +1,70 @@
 {
   "@context": "https://schema.igrant.io/data-agreements/v1",
-  "data_agreement_id": "d7216cb1-aedb-471e-96f7-7fef51dedb76",
-  "data_agreement_version": "v1.0",
-  "data_agreement_template_id": "91be609a-4acd-468f-b37a-0f379893b65c",
-  "data_agreement_template_version": "v1.0",
-  "usage_purpose": "Customized shopping experience",
-  "usage_purpose_description": "Collecting user data for offering custom tailored shopping experience",
-  "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
-
-  "data_policy": {
-    "policy_URL": "https://clarifyhealth.com/privacy-policy/",
-    "jurisdiction": "Stockholm, Sweden",
-    "industry_scope": "Healthcare",
-    "data_retention_period": "3",
-    "geographic_restriction": "Europe, Not restricted",
-    "geo_location": "Europe"
+  "id": "d7216cb1-aedb-471e-96f7-7fef51dedb76",
+  "version": "v1.0",
+  "template_id": "91be609a-4acd-468f-b37a-0f379893b65c",
+  "template_version": "v1.0",
+  "policy_URL": "https://clarifyhealth.com/privacy-policy/",
+  "services": [{
+    "service": "Customized shopping experience",
+    "service_description": "Collecting user data for offering custom tailored shopping experience"
+  }],
+  "purposes": [{
+    "purpose": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
+    "purpose_category": "Healthcare",
+    "personal_data": [{
+        "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
+        "attribute_name": "Name",   # Name has same characteristics as category. Category represents the type of pii data, ie name
+        "attribute_mandatory": false,   # The record only captures what is actually collected
+        "attribute_category": "General",   # Recommend to remove and possibly rename attribute_name to attribute_category
+        "sensitive_personal_category": true
+      },
+      {
+        "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
+        "attribute_name": "Age",
+        "attribute_mandatory": true, 
+        "attribute_category": "General"
+      }
+    ],
+    "data_retention_period": "36",   # Number of months
+    "storage_location": "Sweden",
+    "geographic_restriction": "Europe"
+  }],
+  "data_controllers": [{
+    "party_name": "Happy Shopping AB",
+    "party_url": "www.happyshopping.com"
+  }],
+  "jurisdiction": "Sweden",
+  "third_party": [{}],       # Empty means not shared with any third party
+  "dpia": {   # Using DPIA instead of impact_assessment
+    "timestamp": "2021-05-08T08:41:59+0000",
+    "assessment_summary_URL": "https://org.com/dpia_results.html"
+  },
+  "event": {    # Discuss if this field makes sense
+    "timestamp": "2021-05-08T08:41:59+0000",
+    "state": "attested"   # Could use a better state name like signed or agreed. Exact values not standardized yet.
   },
 
-  "data_sharing": {
-    "exchange": true,
-    "role": "<null/issuer/verifier>"
-  },
-  
-  "personal_data":[
-    {
-      "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-      "attribute_name": "Name",
-      "attribute_mandatory": false, 
-      "attribute_category": "General"
-    },
-    {
-      "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-      "attribute_name": "Age",
-      "attribute_mandatory": true, 
-      "attribute_category": "General"
-    }
-  ],
-
-  "dpia": {
-    "dpia_done": true,
-    "dpia_date": "2021-05-08T08:41:59+0000",
-    "dpia_verification_url": "https://org.com/dpia_results.html"
-  },
-
-  "sender_metadata": {
-    "sender-did": "did:mydata:0:<sender_did_value>",
+  "sender_metadata": {   # Proprietary
+    "sender-did": "did:mydata:0:<sender_did_value>",    # Map to party_id
     "preparation-time-stamp": "2021-05-08T08:41:59+0000",
     "prepartion_signature": "<signature>"
   },
-  
-  "recipient_metadata": {
-    "recipient-did": "did:mydata:1:<sender_did_value>",
+
+  "data_sharing": {   # Proprietary
+    "exchange": true,   # Move to third_party list, question if we should have a separate flag to be clearer
+    "role": "<null/issuer/verifier>"  # Unclear how to map this field. Method_of_use
+  },
+          
+  "sender_metadata": {   # Proprietary
+    "sender-did": "did:mydata:0:<sender_did_value>",    # Map to party_id
+    "preparation-time-stamp": "2021-05-08T08:41:59+0000",
+    "prepartion_signature": "<signature>"
+  },
+
+  "recipient_metadata": {   # Proprietary
+    "recipient-did": "did:mydata:1:<sender_did_value>",   # Map to principal_id
     "capture_signature": "<signature>",
-    "capture-time-stamp": "2021-05-08T08:41:59+0000"
+    "capture-time-stamp": "2021-05-08T08:41:59+0000"  # event timestamp
   }
 }
