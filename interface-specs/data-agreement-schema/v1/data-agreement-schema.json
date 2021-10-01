@@ -1,57 +1,52 @@
 {
   "@context": "https://schema.igrant.io/data-agreements/v1",
-  "data_agreement_id": "d7216cb1-aedb-471e-96f7-7fef51dedb76",
-  "data_agreement_version": "v1.0",
-  "data_agreement_template_id": "91be609a-4acd-468f-b37a-0f379893b65c",
-  "data_agreement_template_version": "v1.0",
-  "usage_purpose": "Customized shopping experience",
-  "usage_purpose_description": "Collecting user data for offering custom tailored shopping experience",
-  "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
+  "id": "d7216cb1-aedb-471e-96f7-7fef51dedb76",
+  "version": "v1.0",
+  "template_id": "91be609a-4acd-468f-b37a-0f379893b65c",
+  "template_version": "v1.0",
+
+  "pii_controller_name": "Happy Shopping AB",
+  "pii_controller_url": "www.happyshopping.com",
 
   "data_policy": {
     "policy_URL": "https://clarifyhealth.com/privacy-policy/",
     "jurisdiction": "Stockholm, Sweden",
-    "industry_scope": "Healthcare",
-    "data_retention_period": "3",
+    "industry_scope": "Retail",
+    "data_retention_period_in_months": "30",
     "geographic_restriction": "Europe, Not restricted",
-    "geo_location": "Europe"
+    "storage_location": "Europe"
   },
 
-  "data_sharing": {
-    "exchange": true,
-    "role": "<null/issuer/verifier>"
-  },
+  "purpose": "Customized shopping experience",
+  "purpose_description": "Collecting user data for offering custom tailored shopping experience",
+  "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
+  "method_of_use": "<null/data-source/data-using-service>",
   
-  "personal_data":[
-    {
+  "personal_data":[{
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-      "attribute_name": "Name",
-      "attribute_mandatory": false, 
-      "attribute_category": "General"
+      "attribute_name": "Name"
     },
     {
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-      "attribute_name": "Age",
-      "attribute_mandatory": true, 
-      "attribute_category": "General"
+      "attribute_name": "Age"
     }
   ],
 
   "dpia": {
-    "dpia_done": true,
     "dpia_date": "2021-05-08T08:41:59+0000",
-    "dpia_verification_url": "https://org.com/dpia_results.html"
+    "dpia_summary_url": "https://org.com/dpia_results.html"
   },
 
-  "sender_metadata": {
-    "sender-did": "did:mydata:0:<sender_did_value>",
-    "preparation-time-stamp": "2021-05-08T08:41:59+0000",
-    "prepartion_signature": "<signature>"
+  "event":[{
+    "time-stamp": "2021-05-08T08:41:59+0000",
+    "principle-did": "did:mydata:1:<sender_did_value>",
+    "state": "prepared",
+    "authenticity": "<signature>"
   },
-  
-  "recipient_metadata": {
-    "recipient-did": "did:mydata:1:<sender_did_value>",
-    "capture_signature": "<signature>",
-    "capture-time-stamp": "2021-05-08T08:41:59+0000"
-  }
+  {
+    "time-stamp": "2021-05-08T08:41:59+0000",
+    "principle-did": "did:mydata:1:<sender_did_value>",
+    "state": "signed",
+    "authenticity": "<signature>"
+  }]
 }
