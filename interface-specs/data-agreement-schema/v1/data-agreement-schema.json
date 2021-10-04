@@ -4,10 +4,8 @@
   "version": "v1.0",
   "template_id": "91be609a-4acd-468f-b37a-0f379893b65c",
   "template_version": "v1.0",
-
   "pii_controller_name": "Happy Shopping AB",
   "pii_controller_url": "www.happyshopping.com",
-
   "data_policy": {
     "policy_URL": "https://clarifyhealth.com/privacy-policy/",
     "jurisdiction": "Stockholm, Sweden",
@@ -16,13 +14,12 @@
     "geographic_restriction": "Europe, Not restricted",
     "storage_location": "Europe"
   },
-
   "purpose": "Customized shopping experience",
   "purpose_description": "Collecting user data for offering custom tailored shopping experience",
   "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
   "method_of_use": "<null/data-source/data-using-service>",
-  
-  "personal_data":[{
+  "personal_data": [
+    {
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
       "attribute_name": "Name"
     },
@@ -31,22 +28,22 @@
       "attribute_name": "Age"
     }
   ],
-
   "dpia": {
     "dpia_date": "2021-05-08T08:41:59+0000",
     "dpia_summary_url": "https://org.com/dpia_results.html"
   },
-
-  "event":[{
-    "time-stamp": "2021-05-08T08:41:59+0000",
-    "principle-did": "did:mydata:1:<sender_did_value>",
-    "state": "prepared",
-    "authenticity": "<signature>"
-  },
-  {
-    "time-stamp": "2021-05-08T08:41:59+0000",
-    "principle-did": "did:mydata:1:<sender_did_value>",
-    "state": "signed",
-    "authenticity": "<signature>"
-  }]
+  "event": [
+    {
+      "time-stamp": "2021-05-08T08:41:59+0000",
+      "principle-did": "did:mydata:1:<sender_did_value>",
+      "state": "<Definition/Prepration/Capture>",
+      "authenticity": "<signature>"
+    },
+    {
+      "time-stamp": "2021-05-08T08:41:59+0000",
+      "principle-did": "did:mydata:1:<sender_did_value>",
+      "state": "<Definition/Prepration/Capture>",
+      "authenticity": "<signature>"
+    }
+  ]
 }
