@@ -8,10 +8,10 @@
   "pii_controller_url": "www.happyshopping.com",
   "data_policy": {
     "policy_URL": "https://clarifyhealth.com/privacy-policy/",
-    "jurisdiction": "Stockholm, Sweden",
+    "jurisdiction": "Sweden",
     "industry_scope": "Retail",
-    "data_retention_period_in_months": "30",
-    "geographic_restriction": "Europe, Not restricted",
+    "data_retention_period": "30",
+    "geographic_restriction": "Europe",
     "storage_location": "Europe"
   },
   "purpose": "Customized shopping experience",
@@ -21,11 +21,13 @@
   "personal_data": [
     {
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-      "attribute_name": "Name"
+      "attribute_name": "Name",
+      "attribute_sensitive": "True"
     },
     {
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-      "attribute_name": "Age"
+      "attribute_name": "Age",
+      "attribute_sensitive": "True"
     }
   ],
   "dpia": {
