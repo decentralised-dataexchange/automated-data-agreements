@@ -18,4 +18,8 @@ Please use this as a guidance: https://tbaggery.com/2008/04/19/a-note-about-git-
 
 Please use for example, `project-name_data-agreement.yaml`format. 
 
+## Release
 
+The APIs are released at: 
+
+* [Data Agreement APIs Rel. 1.0.1](https://app.swaggerhub.com/apis/iGrant.io/ADA/1.0.1)
