@@ -14,38 +14,87 @@
     "geographic_restriction": "Europe",
     "storage_location": "Europe"
   },
-  "purpose": "Customized shopping experience",
-  "purpose_description": "Collecting user data for offering custom tailored shopping experience",
-  "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
-  "method_of_use": "<null/data-source/data-using-service>",
-  "personal_data": [
-    {
+
+  //Requirement: Purpose cardinality >= 1
+
+  //Alterative A
+  "purposes": [{
+    "id": "Customized shopping experience",
+    "purpose_description": "Collecting user data for offering custom tailored shopping experience",
+    "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
+    "method_of_use": "<null/data-source/data-using-service>"
+  }],
+
+  "personal_data": [{
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
       "attribute_name": "Name",
-      "attribute_sensitive": "True"
+      "attribute_sensitive": "True",
+      //Requirement: Each specific piece of data must be linked to a list of purposes
+      "purposes": ["Customized shopping experience"]
     },
     {
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
       "attribute_name": "Age",
-      "attribute_sensitive": "True"
+      "attribute_sensitive": "True",
+      "purposes": ["Customized shopping experience"]
     }
   ],
+
+  //Alterative B
+  "purposes": [{
+    "id": "Customized shopping experience",
+    "purpose_description": "Collecting user data for offering custom tailored shopping experience",
+    "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
+    "method_of_use": "<null/data-source/data-using-service>",
+
+    "personal_data": [{
+        "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
+        "attribute_name": "Name",
+        "attribute_sensitive": "True"
+      },
+      {
+        "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
+        "attribute_name": "Age",
+        "attribute_sensitive": "True"
+      }
+    ]
+  }],
   "dpia": {
     "dpia_date": "2021-05-08T08:41:59+0000",
     "dpia_summary_url": "https://org.com/dpia_results.html"
   },
-  "event": [
-    {
+  "event": [{
       "time-stamp": "2021-05-08T08:41:59+0000",
       "principle-did": "did:mydata:1:<sender_did_value>",
       "state": "<Definition/Prepration/Capture>",
-      "authenticity": "<signature>"
+      //Requirement: Usage of linked data proofs for validation
+      "proof": {
+        "type": "RsaSignature2018",
+        "created": "2017-06-18T21:19:10Z",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "https://example.edu/issuers/keys/1",
+        "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5X
+        sITJX1CxPCT8yAV - TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq - pQy7UJiN5mgRxD - WUc
+        X16dUEMGlv50aqzpqh4Qktb3rk - BuQy72IFLOqV0G_zS245 - kronKb78cPN25DGlcTwLtj
+        PAYuNzVBAh4vGHSrQyHUdBBPM"
+      }
     },
     {
       "time-stamp": "2021-05-08T08:41:59+0000",
       "principle-did": "did:mydata:1:<sender_did_value>",
       "state": "<Definition/Prepration/Capture>",
-      "authenticity": "<signature>"
+      "proof": {
+        "type": "RsaSignature2018",
+        "created": "2018-06-18T21:19:10Z",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "https://example.com/jdoe/keys/1",
+        "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..DJBMvvFAIC00nSGB6Tn0XKbbF9XrsaJZREWvR2aONYTQQxnyXirtXnlewJMB
+        Bn2h9hfcGZrvnC1b6PgWmukzFJ1IiH1dWgnDIS81BH - IxXnPkbuYDeySorc4
+        QU9MJxdVkY5EL4HYbcIfwKj6X4LBQ2_ZHZIu1jdqLcRZqHcsDF5KKylKc1TH
+        n5VRWy5WhYg_gBnyWny8E6Qkrze53MR7OuAmmNJ1m1nN8SxDrG6a08L78J0 -
+        Fbas5OjAQz3c17GY8mVuDPOBIOVjMEghBlgl3nOi1ysxbRGhHLEK4s0KKbeR
+        ogZdgt1DkQxDFxxn41QWDw_mmMCjs9qxg0zcZzqEJw "
+      }
     }
   ]
 }
