@@ -22,12 +22,14 @@
     {
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
       "attribute_name": "Name",
-      "attribute_sensitive": "True"
+      "attribute_sensitive": "True",
+      "attribute_category": "Name"
     },
     {
       "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
       "attribute_name": "Age",
-      "attribute_sensitive": "True"
+      "attribute_sensitive": "True",
+      "attribute_category": "Age"
     }
   ],
   "dpia": {
