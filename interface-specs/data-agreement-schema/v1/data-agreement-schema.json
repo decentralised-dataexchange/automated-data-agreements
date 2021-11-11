@@ -16,7 +16,7 @@
   },
   "purpose": "Customized shopping experience",
   "purpose_description": "Collecting user data for offering custom tailored shopping experience",
-  "legal_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
+  "lawful_basis": "<consent/legal_obligation/contract/vital_interest/public_task/legitimate_interest>",
   "method_of_use": "<null/data-source/data-using-service>",
   "personal_data": [
     {
