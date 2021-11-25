@@ -38,16 +38,34 @@
   },
   "event": [
     {
+      "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
       "time-stamp": "2021-05-08T08:41:59+0000",
-      "principle-did": "did:mydata:1:<sender_did_value>",
-      "state": "<Definition/Prepration/Capture>",
-      "authenticity": "<signature>"
+      "principle-did": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
+      "state": "<Definition/Prepration/Capture>"
     },
     {
+      "id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP#2",
       "time-stamp": "2021-05-08T08:41:59+0000",
-      "principle-did": "did:mydata:1:<sender_did_value>",
-      "state": "<Definition/Prepration/Capture>",
-      "authenticity": "<signature>"
+      "principle-did": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
+      "state": "<Definition/Prepration/Capture>"
+    }
+  ],
+  "proofChain":[
+    {
+      "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
+      "type": "Ed25519Signature2020",
+      "created": "2021-05-08T08:41:59+0000",
+      "verificationMethod": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
+      "proofPurpose": "contractAgreement",
+      "proofValue": "z6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwLz6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwL"
+    },
+    {
+      "id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP#2",
+      "type": "Ed25519Signature2020",
+      "created": "2021-05-08T08:41:59+0000",
+      "verificationMethod": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
+      "proofPurpose": "contractAgreement",
+      "proofValue": "z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZPz6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
     }
   ]
 }
