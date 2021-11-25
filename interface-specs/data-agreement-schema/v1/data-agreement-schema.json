@@ -41,13 +41,25 @@
       "time-stamp": "2021-05-08T08:41:59+0000",
       "principle-did": "did:mydata:1:<sender_did_value>",
       "state": "<Definition/Prepration/Capture>",
-      "authenticity": "<signature>"
+      "authenticity": {
+        "type": "Ed25519Signature2020",
+        "created": "2021-11-25T10:47:35+0000",
+        "verificationMethod": "did:mydata:1:<sender_did_value>",
+        "proofPurpose": "contractAgreement",
+        "proofValue": "zVbY8nQAVHMrXFkXJpmEcqdoDwLWxaqA3Q1geV64oey5q2M3XKaxup3tmzN4DRFTLVqpLMweBrSxMY2xHX5XTYVQe"
+      }
     },
     {
       "time-stamp": "2021-05-08T08:41:59+0000",
       "principle-did": "did:mydata:1:<sender_did_value>",
       "state": "<Definition/Prepration/Capture>",
-      "authenticity": "<signature>"
+      "authenticity": {
+        "type": "Ed25519Signature2020",
+        "created": "2021-11-25T10:47:35+0000",
+        "verificationMethod": "did:mydata:1:<sender_did_value>",
+        "proofPurpose": "contractAgreement",
+        "proofValue": "zVbY8nQAVHMrXFkXJpmEcqdoDwLWxaqA3Q1geV64oey5q2M3XKaxup3tmzN4DRFTLVqpLMweBrSxMY2xHX5XTYVQe"
+      }
     }
   ]
 }
