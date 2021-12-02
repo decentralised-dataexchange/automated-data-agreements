@@ -1,5 +1,5 @@
 <h1 align="center">
-    Automated Data Agreements Project (NGI eSSIF-Lab)
+    Data Agreements for enabling auditable personal data exchange
 </h1>
 
 <p align="center">
