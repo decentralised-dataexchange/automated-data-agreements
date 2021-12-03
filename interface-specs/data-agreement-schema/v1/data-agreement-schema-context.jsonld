@@ -1,5 +1,5 @@
 {
-    "context": {
+    "@context": {
         "data_agreement": "https://docs.igrant.io/schema/data-agreements/v1#",
         "schema": "https://schema.org/",
         "mydata": "https://dictionary.mydata.org/prodserv/",
