@@ -1,134 +1,136 @@
 {
-    "data_agreement": "https://docs.igrant.io/schema/data-agreements/v1#",
-    "schema": "https://schema.org/",
-    "mydata": "https://dictionary.mydata.org/prodserv/",
-    "dpv": "http://www.w3.org/ns/dpv#",
-    "mydata_did": "https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/did-spec.md#",
-    "id": {
-        "@id": "data_agreement:id",
-        "@type": "mydata:uid"
-    },
-    "version": {
-        "@id": "data_agreement:version",
-        "@type": "schema:version"
-    },
-    "template_id": {
-        "@id": "data_agreement:template_id",
-        "@type": "mydata:uid"
-    },
-    "template_version": {
-        "@id": "data_agreement:template_version",
-        "@type": "schema:version"
-    },
-    "data_controller_name": {
-        "@id": "data_agreement:data_controller_name",
-        "@type": "dpv:LegalEntity"
-    },
-    "data_controller_url": {
-        "@id": "data_agreement:data_controller_url",
-        "@type": "schema:URL"
-    },
-    "data_policy": {
-        "@id": "data_agreement:data_policy",
-        "@type": "@id",
-        "@context": {
-            "policy_URL": {
-                "@id": "data_agreement:policy_url",
-                "@type": "schema:URL"
-            },
-            "jurisdiction": {
-                "@id": "data_agreement:jurisdiction",
-                "@type": "schema:jurisdiction"
-            },
-            "industry_sector": {
-                "@id": "data_agreement:industry_sector",
-                "@type": "schema:industry"
-            },
-            "data_retention_period": {
-                "@id": "data_agreement:data_retention_period",
-                "@type": "schema:Number"
-            },
-            "geographic_restriction": {
-                "@id": "data_agreement:geographic_restriction",
-                "@type": "schema:Continent"
-            },
-            "storage_location": {
-                "@id": "data_agreement:storage_location",
-                "@type": "dpv:StorageLocation"
+    "context": {
+        "data_agreement": "https://docs.igrant.io/schema/data-agreements/v1#",
+        "schema": "https://schema.org/",
+        "mydata": "https://dictionary.mydata.org/prodserv/",
+        "dpv": "http://www.w3.org/ns/dpv#",
+        "mydata_did": "https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/did-spec.md#",
+        "id": {
+            "@id": "data_agreement:id",
+            "@type": "mydata:uid"
+        },
+        "version": {
+            "@id": "data_agreement:version",
+            "@type": "schema:version"
+        },
+        "template_id": {
+            "@id": "data_agreement:template_id",
+            "@type": "mydata:uid"
+        },
+        "template_version": {
+            "@id": "data_agreement:template_version",
+            "@type": "schema:version"
+        },
+        "data_controller_name": {
+            "@id": "data_agreement:data_controller_name",
+            "@type": "dpv:LegalEntity"
+        },
+        "data_controller_url": {
+            "@id": "data_agreement:data_controller_url",
+            "@type": "schema:URL"
+        },
+        "data_policy": {
+            "@id": "data_agreement:data_policy",
+            "@type": "@id",
+            "@context": {
+                "policy_URL": {
+                    "@id": "data_agreement:policy_url",
+                    "@type": "schema:URL"
+                },
+                "jurisdiction": {
+                    "@id": "data_agreement:jurisdiction",
+                    "@type": "schema:jurisdiction"
+                },
+                "industry_sector": {
+                    "@id": "data_agreement:industry_sector",
+                    "@type": "schema:industry"
+                },
+                "data_retention_period": {
+                    "@id": "data_agreement:data_retention_period",
+                    "@type": "schema:Number"
+                },
+                "geographic_restriction": {
+                    "@id": "data_agreement:geographic_restriction",
+                    "@type": "schema:Continent"
+                },
+                "storage_location": {
+                    "@id": "data_agreement:storage_location",
+                    "@type": "dpv:StorageLocation"
+                }
             }
-        }
-    },
-    "purpose": {
-        "@id": "data_agreement:purpose",
-        "@type": "dpv:Purpose"
-    },
-    "purpose_description": {
-        "@id": "data_agreement:purpose_description",
-        "@type": "schema:Text"
-    },
-    "lawful_basis": {
-        "@id": "data_agreement:lawful_basis",
-        "@type": "dpv:LegalBasis"
-    },
-    "method_of_use": {
-        "@id": "data_agreement:method_of_use",
-        "@type": "schema:Text"
-    },
-    "personal_data": {
-        "@id": "data_agreement:personal_data",
-        "@type": "@id",
-        "@context": {
-            "attribute_id": {
-                "@id": "data_agreement:attribute_id",
-                "@type": "mydata:uid"
-            },
-            "attribute_name": {
-                "@id": "data_agreement:attribute_name",
-                "@type": "schema:Text"
-            },
-            "attribute_sensitive": {
-                "@id": "data_agreement:attribute_sensitive",
-                "@type": "schema:Boolean"
-            },
-            "attribute_category": {
-                "@id": "data_agreement:attribute_category",
-                "@type": "dpv:PersonalDataCategory"
+        },
+        "purpose": {
+            "@id": "data_agreement:purpose",
+            "@type": "dpv:Purpose"
+        },
+        "purpose_description": {
+            "@id": "data_agreement:purpose_description",
+            "@type": "schema:Text"
+        },
+        "lawful_basis": {
+            "@id": "data_agreement:lawful_basis",
+            "@type": "dpv:LegalBasis"
+        },
+        "method_of_use": {
+            "@id": "data_agreement:method_of_use",
+            "@type": "schema:Text"
+        },
+        "personal_data": {
+            "@id": "data_agreement:personal_data",
+            "@type": "@id",
+            "@context": {
+                "attribute_id": {
+                    "@id": "data_agreement:attribute_id",
+                    "@type": "mydata:uid"
+                },
+                "attribute_name": {
+                    "@id": "data_agreement:attribute_name",
+                    "@type": "schema:Text"
+                },
+                "attribute_sensitive": {
+                    "@id": "data_agreement:attribute_sensitive",
+                    "@type": "schema:Boolean"
+                },
+                "attribute_category": {
+                    "@id": "data_agreement:attribute_category",
+                    "@type": "dpv:PersonalDataCategory"
+                }
             }
-        }
-    },
-    "dpia": {
-        "@id": "data_agreement:dpia",
-        "@type": "@id",
-        "@context": {
-            "dpia_date": {
-                "@id": "data_agreement:dpia_date",
-                "@type": "schema:DateTime"
-            },
-            "dpia_summary_url": {
-                "@id": "data_agreement:dpia_summary_url",
-                "@type": "schema:URL"
+        },
+        "dpia": {
+            "@id": "data_agreement:dpia",
+            "@type": "@id",
+            "@context": {
+                "dpia_date": {
+                    "@id": "data_agreement:dpia_date",
+                    "@type": "schema:DateTime"
+                },
+                "dpia_summary_url": {
+                    "@id": "data_agreement:dpia_summary_url",
+                    "@type": "schema:URL"
+                }
             }
-        }
-    },
-    "event": {
-        "@id": "data_agreement:event",
-        "@type": "@id",
-        "@context": {
-            "id": {
-                "@id": "data_agreement:event_id",
-                "@type": "mydata:uid"
-            },
-            "time-stamp": {
-                "@id": "data_agreement:event_timestamp",
-                "@type": "schema:DateTime"
-            },
-            "did": {
-                "@id": "data_agreement:event_did",
-                "@type": "mydata_did:2the-didmydata-format"
-            },
-            "state": {
-                "@id": "data_agreement:event_state",
-                "@type": "schema:Text"
+        },
+        "event": {
+            "@id": "data_agreement:event",
+            "@type": "@id",
+            "@context": {
+                "id": {
+                    "@id": "data_agreement:event_id",
+                    "@type": "mydata:uid"
+                },
+                "time-stamp": {
+                    "@id": "data_agreement:event_timestamp",
+                    "@type": "schema:DateTime"
+                },
+                "did": {
+                    "@id": "data_agreement:event_did",
+                    "@type": "mydata_did:2the-didmydata-format"
+                },
+                "state": {
+                    "@id": "data_agreement:event_state",
+                    "@type": "schema:Text"
+                }
             }
         }
     }
