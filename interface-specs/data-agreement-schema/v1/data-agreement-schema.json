@@ -70,5 +70,6 @@
       "proofPurpose": "contractAgreement",
       "proofValue": "z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZPz6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
     }
-  ]
+  ],
+  "principle-did": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
 }
