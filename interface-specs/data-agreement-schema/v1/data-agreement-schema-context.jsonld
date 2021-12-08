@@ -5,6 +5,7 @@
         "mydata": "https://dictionary.mydata.org/prodserv/",
         "dpv": "http://www.w3.org/ns/dpv#",
         "mydata_did": "https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/did-spec.md#",
+        "sec": "https://w3id.org/security#",
         "id": {
             "@id": "data_agreement:id",
             "@type": "mydata:uid"
@@ -136,6 +137,11 @@
         "principle-did": {
             "@id": "data_agreement:principle-did",
             "@type": "mydata_did:2the-didmydata-format"
+        },
+        "proofChain": {
+            "@id": "sec:proof",
+            "@type": "@id",
+            "@container": "@set"
         }
     }
 }
