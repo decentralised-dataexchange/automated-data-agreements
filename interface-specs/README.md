@@ -22,4 +22,4 @@ Please use for example, `project-name_data-agreement.yaml`format.
 
 The APIs are released at: 
 
-* [Data Agreement APIs Rel. 1.0.1](https://app.swaggerhub.com/apis/iGrant.io/ADA/1.0.1)
+* [Data Agreement APIs Rel. 2.0.0](https://app.swaggerhub.com/apis-docs/iGrant.io/ADA/2.0.0)

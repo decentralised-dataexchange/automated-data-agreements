@@ -8,162 +8,41 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.1
+  version: 2.0.0
 servers:
-- url: https://virtserver.swaggerhub.com/LCubedAB/ADA/1.0.1
+- url: https://virtserver.swaggerhub.com/iGrant.io/ADA/2.0.0
   description: SwaggerHub API Auto Mocking
 tags:
-- name: organisations
-  description: Operations available for organisations.
-- name: individuals
-  description: Operations available to individuals.
-- name: auditor
-  description: Operations available for auditors
+- name: Data Agreement - Auditor Functions
+  description: Data Agreement Proofs Protocol 1.0 (ADA RFC 0004)
+  externalDocs:
+    description: Specification
+    url: https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md
+- name: Data Agreement - Core Functions
+  description: Data Agreement Protocol 1.0 (ADA RFC 0002)
+  externalDocs:
+    description: Specification
+    url: https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md
+- name: Data Agreement - MyData DID Operations
+  description: MyData DID Protocol 1.0 (ADA RFC 0001)
+  externalDocs:
+    description: Specification
+    url: https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md
+- name: Data Agreement - MyData DID Registry Admin Functions
+  description: MyData DID registry administrative functions
+  externalDocs:
+    description: Specification
+    url: https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md
+- name: connection
+  description: Connection management
+  externalDocs:
+    description: Specification
+    url: https://github.com/hyperledger/aries-rfcs/tree/9b0aaa39df7e8bd434126c4b33c097aae78d65bf/features/0160-connection-protocol
 paths:
-  /dataagreement:
-    post:
-      tags:
-      - organisations
-      description: Create a data agreement.
-      operationId: Create a data agreement.
-      requestBody:
-        description: Data agreement structure
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataAgreement'
-      responses:
-        "201":
-          description: Data agreement created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_201'
-        "400":
-          description: invalid input, object invalid
-  /dataagreement/{agreementId}:
+  /mydata-did/didcomm/transaction-records:
     get:
       tags:
-      - organisations
-      description: Fetch a data agreement
-      operationId: Fetch a data agreement
-      parameters:
-      - name: agreementId
-        in: path
-        description: Data agreement Id
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
-      responses:
-        "200":
-          description: Returns data agreement
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataAgreement'
-        "404":
-          description: Data agreement not found
-    delete:
-      tags:
-      - organisations
-      description: Delete a data agreement
-      operationId: Delete a data agreement
-      parameters:
-      - name: agreementId
-        in: path
-        description: Data agreement Id
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
-      responses:
-        "204":
-          description: Data agreement deleted
-        "404":
-          description: Data agreement not found
-    patch:
-      tags:
-      - organisations
-      description: Update a data agreement
-      operationId: Update a data agreement
-      parameters:
-      - name: agreementId
-        in: path
-        description: Data agreement Id
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
-      requestBody:
-        description: Data agreement structure
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataAgreement'
-      responses:
-        "200":
-          description: Returns updated data agreement
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataAgreement'
-        "404":
-          description: Data agreement not found
-        "400":
-          description: invalid input, object invalid
-  /dataagreement/{agreementId}/publish:
-    post:
-      tags:
-      - organisations
-      description: Publish a data agreement
-      operationId: Publish a data agreement
-      parameters:
-      - name: agreementId
-        in: path
-        description: Data agreement Id
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
-      responses:
-        "204":
-          description: Data agreement published
-        "404":
-          description: Data agreement not found
-  /dataagreement/{agreementId}/unpublish:
-    post:
-      tags:
-      - organisations
-      description: Unpublish a data agreement
-      operationId: Unpublish a data agreement
-      parameters:
-      - name: agreementId
-        in: path
-        description: Data agreement Id
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
-      responses:
-        "204":
-          description: Data agreement unpublished
-        "404":
-          description: Data agreement not found
-  /mydata-did/transaction-records:
-    get:
-      tags:
-      - individuals
+      - Data Agreement - MyData DID Operations
       summary: Fetch MyData DID registry transaction records
       parameters:
       - name: connection_id
@@ -175,172 +54,137 @@ paths:
         schema:
           type: string
           format: uuid
-          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-      - name: state
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: message_type
         in: query
-        description: MyData DID registry transaction state
+        description: Message type
         required: false
         style: form
         explode: true
         schema:
           type: string
-          enum:
-          - sent
-          - received
-          - failed
-          - success
-      - name: thread_id
-        in: query
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          description: Thread identifier
-          format: uuid
-          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-      - name: transaction_type
-        in: query
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          description: Transaction type
           enum:
           - create-did
           - read-did
           - delete-did
+      - name: thread_id
+        in: query
+        description: Thread identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uuid
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
       responses:
         "200":
-          description: List of transactions against DID registry
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/V10MyDataDIDRegistryTransactionList'
-  /mydata-did/transaction-records/{mydata_did_registry_transaction_id}:
+                $ref: '#/components/schemas/MyDataDIDRegistryDIDCommTransactionRecordListResponse'
+  /mydata-did/didcomm/transaction-records/{mydata_did_registry_didcomm_transaction_record_id}:
     get:
       tags:
-      - individuals
-      summary: Fetch a single MyData DID registry transaction record
+      - Data Agreement - MyData DID Operations
+      summary: Fetch MyData DID registry DIDComm transaction record by ID
       parameters:
-      - name: mydata_did_registry_transaction_id
+      - name: mydata_did_registry_didcomm_transaction_record_id
         in: path
+        description: MyData DID registry didcomm transaction identifier
         required: true
         style: simple
         explode: false
         schema:
           pattern: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
           type: string
-          description: MyData DID registry transaction identifier
-          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
       responses:
         "200":
-          description: DID registry transaction
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/V10MyDataDIDRegistryTransaction'
+                $ref: '#/components/schemas/MyDataDIDRegistryDIDCommTransactionRecord'
     delete:
       tags:
-      - individuals
-      summary: Remove an existing MyData DID registry transaction record
+      - Data Agreement - MyData DID Operations
+      summary: Remove MyData DID registry DIDComm transaction record by ID
       parameters:
-      - name: mydata_did_registry_transaction_id
+      - name: mydata_did_registry_didcomm_transaction_record_id
         in: path
+        description: MyData DID registry didcomm transaction identifier
         required: true
         style: simple
         explode: false
         schema:
           pattern: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
           type: string
-          description: MyData DID registry transaction identifier
-          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
       responses:
         "204":
-          description: Deleted DID registry transaction record
-  /mydata-did/create-did:
+          description: MyData DID registry DIDComm transaction record removed
+  /mydata-did/didcomm/create-did/{did}:
     post:
       tags:
-      - individuals
-      summary: Send create-did message
-      requestBody:
-        description: DID document
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DIDVerificationMethod'
-      responses:
-        "200":
-          description: Sent DIDComm message to DID registry to register DID
-  /mydata-did/read-did:
-    post:
-      tags:
-      - individuals
-      - auditor
-      summary: Send read-did message
-      requestBody:
-        description: Decentralised identifier to be resolved
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/V10ReadDIDQueryString'
-      responses:
-        "200":
-          description: Sent DIDComm message to DID registry to resolve DID
-  /mydata-did/delete-did:
-    post:
-      tags:
-      - individuals
-      summary: Send delete-did message
-      requestBody:
-        description: Decentralised identifier to be deleted
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/V10ReadDIDQueryString'
-      responses:
-        "200":
-          description: Sent DIDComm message to DID registry to delete DID
-  /mydata-did/verified:
-    get:
-      tags:
-      - organisations
-      summary: Fetch all verified MyData DID
-      parameters: []
-      responses:
-        "200":
-          description: Verified decentralised identifiers
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VerifiedMyDataList'
-  /mydata-did/verified/{did}:
-    get:
-      tags:
-      - organisations
-      summary: Fetch verified MyData DID record
+      - Data Agreement - MyData DID Operations
+      summary: Send create-did didcomm message to MyData DID registry
       parameters:
       - name: did
         in: path
+        description: did:sov identifier
         required: true
         style: simple
         explode: false
         schema:
+          pattern: ^(did:sov:)?[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{21,22}$
           type: string
-          description: MyData decentralised identifier
+        example: WgWxqztrNooG92RXvxSTWv
       responses:
         "200":
-          description: Verified decentralised identifier record
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VerifiedMyDataRecord'
-  /mydata-did/did-records:
+          description: Send create-did message to DID registry
+  /mydata-did/didcomm/read-did/{did}:
+    post:
+      tags:
+      - Data Agreement - MyData DID Operations
+      summary: Send read-did didcomm message to MyData DID registry
+      parameters:
+      - name: did
+        in: path
+        description: did:mydata identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: ^did:mydata:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+        example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+      responses:
+        "200":
+          description: Send read-did message to DID registry
+  /mydata-did/didcomm/delete-did/{did}:
+    post:
+      tags:
+      - Data Agreement - MyData DID Operations
+      summary: Send delete-did message
+      parameters:
+      - name: did
+        in: path
+        description: did:mydata identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: ^did:mydata:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+        example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+      responses:
+        "200":
+          description: Send delete-did message to DID registry
+  /mydata-did/remote:
     get:
       tags:
-      - individuals
-      summary: Fetch MyData DID records
+      - Data Agreement - MyData DID Operations
+      summary: Fetch MyData DID remote records.
       parameters:
       - name: did
         in: query
@@ -349,136 +193,1277 @@ paths:
         style: form
         explode: true
         schema:
-          pattern: ^did:mydata(:?(0|1|2|3|4))?:(z[a-km-zA-HJ-NP-Z1-9]+)
+          pattern: ^did:mydata:(z[a-km-zA-HJ-NP-Z1-9]+)
           type: string
-          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
-      - name: state
+        example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+      - name: sov_verkey
         in: query
-        description: MyData DID registry transaction state
+        description: Sovrin verkey
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: ^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{43,44}$
+          type: string
+        example: H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV
+      - name: status
+        in: query
+        description: MyData DID remote status
         required: false
         style: form
         explode: true
         schema:
           type: string
           enum:
-          - verified
+          - active
           - revoked
       responses:
         "200":
-          description: List of decentralised identifiers
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/V10MyDataDIDRecordsList'
+                type: array
+                items:
+                  $ref: '#/components/schemas/MyDataDIDRemoteRecordResponse'
+  /mydata-did-registry/mydata-did:
+    get:
+      tags:
+      - Data Agreement - MyData DID Registry Admin Functions
+      summary: Fetch all registered MyData DIDs
+      parameters:
+      - name: connection_id
+        in: query
+        description: Connection identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uuid
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: did
+        in: query
+        description: MyData decentralised identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          pattern: ^did:mydata:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+        example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+      - name: status
+        in: query
+        description: MyData DID remote status
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - active
+          - revoked
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MyDataDIDRegistryMyDataDIDListResponse'
+  /data-agreements/didcomm/read-data-agreement:
+    post:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Send read data agreement message to Data Controller (remote agent)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReadDataAgreementRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataAgreementCRUDDIDCommTransactionResponse'
+  /data-agreements/didcomm/transactions:
+    get:
+      tags:
+      - Data Agreement - Core Functions
+      summary: List data agreements crud didcomm transactions from the wallet
+      parameters:
+      - name: connection_id
+        in: query
+        description: Connection identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uuid
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: message_type
+        in: query
+        description: Message type
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - create-data-agreement
+          - read-data-agreement
+          - update-data-agreement
+          - delete-data-agreement
+      - name: thread_id
+        in: query
+        description: Thread identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uuid
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataAgreementCRUDDIDCommTransactionResponse'
+  /data-agreements/didcomm/transactions/{da_crud_didcomm_tx_id}:
+    delete:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Remove data agreement CRUD DIDComm transaction record by ID
+      parameters:
+      - name: da_crud_didcomm_tx_id
+        in: path
+        description: Data agreement CRUD didcomm transaction identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "204":
+          description: Data agreement CRUD DIDComm transaction record removed
+  /data-agreements:
+    get:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Query data agreements in the wallet
+      parameters:
+      - name: data_agreement_id
+        in: query
+        description: Data agreement identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: delete_flag
+        in: query
+        description: Delete flag to query deleted data agreements
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: method_of_use
+        in: query
+        description: Method of use
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - data-source
+          - data-using-service
+      - name: template_version
+        in: query
+        description: Data agreement template version
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataAgreementV1RecordResponse'
+    post:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Create and store data agreement in wallet
+      requestBody:
+        $ref: '#/components/requestBodies/CreateOrUpdateDataAgreementInWalletRequest'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataAgreementV1RecordResponse'
+        "422":
+          description: Unprocessable Entity (invalid request payload)
+  /data-agreements/{data_agreement_id}:
+    put:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Update data agreement in the wallet
+      parameters:
+      - name: data_agreement_id
+        in: path
+        description: Data agreement identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/CreateOrUpdateDataAgreementInWalletRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataAgreementV1RecordResponse'
+        "400":
+          description: Bad Request (invalid request payload)
+    delete:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Delete data agreement in the wallet
+      parameters:
+      - name: data_agreement_id
+        in: path
+        description: Data agreement identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: No Content (data agreement deleted)
+        "400":
+          description: Bad Request (invalid request payload)
+  /data-agreements/version-history/{data_agreement_id}:
+    get:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Query version history of a data agreement
+      parameters:
+      - name: data_agreement_id
+        in: path
+        description: Data agreement identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataAgreementV1RecordResponse'
+        "400":
+          description: Bad Request (invalid request payload)
+  /data-agreements/personal-data:
+    get:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Query data agreement personal data in wallet
+      parameters:
+      - name: attribute_category
+        in: query
+        description: Category of the attribute
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: attribute_sensitive
+        in: query
+        description: Sensitivity of the attribute
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataAgreementPersonalDataRecord'
+    post:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Create and store data agreement personal data in wallet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAndStoreDAPersonalDataInWalletRequest'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataAgreementPersonalDataRecord'
+        "422":
+          description: Unprocessable Entity (invalid request payload)
+  /data-agreements/personal-data/category:
+    get:
+      tags:
+      - Data Agreement - Core Functions
+      summary: List data agreement personal data category from wallet
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDAPersonalDataCategoryFromWalletResponse'
+  /mydata-did/set-did-registry-connection/{connection_id}:
+    post:
+      tags:
+      - Data Agreement - MyData DID Operations
+      summary: Mark a connection as MyData DID registry.
+      parameters:
+      - name: connection_id
+        in: path
+        description: Connection identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "204":
+          description: Connection marked as MyData DID registry.
+        "400":
+          description: Bad Request
+  /mydata-did/get-did-registry-connection:
+    get:
+      tags:
+      - Data Agreement - MyData DID Operations
+      summary: Fetch current connection marked as MyData DID registry
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectionRecord'
+        "400":
+          description: Bad Request
+  /mydata-did/unset-did-registry-connection:
+    delete:
+      tags:
+      - Data Agreement - MyData DID Operations
+      summary: Unmark current connection marked as MyData DID registry
+      responses:
+        "204":
+          description: Connection unmarked as MyData DID registry.
+        "400":
+          description: Bad Request
+  /auditor/set-auditor-connection/{connection_id}:
+    post:
+      tags:
+      - Data Agreement - Auditor Functions
+      summary: Mark a connection as Auditor.
+      parameters:
+      - name: connection_id
+        in: path
+        description: Connection identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "204":
+          description: Connection marked as Auditor.
+        "400":
+          description: Bad Request
+  /auditor/get-auditor-connection:
+    get:
+      tags:
+      - Data Agreement - Auditor Functions
+      summary: Fetch current connection marked as Auditor
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectionRecord'
+        "400":
+          description: Bad Request
+  /auditor/unset-auditor-connection:
+    delete:
+      tags:
+      - Data Agreement - Auditor Functions
+      summary: Unmark current connection marked as Auditor
+      responses:
+        "204":
+          description: Connection unmarked as Auditor.
+        "400":
+          description: Bad Request
+  /data-agreement-instances:
+    get:
+      tags:
+      - Data Agreement - Core Functions
+      summary: Query data agreement instances
+      parameters:
+      - name: data_agreement_id
+        in: query
+        description: Data agreement identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: data_agreement_template_id
+        in: query
+        description: Data agreement template identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: data_exchange_record_id
+        in: query
+        description: Data exchange record identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: method_of_use
+        in: query
+        description: Method of use (or data exchange mode)
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+          - data-source
+          - data-using-service
+        example: data-using-service
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataAgreementInstance'
+  /auditor/didcomm/transaction-records:
+    get:
+      tags:
+      - Data Agreement - Auditor Functions
+      summary: Fetch Auditor DIDComm transaction records
+      parameters:
+      - name: connection_id
+        in: query
+        description: Connection identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uuid
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      - name: thread_id
+        in: query
+        description: Thread identifier
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          format: uuid
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuditorDIDCommTransactionRecord'
+  /auditor/didcomm/transaction-records/{auditor_didcomm_transaction_record_id}:
+    get:
+      tags:
+      - Data Agreement - Auditor Functions
+      summary: Fetch Auditor DIDComm transaction record by ID
+      parameters:
+      - name: auditor_didcomm_transaction_record_id
+        in: path
+        description: Auditor didcomm transaction identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuditorDIDCommTransactionRecord'
+    delete:
+      tags:
+      - Data Agreement - Auditor Functions
+      summary: Remove Auditor DIDComm transaction record by ID
+      parameters:
+      - name: auditor_didcomm_transaction_record_id
+        in: path
+        description: Auditor didcomm transaction identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          pattern: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "204":
+          description: Auditor DIDComm transaction record removed
+  /auditor/didcomm/verify-request/{data_agreement_id}:
+    post:
+      tags:
+      - Data Agreement - Auditor Functions
+      summary: Send data agreement verify request to the auditor
+      parameters:
+      - name: data_agreement_id
+        in: path
+        description: Data agreement identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuditorDIDCommTransactionRecord'
+  /.well-known/did-configuration.json:
+    get:
+      tags:
+      - connection
+      summary: Well-known endpoint for connection
+      responses:
+        "200":
+          description: Returns connection invitation
 components:
   schemas:
-    DataAgreement:
+    AuditorDIDCommTransactionRecord:
       required:
-      - code_of_conduct
-      - data_policy
-      - personal_data
-      - usage_purpose
-      - usage_purpose_description
+      - auditor_didcomm_transaction_record_id
       type: object
       properties:
-        usage_purpose:
+        auditor_didcomm_transaction_record_id:
           type: string
-          example: Customized shopping experience
-        usage_purpose_description:
-          type: string
-          example: Collecting user data for offering custom tailored shopping experience
-        data_policy:
-          $ref: '#/components/schemas/DataAgreement_data_policy'
-        personal_data:
-          $ref: '#/components/schemas/DataAgreement_personal_data'
-        code_of_conduct:
-          $ref: '#/components/schemas/DataAgreement_code_of_conduct'
-    V10ReadDIDQueryString:
-      required:
-      - connection_id
-      - did
-      type: object
-      properties:
+          description: Transaction record id
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
         connection_id:
           type: string
-          description: Registry connection identifier
-          format: uuid
+          description: Connection identifier
           example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-        did:
+        created_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
           type: string
-          description: MyData decentralised identifier
-    VerifiedMyDataList:
-      type: object
-      properties:
-        results:
+          description: Time of record creation
+          example: 2021-12-10T11:20:01.000+0000
+        messages_list:
           type: array
-          description: Verified MyData DID records
+          description: Messages list
           items:
-            $ref: '#/components/schemas/VerifiedMyDataRecord'
-    VerifiedMyDataRecord:
+            type: object
+        state:
+          type: string
+          description: Current record state
+          example: active
+        thread_id:
+          type: string
+          description: Parent message identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        trace:
+          type: boolean
+          description: Record trace information, based on agent configuration
+        updated_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
+          type: string
+          description: Time of last record update
+          example: 2021-12-10T11:20:01.000+0000
+    CreateAndStoreDAPersonalDataInWalletRequest:
+      required:
+      - attribute_name
       type: object
       properties:
-        did:
-          pattern: ^did:mydata(:?(0|1|2|3|4))?:(z[a-km-zA-HJ-NP-Z1-9]+)
+        attribute_category:
           type: string
-          description: MyData decentralised identifier
-          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
-        diddoc:
-          type: object
-          description: MyData DID document
-    V10MyDataDIDRegistryTransaction:
+          description: Category of the attribute
+          example: Personal
+        attribute_description:
+          type: string
+          description: Description of the attribute
+          example: Name of the user
+        attribute_name:
+          type: string
+          description: Name of the attribute
+          example: Name
+        attribute_sensitive:
+          type: boolean
+          description: Sensitivity of the attribute
+          example: true
+    CreateOrUpdateDataAgreementInWalletRequest:
+      required:
+      - '@context'
+      - data_controller_name
+      - data_policy
+      - lawful_basis
+      - method_of_use
+      - personal_data
+      - purpose
+      - purpose_description
+      type: object
+      properties:
+        '@context':
+          type: string
+          description: Context of the schema
+          example: https://raw.githubusercontent.com/decentralised-dataexchange/automated-data-agreements/main/interface-specs/data-agreement-schema/v1/data-agreement-schema-context.jsonld
+        data_controller_name:
+          type: string
+          description: PII controller name
+          example: Happy Shopping AB
+        data_controller_url:
+          type: string
+          description: PII controller URL
+          example: https://www.happyshopping.com
+        data_policy:
+          $ref: '#/components/schemas/DataAgreementDataPolicy'
+        dpia:
+          $ref: '#/components/schemas/DataAgreementDPIA'
+        lawful_basis:
+          type: string
+          description: Legal basis of processing
+          example: consent
+          enum:
+          - consent
+          - legal_obligation
+          - contract
+          - vital_interest
+          - public_task
+          - legitimate_interest
+        method_of_use:
+          type: string
+          description: Method of use (or data exchange mode)
+          example: data-using-service
+          enum:
+          - data-source
+          - data-using-service
+        personal_data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateOrUpdateDataAgreementPersonalDataRequest'
+        purpose:
+          type: string
+          description: Usage purpose title
+          example: Customized shopping experience
+        purpose_description:
+          type: string
+          description: Usage purpose description
+          example: Collecting user data for offering custom tailored shopping experience
+    CreateOrUpdateDataAgreementPersonalDataRequest:
+      type: object
+      properties:
+        attribute_id:
+          type: string
+          description: Attribute identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        restrictions:
+          type: array
+          description: List of restrictions
+          items:
+            $ref: '#/components/schemas/CreateOrUpdateDataAgreementPersonalDataRestriction'
+    CreateOrUpdateDataAgreementPersonalDataRestriction:
+      type: object
+      properties:
+        cred_def_id:
+          type: string
+          description: Credential definition identifier
+          example: WgWxqztrNooG92RXvxSTWv:3:CL:20:tag
+        schema_id:
+          type: string
+          description: Schema identifier
+          example: WgWxqztrNooG92RXvxSTWv:2:schema_name:1.0
+    DataAgreementCRUDDIDCommTransactionResponse:
       type: object
       properties:
         connection_id:
           type: string
           description: Connection identifier
           example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-        create_did_request_dict:
-          type: object
-          description: Serialized create-did message dict
-        create_did_response_dict:
-          type: object
-          description: Serialised create-did-response message dict
+        da_crud_didcomm_tx_id:
+          type: string
+          description: Data agreement CRUD DIDComm transaction identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        message_type:
+          type: string
+          description: Message type
+          example: read-data-agreement
+        messages_list:
+          type: array
+          description: List of messages
+          items:
+            type: string
+        thread_id:
+          type: string
+          description: Thread identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+    DataAgreementDPIA:
+      type: object
+      properties:
+        dpia_date:
+          type: string
+          description: DPIA conducted date time in ISO 8601 UTC date time format
+          example: 2021-12-10T11:20:02.529+0000
+        dpia_summary_url:
+          type: string
+          description: DPIA summary URL
+          example: https://org.com/dpia_results.html
+    DataAgreementDataPolicy:
+      required:
+      - data_retention_period
+      - geographic_restriction
+      - jurisdiction
+      - policy_URL
+      - storage_location
+      type: object
+      properties:
+        data_retention_period:
+          type: integer
+          description: Data retention period in days
+          format: int32
+          example: 365
+        geographic_restriction:
+          type: string
+          description: Geographic restriction
+          example: Europe
+        industry_sector:
+          type: string
+          description: Industry scope
+          example: Healthcare
+        jurisdiction:
+          type: string
+          description: Jurisdiction
+          example: Sweden
+        policy_URL:
+          type: string
+          description: Policy URL
+          example: https://clarifyhealth.com/privacy-policy/
+        storage_location:
+          type: string
+          description: Storage location
+          example: Europe
+    DataAgreementEvent:
+      type: object
+      properties:
+        did:
+          pattern: ^did:mydata:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+          description: MyData decentralised identifier
+          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        id:
+          type: string
+          description: Data agreement event identifier
+          example: did:mydata:123456789abcdefghi#1
+        state:
+          type: string
+          description: State of the event
+          example: capture
+        time-stamp:
+          type: string
+          description: Data agreement event timestamp in ISO 8601 UTC date time format
+          example: 2021-12-10T11:20:02.535+0000
+    DataAgreementInstance:
+      required:
+      - data_policy
+      - lawful_basis
+      - method_of_use
+      - personal_data
+      - purpose
+      - purpose_description
+      type: object
+      properties:
+        '@context':
+          type: array
+          description: Context
+          example:
+          - https://raw.githubusercontent.com/decentralised-dataexchange/automated-data-agreements/main/interface-specs/data-agreement-schema/v1/data-agreement-schema-context.jsonld
+          - https://w3id.org/security/v2
+          items:
+            type: string
+        data_controller_name:
+          type: string
+          description: PII controller name
+          example: Happy Shopping AB
+        data_controller_url:
+          type: string
+          description: PII controller URL
+          example: https://www.happyshopping.com
+        data_policy:
+          description: Data policy
+          allOf:
+          - $ref: '#/components/schemas/DataAgreementDataPolicy'
+        dpia:
+          description: DPIA metadata
+          allOf:
+          - $ref: '#/components/schemas/DataAgreementDPIA'
+        event:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataAgreementEvent'
+        id:
+          type: string
+          description: Data agreement identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        lawful_basis:
+          type: string
+          description: Legal basis of processing
+          example: consent
+          enum:
+          - consent
+          - legal_obligation
+          - contract
+          - vital_interest
+          - public_task
+          - legitimate_interest
+        method_of_use:
+          type: string
+          description: Method of use (or data exchange mode)
+          example: data-using-service
+          enum:
+          - data-source
+          - data-using-service
+        personal_data:
+          type: array
+          description: Personal data (attributes)
+          items:
+            $ref: '#/components/schemas/DataAgreementPersonalData'
+        principle-did:
+          type: string
+          description: Principle did
+          example: did:mydata:123456789abcdefghi
+        proof:
+          $ref: '#/components/schemas/DataAgreementProof'
+        proofChain:
+          type: array
+          description: Data agreement proof chain
+          items:
+            $ref: '#/components/schemas/DataAgreementProof'
+        purpose:
+          type: string
+          description: Usage purpose title
+          example: Customized shopping experience
+        purpose_description:
+          type: string
+          description: Usage purpose description
+          example: Collecting user data for offering custom tailored shopping experience
+        template_id:
+          type: string
+          description: Data agreement template identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        template_version:
+          type: integer
+          description: Data agreement template version
+          format: int32
+          example: 1
+        version:
+          type: integer
+          description: Data agreement version
+          format: int32
+          example: 1
+    DataAgreementPersonalData:
+      required:
+      - attribute_description
+      - attribute_name
+      type: object
+      properties:
+        attribute_category:
+          type: string
+          description: Category of the attribute
+          example: Personal
+        attribute_description:
+          type: string
+          description: The description of the attribute.
+          example: Name of the customer
+        attribute_id:
+          type: string
+          description: Attribute identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        attribute_name:
+          type: string
+          description: Name of the attribute
+          example: Name
+        attribute_sensitive:
+          type: boolean
+          description: Sensitivity of the attribute
+          example: true
+    DataAgreementPersonalDataRecord:
+      required:
+      - attribute_category
+      - attribute_description
+      - attribute_name
+      - attribute_sensitive
+      - data_agreement_personal_data_record_id
+      type: object
+      properties:
+        attribute_category:
+          type: string
+          description: The category of the attribute.
+          example: personal
+        attribute_description:
+          type: string
+          description: The description of the attribute.
+          example: Name of the customer
+        attribute_name:
+          type: string
+          description: The name of the attribute.
+          example: name
+        attribute_sensitive:
+          type: string
+          description: The sensitive flag of the attribute.
+          example: "True"
         created_at:
           pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
           type: string
           description: Time of record creation
-          example: 2021-09-19 14:06:14Z
-        delete_did_request_dict:
-          type: object
-          description: Serialized delete-did message dict
-        delete_did_response_dict:
-          type: object
-          description: Serialised delete-did-response message dict
-        error_msg:
+          example: 2021-12-10T11:20:01.000+0000
+        data_agreement_personal_data_record_id:
           type: string
-          description: Error message
-          example: Invalid structure
-        mydata_did_registry_transaction_id:
-          type: string
-          description: MyData registry transaction identifier
           example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-        read_did_request_dict:
-          type: object
-          description: Serialized read-did message dict
-        read_did_response_dict:
-          type: object
-          description: Serialised read-did-response message dict
-        record_type:
-          type: string
-          description: MyData transaction record type
-          example: create-did
         state:
           type: string
-          description: MyData transaction state
-          example: success
-        their_connection_id:
+          description: Current record state
+          example: active
+        trace:
+          type: boolean
+          description: Record trace information, based on agent configuration
+        updated_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
           type: string
-          description: Their connection identifier (Connection ID for which MyData DID will be used for ADA messages)
+          description: Time of last record update
+          example: 2021-12-10T11:20:01.000+0000
+    DataAgreementProof:
+      type: object
+      properties:
+        created:
+          type: string
+          description: Proof created date time in ISO 8601 format
+          example: 2021-12-10T11:20:02.534+0000
+        id:
+          type: string
+          description: Proof identifier
+          example: did:mydata:123456789abcdefghi#1
+        proofPurpose:
+          type: string
+          description: Proof purpose
+          example: contractAgreement
+        proofValue:
+          type: string
+          description: Proof value
+          example: 123456789abcdefghi
+        type:
+          type: string
+          description: Proof type
+          example: Ed25519Signature2018
+        verificationMethod:
+          type: string
+          description: Verification method
+          example: did:mydata:123456789abcdefghi
+    DataAgreementV1:
+      required:
+      - '@context'
+      - data_controller_name
+      - data_policy
+      - lawful_basis
+      - method_of_use
+      - personal_data
+      - purpose
+      - purpose_description
+      type: object
+      properties:
+        '@context':
+          type: string
+          description: Context of the schema
+          example: https://raw.githubusercontent.com/decentralised-dataexchange/automated-data-agreements/main/interface-specs/data-agreement-schema/v1/data-agreement-schema-context.jsonld
+        data_controller_name:
+          type: string
+          description: PII controller name
+          example: Happy Shopping AB
+        data_controller_url:
+          type: string
+          description: PII controller URL
+          example: https://www.happyshopping.com
+        data_policy:
+          $ref: '#/components/schemas/DataAgreementDataPolicy'
+        dpia:
+          $ref: '#/components/schemas/DataAgreementDPIA'
+        lawful_basis:
+          type: string
+          description: Legal basis of processing
+          example: consent
+          enum:
+          - consent
+          - legal_obligation
+          - contract
+          - vital_interest
+          - public_task
+          - legitimate_interest
+        method_of_use:
+          type: string
+          description: Method of use (or data exchange mode)
+          example: data-using-service
+          enum:
+          - data-source
+          - data-using-service
+        personal_data:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataAgreementPersonalData'
+        purpose:
+          type: string
+          description: Usage purpose title
+          example: Customized shopping experience
+        purpose_description:
+          type: string
+          description: Usage purpose description
+          example: Collecting user data for offering custom tailored shopping experience
+        template_id:
+          type: string
+          description: Data agreement template identifier
           example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        template_version:
+          type: integer
+          description: Data agreement template version
+          format: int32
+          example: 1
+    DataAgreementV1RecordResponse:
+      required:
+      - data_agreement
+      - data_agreement_id
+      - data_agreement_record_id
+      - delete_flag
+      - method_of_use
+      - published_flag
+      - state
+      type: object
+      properties:
+        data_agreement:
+          description: The data agreement.
+          allOf:
+          - $ref: '#/components/schemas/DataAgreementV1'
+        data_agreement_id:
+          type: string
+          description: The unique identifier for the data agreement.
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        data_agreement_record_id:
+          type: string
+          description: Data Agreement Record identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        delete_flag:
+          type: string
+          description: The delete flag.
+          example: "False"
+          enum:
+          - "True"
+          - "False"
+        method_of_use:
+          type: string
+          description: The method of use for the data agreement.
+          example: data-source
+          enum:
+          - data-source
+          - data-using-service
+        published_flag:
+          type: string
+          description: The production flag.
+          example: "False"
+          enum:
+          - "True"
+          - "False"
+        state:
+          type: string
+          description: The state of the data agreement.
+          example: PREPARATION
+          enum:
+          - PREPARATION
+    ListDAPersonalDataCategoryFromWalletResponse:
+      required:
+      - categories
+      type: object
+      properties:
+        categories:
+          type: array
+          description: List of categories
+          items:
+            type: string
+            description: Category
+            example: Personal
+    MyDataDIDDoc:
+      required:
+      - '@context'
+      - authentication
+      - id
+      - service
+      - verification_method
+      type: object
+      properties:
+        '@context':
+          type: string
+          description: The DIDDoc context
+          example: https://w3id.org/did/v1
+        authentication:
+          type: array
+          items:
+            $ref: '#/components/schemas/MyDataDIDDocAuthentication'
+        id:
+          type: string
+          example: did:mydata:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        service:
+          type: array
+          items:
+            $ref: '#/components/schemas/MyDataDIDDocService'
+        verification_method:
+          type: array
+          items:
+            $ref: '#/components/schemas/MyDataDIDDocVerificationMethod'
+    MyDataDIDDocAuthentication:
+      required:
+      - publicKey
+      - type
+      type: object
+      properties:
+        publicKey:
+          type: string
+          example: did:mydata:fz6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E#1
+        type:
+          type: string
+          example: Ed25519SignatureAuthentication2018
+    MyDataDIDDocService:
+      required:
+      - id
+      - priority
+      - recipientKeys
+      - serviceEndpoint
+      - type
+      type: object
+      properties:
+        id:
+          type: string
+          example: did:mydata:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E;didcomm
+        priority:
+          type: integer
+          format: int32
+          example: 1
+        recipientKeys:
+          type: array
+          items:
+            type: string
+            example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        serviceEndpoint:
+          type: string
+          example: https://didcomm.org
+        type:
+          type: string
+          example: DIDComm
+    MyDataDIDDocVerificationMethod:
+      required:
+      - controller
+      - id
+      - publicKeyBase58
+      - type
+      type: object
+      properties:
+        controller:
+          type: string
+          example: did:mydata:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        id:
+          type: string
+          example: did:mydata:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E#1
+        publicKeyBase58:
+          type: string
+          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        type:
+          type: string
+          example: Ed25519VerificationKey2018
+    MyDataDIDRegistryDIDCommTransactionRecord:
+      required:
+      - mydata_did_registry_didcomm_transaction_record_id
+      type: object
+      properties:
+        connection_id:
+          type: string
+          description: Connection identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        created_at:
+          pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
+          type: string
+          description: Time of record creation
+          example: 2021-12-10T11:20:01.000+0000
+        message_type:
+          type: string
+          description: Message family
+          example: create-did
+          enum:
+          - create-did
+          - read-did
+          - delete-did
+        messages_list:
+          type: array
+          description: Messages list
+          items:
+            type: object
+        mydata_did_registry_didcomm_transaction_record_id:
+          type: string
+          description: Transaction record id
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        state:
+          type: string
+          description: Current record state
+          example: active
         thread_id:
           type: string
-          description: Thread identifier
+          description: Parent message identifier
           example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
         trace:
           type: boolean
@@ -487,100 +1472,169 @@ components:
           pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
           type: string
           description: Time of last record update
-          example: 2021-09-19 14:06:14Z
-    V10MyDataDIDRegistryTransactionList:
+          example: 2021-12-10T11:20:01.000+0000
+    MyDataDIDRegistryDIDCommTransactionRecordListResponse:
       type: object
       properties:
         results:
           type: array
           description: MyData DID registry transaction records
           items:
-            $ref: '#/components/schemas/V10MyDataDIDRegistryTransaction'
-    V10MyDataDIDRecord:
+            $ref: '#/components/schemas/MyDataDIDRegistryDIDCommTransactionRecord'
+    MyDataDIDRegistryMyDataDIDListResponse:
       type: object
       properties:
+        connection_id:
+          type: string
+          description: Connection identifier
+          format: uuid
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        did:
+          pattern: ^did:mydata:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+          description: MyData decentralised identifier
+          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        diddoc:
+          description: MyData DID document
+          allOf:
+          - $ref: '#/components/schemas/MyDataDIDDoc'
+        status:
+          type: string
+          description: MyData DID remote status
+          enum:
+          - active
+          - revoked
+        version:
+          type: string
+          description: MyData DID document version
+    MyDataDIDRemoteRecordResponse:
+      type: object
+      properties:
+        did:
+          pattern: ^did:mydata:(z[a-km-zA-HJ-NP-Z1-9]+)
+          type: string
+          description: MyData decentralised identifier
+          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
+        did_doc:
+          description: MyData DID document
+          allOf:
+          - $ref: '#/components/schemas/MyDataDIDDoc'
+        sov_verkey:
+          pattern: ^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{43,44}$
+          type: string
+          description: Sovrin verkey
+          example: H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV
+        status:
+          type: string
+          description: MyData DID remote status
+          enum:
+          - active
+          - revoked
+    ReadDataAgreementRequest:
+      required:
+      - connection_id
+      - data_agreement_id
+      type: object
+      properties:
+        connection_id:
+          type: string
+          description: Connection identifier
+          format: uuid
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        data_agreement_id:
+          type: string
+          description: Data agreement identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+    ConnectionRecord:
+      type: object
+      properties:
+        accept:
+          type: string
+          description: 'Connection acceptance: manual or auto'
+          example: auto
+          enum:
+          - manual
+          - auto
+        alias:
+          type: string
+          description: Optional alias to apply to connection for later use
+          example: Bob, providing quotes
+        connection_id:
+          type: string
+          description: Connection identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
         created_at:
           pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
           type: string
           description: Time of record creation
-          example: 2021-09-19 14:06:14Z
-        did:
-          pattern: ^did:mydata(:?(0|1|2|3|4))?:(z[a-km-zA-HJ-NP-Z1-9]+)
+          example: 2021-12-10T11:20:01.000+0000
+        error_msg:
           type: string
-          description: MyData decentralised identifier
-          example: z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E
-        mydata_did_record_id:
+          description: Error message
+          example: No DIDDoc provided; cannot connect to public DID
+        inbound_connection_id:
           type: string
-          description: MyData DID record
+          description: Inbound routing connection id to use
           example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        initiator:
+          type: string
+          description: 'Connection initiator: self, external, or multiuse'
+          example: self
+          enum:
+          - self
+          - external
+          - multiuse
+        invitation_key:
+          pattern: ^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{43,44}$
+          type: string
+          description: Public key for connection
+          example: H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV
+        invitation_mode:
+          type: string
+          description: 'Invitation mode: once, multi, or static'
+          example: once
+          enum:
+          - once
+          - multi
+          - static
+        my_did:
+          pattern: ^(did:sov:)?[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{21,22}$
+          type: string
+          description: Our DID for connection
+          example: WgWxqztrNooG92RXvxSTWv
+        request_id:
+          type: string
+          description: Connection request identifier
+          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        routing_state:
+          type: string
+          description: Routing state of connection
+          example: active
         state:
           type: string
-          description: MyData DID record state
-          example: verified
-        trace:
-          type: boolean
-          description: Record trace information, based on agent configuration
+          description: Current record state
+          example: active
+        their_did:
+          pattern: ^(did:sov:)?[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{21,22}$
+          type: string
+          description: Their DID for connection
+          example: WgWxqztrNooG92RXvxSTWv
+        their_label:
+          type: string
+          description: Their label for connection
+          example: Bob
+        their_role:
+          type: string
+          description: Their assigned role for connection
+          example: Point of contact
         updated_at:
           pattern: ^\d{4}-\d\d-\d\d[T ]\d\d:\d\d(?:\:(?:\d\d(?:\.\d{1,6})?))?(?:[+-]\d\d:?\d\d|Z|)$
           type: string
           description: Time of last record update
-          example: 2021-09-19 14:06:14Z
-    V10MyDataDIDRecordsList:
-      type: object
-      properties:
-        results:
-          type: array
-          description: MyData DID records
-          items:
-            $ref: '#/components/schemas/V10MyDataDIDRecord'
-    DIDVerificationMethod:
-      required:
-      - recipient_connection_id
-      - registry_connection_id
-      type: object
-      properties:
-        recipient_connection_id:
-          type: string
-          description: Recipient connection ID
-          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-        registry_connection_id:
-          type: string
-          description: ADA registry service connection ID
-          example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
-    inline_response_201:
-      type: object
-      properties:
-        agreementId:
-          type: string
-          example: c0a1ec88-85f3-48f9-92f9-4c3ea318e5b1
-    DataAgreement_data_policy:
-      type: object
-      properties:
-        data_retention_period:
-          type: string
-          example: "365"
-    DataAgreement_personal_data:
-      type: object
-      properties:
-        attribute_names:
-          type: array
-          example:
-          - Name
-          - Age
-          items:
-            type: string
-    DataAgreement_code_of_conduct:
-      type: object
-      properties:
-        dpia_conducted:
-          type: boolean
-          example: true
-        dpia_passed:
-          type: boolean
-          example: true
-        dpia_date:
-          type: string
-          example: 2021-05-08T08:41:59+0000
-        dpia_verification_url:
-          type: string
-          example: https://org.com/dpia_results.html
+          example: 2021-12-10T11:20:01.000+0000
+  requestBodies:
+    CreateOrUpdateDataAgreementInWalletRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateOrUpdateDataAgreementInWalletRequest'
