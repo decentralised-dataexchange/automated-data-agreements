@@ -17,64 +17,67 @@ Mr. Mr. Jan Lindquist (Linaltec, Sweden)
 Ms. Lotta Lundin (iGrant.io, Sweden)  
 
 ## Table of Contents
+- [Data Agreement - DIDComm Protocol Specification](#data-agreement---didcomm-protocol-specification)
+  - [Abstract](#abstract)
+  - [Status of This Document](#status-of-this-document)
+  - [Authors](#authors)
+  - [Contributors and Reviwers](#contributors-and-reviwers)
+  - [Table of Contents](#table-of-contents)
 - [1.0 Introduction](#10-introduction)
-  * [1.1 Component View](#11-component-view)
-  * [1.2  Implementation View](#12-implementation-view)
+  - [1.1 Component View](#11-component-view)
+  - [1.2	Implementation View](#12implementation-view)
 - [2.0 ADA RFC 0001: MyData DID Protocol 1.0](#20-ada-rfc-0001-mydata-did-protocol-10)
-  * [2.1 Summary](#21-summary)
-  * [2.2 Motivation](#22-motivation)
-  * [2.3 Tutorial](#23-tutorial)
-    + [2.3.1 Interaction](#231-interaction)
-    + [2.3.2 Messages](#232-messages)
-      - [2.3.2.1    Create Operation](#2321create-operation)
-      - [2.3.2.2    Read Operation](#2322read-operation)
-      - [2.3.2.3    Update Operation](#2323update-operation)
-      - [2.3.2.4    Delete Operation](#2324delete-operation)
-      - [2.3.2.5    Problem Report](#2325problem-report)
-- [3.0   ADA RFC 0002: Data Agreement Protocol 1.0](#30ada-rfc-0002-data-agreement-protocol-10)
-  * [3.1  Summary](#31summary)
-  * [3.2  Motivation](#32motivation)
-  * [3.3  Tutorial](#33tutorial)
-    + [3.3.1   Interaction](#331interaction)
-    + [3.3.2   Messages](#332messages)
-      - [3.3.2.1    Create Data Agreement](#3321create-data-agreement)
-      - [3.3.2.2    Read Data Agreement](#3322read-data-agreement)
-      - [3.3.2.3    Update Data Agreement](#3323update-data-agreement)
-      - [3.3.2.4    Delete Data Agreement](#3324delete-data-agreement)
-      - [3.3.2.5    Problem Report](#3325-problem-report)
-- [4.0   ADA RFC 0003: Data Agreement Negotiation Protocol 1.0](#40ada-rfc-0003-data-agreement-negotiation-protocol-10)
-  * [4.1  Summary](#41-summary)
-  * [4.2  Motivation](#42motivation)
-  * [4.3  Tutorial](#43tutorial)
-    + [4.2.1   Interaction](#421interaction)
-    + [4.2.2   Messages](#422messages)
-      - [4.2.2.1    Offer](#4221offer)
-      - [4.2.2.2    Accept](#4222accept)
-      - [4.2.2.3    Reject](#4223reject)
-      - [4.2.2.4    Problem Report](#4224problem-report)
-- [5.0   ADA Protocol 0004: Data Agreement Proofs Protocol 1.0](#50ada-protocol-0004-data-agreement-proofs-protocol-10)
-  * [5.1  Summary](#51summary)
-  * [5.2  Motivation](#52motivation)
-  * [5.3  Tutorial](#53tutorial)
-    + [5.3.1   Interaction](#531interaction)
-    + [5.3.2   Messages](#532messages)
-      - [5.3.2.1    Verify Request](#5321verify-request)
-      - [5.3.2.2    Verify Response](#5322-verify-response)
-      - [5.3.2.3    Problem Report](#5323-problem-report)
-- [6.0   ADA Protocol 0005: Data Agreement Termination Protocol 1.0](#60ada-protocol-0005--data-agreement-termination-protocol-10)
-  * [6.1  Summary](#61summary)
-  * [6.2  Motivation](#62motivation)
-  * [6.3  Tutorial](#63tutorial)
-    + [5.3.1   Interaction](#531interaction-1)
-    + [5.3.2   Messages](#532messages-1)
-      - [6.3.2.1    Request Withdrawal](#6321request-withdrawal)
-      - [6.3.2.2    Confirm Withdrawal](#6322confirm-withdrawal)
-      - [6.3.2.3    Problem Report](#6323problem-report)
-- [7.0   ADA RFC 0006: Data Agreement Context Decorator](#70ada-rfc-0006--data-agreement-context-decorator)
-  * [7.1  Summary](#71summary)
-  * [7.2  Motivation](#72motivation)
-  * [7.3  Tutorial](#73tutorial)
-- [8.0   References](#80references)
+  - [2.1 Summary](#21-summary)
+  - [2.2 Motivation](#22-motivation)
+  - [2.3 Tutorial](#23-tutorial)
+    - [2.3.1 Interaction](#231-interaction)
+    - [2.3.2 Messages](#232-messages)
+      - [2.3.2.1	Create Operation](#2321create-operation)
+      - [2.3.2.2	Read Operation](#2322read-operation)
+      - [2.3.2.3	Update Operation](#2323update-operation)
+      - [2.3.2.4	Delete Operation](#2324delete-operation)
+      - [2.3.2.5	Problem Report](#2325problem-report)
+- [3.0	ADA RFC 0002: Data Agreement Protocol 1.0](#30ada-rfc-0002-data-agreement-protocol-10)
+  - [3.1	Summary](#31summary)
+  - [3.2	Motivation](#32motivation)
+  - [3.3	Tutorial](#33tutorial)
+    - [3.3.1	Interaction](#331interaction)
+    - [3.3.2	Messages](#332messages)
+      - [3.3.2.2	Read Data Agreement](#3322read-data-agreement)
+      - [3.3.2.5	Problem Report](#3325problem-report)
+- [4.0	ADA RFC 0003: Data Agreement Negotiation Protocol 1.0](#40ada-rfc-0003-data-agreement-negotiation-protocol-10)
+  - [4.1	Summary](#41summary)
+  - [4.2	Motivation](#42motivation)
+  - [4.3	Tutorial](#43tutorial)
+    - [4.2.1	Interaction](#421interaction)
+    - [4.2.2	Messages](#422messages)
+      - [4.2.2.1	Offer](#4221offer)
+      - [4.2.2.2	Accept](#4222accept)
+      - [4.2.2.3	Reject](#4223reject)
+      - [4.2.2.4	Problem Report](#4224problem-report)
+- [5.0	ADA Protocol 0004: Data Agreement Proofs Protocol 1.0](#50ada-protocol-0004-data-agreement-proofs-protocol-10)
+  - [5.1	Summary](#51summary)
+  - [5.2	Motivation](#52motivation)
+  - [5.3	Tutorial](#53tutorial)
+    - [5.3.1	Interaction](#531interaction)
+    - [5.3.2	Messages](#532messages)
+      - [5.3.2.1	Verify Request](#5321verify-request)
+      - [5.3.2.2	Verify Response](#5322verify-response)
+      - [5.3.2.3	Problem Report](#5323problem-report)
+- [6.0	ADA Protocol 0005: Data Agreement Termination Protocol 1.0](#60ada-protocol-0005-data-agreement-termination-protocol-10)
+  - [6.1	Summary](#61summary)
+  - [6.2	Motivation](#62motivation)
+  - [6.3	Tutorial](#63tutorial)
+    - [5.3.1	Interaction](#531interaction-1)
+    - [5.3.2	Messages](#532messages-1)
+      - [6.3.2.1	Request Withdrawal](#6321request-withdrawal)
+      - [6.3.2.2	Confirm Withdrawal](#6322confirm-withdrawal)
+      - [6.3.2.3	Problem Report](#6323problem-report)
+- [7.0	ADA RFC 0006: Data Agreement Context Decorator](#70ada-rfc-0006-data-agreement-context-decorator)
+  - [7.1	Summary](#71summary)
+  - [7.2	Motivation](#72motivation)
+  - [7.3	Tutorial](#73tutorial)
+- [8.0	References](#80references)
 
 # 1.0 Introduction
 
@@ -124,30 +127,51 @@ The following actors are identified as part of ADA specification and can assume 
 * a **Data Source**, the organisation collecting private data, (typically a data controller).  [SSI: Issuer]
 * a **Data Subject** or **Individual**. [SSI: Holder]
 * a **Data Using Service (DUS)**, an organisation processing personal data from one or more data sources to deliver a service. [SSI: Verifier]
-* an** Assessor r**eviews the practices of an organisation**, **conducts a DPIA and drafts data agreements and inter-company agreements for third parties.
-* an** Auditor** may be called in to review the data agreements and ensure they are in place in case of data breaches or regular inspection.
+* an **Assessor** reviews the practices of an organisation, conducts a DPIA and drafts data agreements and inter-company agreements for third parties.
+* an **Auditor** may be called in to review the data agreements and ensure they are in place in case of data breaches or regular inspection.
 
 ### 2.3.1 Interaction
 
-The ADA service will be exposing a DIDComm agent. CRUD operations on DID can then be performed by the requester using available DIDComm messages. The ADA service itself will be allocated a DID, and an associated DID document will be publicly available at an established DID configuration endpoint (`"/.well-known/did-configuration.json"`) of the web server. The DID configuration document conforms to the DID-CORE specification [1]. The public key specified in the DID configuration document is used for constructing DIDComm encryption envelopes by the requester. His envelope is sent to the DIDComm agent mentioned in the service endpoints section within the DID configuration document to communicate with the responder.
+The ADA service will be exposing a DIDComm agent. CRUD operations on DID can then be performed by the requester using available DIDComm messages. The ADA service itself will be allocated a pairwise DID, and a connection invitation message with pairwise DID as one of the recipientKey will be publicly available at an established DID configuration endpoint (`"/.well-known/did-configuration.json"`) of the web server.  A sample configuration is given below:
+
+```json
+{
+  "ServiceEndpoint": "https://mydata-did-registry.igrant.io",
+  "RoutingKey": "",
+  "Invitation": {
+    "label": "MyData-DID-Registry",
+    "serviceEndpoint": "https://mydata-did-registry.igrant.io",
+    "routingKeys": [],
+    "recipientKeys": [
+      "4ZMHW7jX885o6dfXTjff2W8zkDdPXEFrxYauFmJrNwyE"
+    ],
+    "@id": "8e1cc2f6-f2af-41e7-8475-fa99be1c4c99",
+    "@type": "https://didcomm.org/connections/1.0/invitation"
+  }
+}
+```
+
+
+
+The recipient key (public key) specified in the connection invitation is used for constructing DIDComm encryption envelopes by the requester. This envelope is sent to the DIDComm agent mentioned in the service endpoints section within the connection invitation document to communicate with the responder.
 
 ### 2.3.2 Messages
 
 The MyData DID protocol consists of these messages:
 
-* ``create-did``
-* ``create-did-response``
-* ``read-did``
-* ``read-did-response``
-* ``delete-did``
-* ``delete-did-response``
-* ``problem-report``
+* `mydata-did/1.0/create-did`
+* `mydata-did/1.0/create-did-response`
+* `mydata-did/1.0/read-did`
+* `mydata_did/1.0/read-did-response`
+* `mydata-did/1.0/delete-did`
+* `mydata-did/1.0/delete-did-response`
+* `mydata-did/1.0/problem-report`
 
 There are 3 possible operations using the above messages. The 3 operations are - Create, Read and Delete. How to use the above messages are explained below for each operation.  
 
 #### 2.3.2.1	Create Operation
 
-The Create Operation is initiated by the requester by sending the `create-did` DIDComm message to the responder (ADA service). The responder responds with a `create-did-response` message if the operation is successful or with a `problem-report` message if the operation fails.
+The Create Operation is initiated by the requester by sending the `mydata-did/1.0/create-did` DIDComm message to the responder (ADA service). The responder responds with a `mydata-did/1.0/create-did-response` message if the operation is successful or with a `mydata-did/1.0/problem-report` message if the operation fails.
 
 Creation of the DID follows the sequence below: 
 
@@ -158,101 +182,186 @@ Creation of the DID follows the sequence below:
 
 ```json 
 {
-  "@id": "6a956d0d-b117-41d5-841e-7190ee0e5d5f",
-  "@type": "https://didcomm.org/mydata-did/1.0/create-did",
-  "to" : "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "created_time": "1622649143",
-  "body": {
-    "did": {
-      "@context": "https://w3id.org/did/v1",
-      ....
-      Rest of the DID document
-      ....
+    "@type": "https://didcomm.org/mydata-did/mydata-did/1.0/create-did",
+    "@id": "53f19e0b-5be2-480a-92bc-fcdeabf69ad3",
+    "created_time": "1639125359",
+    "to": "did:mydata:z6Mkr85Fb3yUoj2PT1BVfFfVmAuuAe38UX9XnD5Eb9PVA8FG",
+    "from": "did:mydata:z6MkioNqmrGDEDMA1e5YBH6Tudjt5gQj9kFxzA5DzUwWNS8s",
+    "body~sig": {
+        "@type": "https://didcomm.org/signature/1.0/ed25519Sha512_single",
+        "signature": "oNecYanvYrKMTpl1G9GkmbTv-v6zbEqotBhgzYxiR_XBr_fBJDrLEiPtpzVsi0f72da2tubjcYISzq9RzlRzDA==",
+        "sig_data": "AAAAAGGzXsd7IkBjb250ZXh0IjogImh0dHBzOi8vdzNpZC5vcmcvZGlkL3YxIiwgImlkIjogImRpZDpteWRhdGE6ejZNa28zaHRUZUs5NGppWDRSR0FGenRSZm82NU5qV20zMXkxSGUxU1VuNW90WTdYIiwgInZlcmlmaWNhdGlvbl9tZXRob2QiOiBbeyJpZCI6ICJkaWQ6bXlkYXRhOno2TWtvM2h0VGVLOTRqaVg0UkdBRnp0UmZvNjVOaldtMzF5MUhlMVNVbjVvdFk3WCMxIiwgInR5cGUiOiAiRWQyNTUxOVZlcmlmaWNhdGlvbktleTIwMTgiLCAiY29udHJvbGxlciI6ICJkaWQ6bXlkYXRhOno2TWtvM2h0VGVLOTRqaVg0UkdBRnp0UmZvNjVOaldtMzF5MUhlMVNVbjVvdFk3WCIsICJwdWJsaWNLZXlCYXNlNTgiOiAiejZNa28zaHRUZUs5NGppWDRSR0FGenRSZm82NU5qV20zMXkxSGUxU1VuNW90WTdYIn1dLCAiYXV0aGVudGljYXRpb24iOiBbeyJ0eXBlIjogIkVkMjU1MTlTaWduYXR1cmVBdXRoZW50aWNhdGlvbjIwMTgiLCAicHVibGljS2V5IjogImRpZDpteWRhdGE6ejZNa28zaHRUZUs5NGppWDRSR0FGenRSZm82NU5qV20zMXkxSGUxU1VuNW90WTdYIzEifV0sICJzZXJ2aWNlIjogW3siaWQiOiAiZGlkOm15ZGF0YTp6Nk1rbzNodFRlSzk0amlYNFJHQUZ6dFJmbzY1TmpXbTMxeTFIZTFTVW41b3RZN1g7ZGlkY29tbSIsICJ0eXBlIjogIkRJRENvbW0iLCAicHJpb3JpdHkiOiAwLCAicmVjaXBpZW50S2V5cyI6IFsiejZNa28zaHRUZUs5NGppWDRSR0FGenRSZm82NU5qV20zMXkxSGUxU1VuNW90WTdYIl0sICJzZXJ2aWNlRW5kcG9pbnQiOiAiaHR0cDovL2xvY2FsaG9zdDo4MDAyLyJ9XX0=",
+        "signer": "9bSqsQ4hjCE3wvRTaRvaphY5ZAEud8iebd6WeW7nyKL9"
+    },
+    "~transport": {
+      "return_route": "all"
     }
-  },
-  "~transport": {
-    "return_route": "all"
-  }
 }
 ```
 
-* <strong><code>id</code></strong> is a unique value to the sender which indicates the message ID.
-* <strong><code>type</code></strong> indicates the message type. Message type decides how the message contents must be processed.
-* <strong><code>from</code></strong> is a valid DID which identifies the sender. This can be the same as the DID that is getting created.
-* <strong><code>to</code></strong> is a valid DID which identifies the recipient. It is the value of ADA service’s DID. This is obtained from the DID document available at the root endpoint of ADA service. 
-* <strong><code>created_time</code></strong> indicates the message created time. This is represented in UTC epoch seconds.
-* <strong><code>body</code></strong> contains the actual message body. In this case it contains the DID document that is getting created and stored in the DID registry.
-* <strong><code>~transport</code></strong> decorator is optional. This decorator conforms to ARIES RFC 0092 [6]. If it’s specified and the value of <code>return_route </code>is <code>all</code>, then it means ADA service must respond to the respective DIDComm message using the same HTTP connection. This is useful when the client sending a DIDComm message doesn’t have any inbound route available.
-5. A DIDComm encryption envelope is constructed according to the steps documented in ARIES RFC 0019 [7] to wrap the above plaintext message. Encryption envelope uses a standard format built on JSON Web Encryption (JWE) [8].  The public key used is fetched from the DID document available at the well-known DID configuration endpoint of the ADA service. Mode of encryption when creating JWE is anoncrypt. 
-6. The encryption envelope is transmitted to the ADA service by performing HTTP POST operation. For ADA service to process the incoming message, the <code>content-type</code> HTTP header provided is <code>application/didcomm-encrypted+json</code>. 
-7. The ADA service will respond to the above DIDComm message with an encryption envelope (JWE) which when unpacked will contain a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/create-did-response](https://didcomm.org/mydata-did/1.0/create-did-response). An example is given below:
+* **id** is a unique value to the sender which indicates the message ID.
+* **type** indicates the message type. Message type decides how the message contents must be processed.
+* **from** is a valid DID which identifies the sender. This can be the same as the DID that is getting created.
+* **to** is a valid DID which identifies the recipient. It is the value of ADA service’s DID. This is obtained from the DID document available at the root endpoint of ADA service. 
+* **created_time** indicates the message created time. This is represented in UTC epoch seconds.
+* **body** contains the actual message body. In this case it contains the DID document that is getting created and stored in the DID registry. The body is signed as described in [Aries RFC 0234 Signature Decorator](https://github.com/hyperledger/aries-rfcs/blob/main/features/0234-signature-decorator/README.md). An example content of the body before encapsulating it in Signature Decorator is given below.
+
+```json
+{
+  "@context": "https://w3id.org/did/v1",
+  "id": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X",
+  "verification_method": [
+    {
+      "id": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X#1",
+      "type": "Ed25519VerificationKey2018",
+      "controller": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X",
+      "publicKeyBase58": "z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X"
+    }
+  ],
+  "authentication": [
+    {
+      "type": "Ed25519SignatureAuthentication2018",
+      "publicKey": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X#1"
+    }
+  ],
+  "service": [
+    {
+      "id": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X;didcomm",
+      "type": "DIDComm",
+      "priority": 0,
+      "recipientKeys": [
+        "z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X"
+      ],
+      "serviceEndpoint": "http://localhost:8002/"
+    }
+  ]
+}
+```
+
+* **~transport** decorator is optional. This decorator conforms to [Aries RFC 0092 Transport Return Route](https://github.com/hyperledger/aries-rfcs/tree/main/features/0092-transport-return-route) [6]. If it’s specified and the value of `return_route` is `all`, then it means ADA service must respond to the respective DIDComm message using the same HTTP connection. This is useful when the client sending a DIDComm message doesn’t have any inbound route available.
+
+
+1. A DIDComm encryption envelope is constructed according to the steps documented in Aries RFC 0019 [7] to wrap the above plaintext message. Encryption envelope uses a standard format built on JSON Web Encryption (JWE) [8].  The public key used is fetched from the DID document available at the well-known DID configuration endpoint of the ADA service. Mode of encryption when creating JWE is anoncrypt. 
+2. The encryption envelope is transmitted to the ADA service by performing HTTP POST operation. For ADA service to process the incoming message, the `content-type` HTTP header provided is `application/ssi-agent-wire`. 
+3. The ADA service will process the incoming message by verifying the signatures after unpacking the message.
+4. The ADA service will respond to the above DIDComm message with an encryption envelope (JWE) which when unpacked will contain a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/create-did-response](https://didcomm.org/mydata-did/1.0/create-did-response). An example is given below:
 
 ```json 
 {
-  "@type": "https://didcomm.org/mydata-did/1.0/create-did-response",
-  "@id": "4f4fbc78-be45-4029-ad18-a808c3a36ac2",
-  "from": "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "to": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-  "created_time": "1622649143",
-  "~thread": {
-    "thid": "6a956d0d-b117-41d5-841e-7190ee0e5d5f"
-  },
-  "body": {
-    "did": {
-      "@context": "https://w3id.org/did/v1",
-      ....
-      Rest of the DID document
-      ....
+    "@type": "https://didcomm.org/mydata-did/1.0/create-did-response",
+    "@id": "4dfd460b-f965-4bf5-923a-9bfd3d30f410",
+    "~thread": {
+        "thid": "53f19e0b-5be2-480a-92bc-fcdeabf69ad3"
     },
-    "version": "1.0"
-  }
+    "body": {
+        "did_doc": {
+            "@context": "https://w3id.org/did/v1",
+            "id": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X",
+            "verification_method": [
+                {
+                    "id": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X#1",
+                    "type": "Ed25519VerificationKey2018",
+                    "controller": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X",
+                    "publicKeyBase58": "z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X"
+                }
+            ],
+            "authentication": [
+                {
+                    "type": "Ed25519SignatureAuthentication2018",
+                    "publicKey": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X#1"
+                }
+            ],
+            "service": [
+                {
+                    "id": "did:mydata:z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X;didcomm",
+                    "type": "DIDComm",
+                    "priority": 0,
+                    "recipientKeys": [
+                        "z6Mko3htTeK94jiX4RGAFztRfo65NjWm31y1He1SUn5otY7X"
+                    ],
+                    "serviceEndpoint": "http://localhost:8002/"
+                }
+            ]
+        },
+        "version": "1",
+        "status": "active"
+    },
+    "from": "did:mydata:z6Mkr85Fb3yUoj2PT1BVfFfVmAuuAe38UX9XnD5Eb9PVA8FG",
+    "created_time": "1639125359",
+    "to": "did:mydata:z6MkioNqmrGDEDMA1e5YBH6Tudjt5gQj9kFxzA5DzUwWNS8s"
 }
 ```
 
 #### 2.3.2.2	Read Operation
 
-The Read Operation is initiated by the requester by sending the `read-did` DIDComm message to the responder (ADA service). The responder responds with a `read-did-response` message if the operation is successful or with a `problem-report` message if the operation fails.
+The Read Operation is initiated by the requester by sending the `mydata-did/1.0/read-did` DIDComm message to the responder (ADA service). The responder responds with a `mydata-did/1.0/read-did-response` message if the operation is successful or with a `mydata-did/1.0/problem-report` message if the operation fails.
 
 To resolve a DID and fetch the associated DID document from the DID registry, a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/read-did](https://didcomm.org/mydata-did/1.0/read-did) must be constructed. An example is given below:
 
 ```
 {
-  "@id": "3e914e45-28f0-4009-b9c2-e2df2ba165b8",
-  "@type": "https://didcomm.org/mydata-did/1.0/read-did",
-  "to" : "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "created_time": "1622649143",
-  "body": {
-    "did": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E"
-  },
-  "~transport": {
-    "return_route": "all"
-  }
+    "@type": "https://didcomm.org/mydata-did/1.0/read-did",
+    "@id": "be23b532-589d-4ed4-ae6f-82b89702d2c4",
+    "created_time": "1639126418",
+    "to": "did:mydata:z6Mkr85Fb3yUoj2PT1BVfFfVmAuuAe38UX9XnD5Eb9PVA8FG",
+    "from": "did:mydata:z6MkioNqmrGDEDMA1e5YBH6Tudjt5gQj9kFxzA5DzUwWNS8s",
+    "body": {
+        "did": "did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar"
+    },
+    "~transport": {
+      "return_route": "all"
+    }
 }
 ```
-The **<code>did</code></strong> attribute in the message body represents the DID that will be resolved.
+The **`did** attribute in the message body represents the DID that will be resolved.
 
-The above example requests the ADA service to resolve `did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E` Notice the message JSON-LD doesn’t contain a **<code>from</code></strong> key, since the read operation can be performed without owning a DID. The packing algorithm used for constructing the DIDComm encryption envelope should be anoncrypt.
+The above example requests the ADA service to resolve `did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar`. The packing algorithm used for constructing the DIDComm encryption envelope should be anoncrypt.
 
-The ADA service will respond to the above DIDComm message with an encryption envelope (JWE) which when unpacked will contain a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/read-did-response](https://didcomm.org/mydata-did/1.0/create-did-response). An example is given below:
+The ADA service will respond to the above DIDComm message with an encryption envelope (JWE) which when unpacked will contain a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/read-did-response](https://didcomm.org/mydata-did/1.0/read-did-response). An example is given below:
 
 ```json 
 {
-  "@type": "https://didcomm.org/mydata-did/1.0/read-did-response",
-  "@id": "4f4fbc78-be45-4029-ad18-a808c3a36ac2",
-  "from": "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "created_time": "1622649143",
-  "~thread": {
-    "thid": "3e914e45-28f0-4009-b9c2-e2df2ba165b8"
-  },
-  "body": {
-    "did": {
-      "@context": "https://w3id.org/did/v1",
-      ....
-      Rest of the DID document
-      ....
+    "@type": "https://didcomm.org/mydata-did/1.0/read-did-response",
+    "@id": "1265c0d5-5199-48b7-acf5-41c6fc766a84",
+    "~thread": {
+        "thid": "be23b532-589d-4ed4-ae6f-82b89702d2c4"
     },
-    "version": "1.0"
-  }
+    "body": {
+        "did_doc": {
+            "@context": "https://w3id.org/did/v1",
+            "id": "did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar",
+            "verification_method": [
+                {
+                    "id": "did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar#1",
+                    "type": "Ed25519VerificationKey2018",
+                    "controller": "did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar",
+                    "publicKeyBase58": "z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar"
+                }
+            ],
+            "authentication": [
+                {
+                    "type": "Ed25519SignatureAuthentication2018",
+                    "publicKey": "did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar#1"
+                }
+            ],
+            "service": [
+                {
+                    "id": "did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar;didcomm",
+                    "type": "DIDComm",
+                    "priority": 0,
+                    "recipientKeys": [
+                        "z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar"
+                    ],
+                    "serviceEndpoint": "http://localhost:8002/"
+                }
+            ]
+        },
+        "version": "1",
+        "status": "active"
+    },
+    "from": "did:mydata:z6Mkr85Fb3yUoj2PT1BVfFfVmAuuAe38UX9XnD5Eb9PVA8FG",
+    "created_time": "1639126418",
+    "to": "did:mydata:z6MkioNqmrGDEDMA1e5YBH6Tudjt5gQj9kFxzA5DzUwWNS8s"
 }
 ```
 
@@ -262,70 +371,71 @@ In the current version of this specification, Update operation on DID documents 
 
 #### 2.3.2.4	Delete Operation
 
-The Delete Operation is initiated by the requester by sending the `delete-did` DIDComm message to the responder (ADA service). The responder responds with a `delete-did-response` message if the operation is successful or with a `problem-report` message if the operation fails.
+The Delete Operation is initiated by the requester by sending the `mydata-did/1.0/delete-did` DIDComm message to the responder (ADA service). The responder responds with a `dmydata-did/1.0/delete-did-response` message if the operation is successful or with a `mydata-did/1.0/problem-report` message if the operation fails.
 
-In the current version of this specification, delete is relevant only when triggered by a DID controller to renew the existing DID to a new one (e.g. when a mobile device with the digital wallet which includes the private key is lost).  In this case, the old DID is marked as revoked. It could then be replaced with the newly created DID. To delete a DID, a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/delete-did](https://didcomm.org/mydata-did/1.0/read-did) must be constructed. An example is given below:
+In the current version of this specification, delete is relevant only when triggered by a DID controller to renew the existing DID to a new one (e.g. when a mobile device with the digital wallet which includes the private key is lost).  In this case, the old DID is marked as revoked. It could then be replaced with the newly created DID. To delete a DID, a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/delete-did](https://didcomm.org/mydata-did/1.0/delete-did) must be constructed. An example is given below:
 
 ```json
 {
-  "@id": "6a956d0d-b117-41d5-841e-7190ee0e5d5f",
-  "@type": "https://didcomm.org/mydata-did/1.0/delete-did",
-  "from": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-  "to" : "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "created_time": "1622649143",
-  "body": {
-    "did": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E"
-  },
-  "~transport": {
-    "return_route": "all"
-  }
+    "@type": "https://didcomm.org/mydata-did/1.0/delete-did",
+    "@id": "ecb656ad-e52a-4105-8fda-4af06ba436a7",
+    "created_time": "1639284769",
+    "to": "did:mydata:z6Mkr85Fb3yUoj2PT1BVfFfVmAuuAe38UX9XnD5Eb9PVA8FG",
+    "from": "did:mydata:z6MkioNqmrGDEDMA1e5YBH6Tudjt5gQj9kFxzA5DzUwWNS8s",
+    "body~sig": {
+        "@type": "https://didcomm.org/signature/1.0/ed25519Sha512_single",
+        "signature": "N_6jzRzEcYAE4laJmUNXpV_Usf4-YMq3Fz3k_t2p9xK16vZKS3BSl91x0meXMFBmOUhO4kykpcct4SB0mIGjDg==",
+        "sig_data": "AAAAAGG1zXl7ImRpZCI6ICJkaWQ6bXlkYXRhOno2TWt3V3lVYVF2cFBpbjVCTFVCVlhTY2JnVWdCQ3RXUE1zTHluanlEbjhKZU5FWSJ9",
+        "signer": "J4iRzAgP4BHc4qdUoxUmkavgMdceyUczHmq3PWAHj9TA"
+    }
 }
 ```
 
-The <strong><code>did</code></strong> attribute in the message body represents the DID that will be marked as revoked.
+The body is signed as described in [Aries RFC 0234 Signature Decorator](https://github.com/hyperledger/aries-rfcs/blob/main/features/0234-signature-decorator/README.md). Signature is generated using the `did:mydata` that needs to be revoked. This is done to verify the ownership of the DID. An example of body before signing is given below.
+
+```json
+{"did": "did:mydata:z6MkgraJGcncoZhxG1tQvzp36wPUZ995r1H1V2nK8MTYQ4Ar"}
+```
+
+The **did** attribute in the message body represents the DID that will be marked as revoked.
 
 The packing algorithm used for constructing the DIDComm encryption envelope should be authcrypt.
 
-The ADA service will respond to the above DIDComm message with an encryption envelope (JWE) which when unpacked will contain a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/delete-did-response](https://didcomm.org/mydata-did/1.0/create-did-response). An example is given below:
+The ADA service will respond to the above DIDComm message with an encryption envelope (JWE) which when unpacked will contain a DIDComm plaintext message of type - [https://didcomm.org/mydata-did/1.0/delete-did-response](https://didcomm.org/mydata-did/1.0/delete-did-response). An example is given below:
 
 ```json
 {
-  "@type": "https://didcomm.org/mydata-did/1.0/delete-did-response",
-  "@id": "4f4fbc78-be45-4029-ad18-a808c3a36ac2",
-  "from": "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "to": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-  "created_time": "1622649143",
-  "~thread": {
-    "thid": "6a956d0d-b117-41d5-841e-7190ee0e5d5f"
-  },
-  "body": {
-    "status": "revoked"
-  }
+    "@type": "https://didcomm.org/mydata-did/1.0/delete-did-response",
+    "@id": "8f560451-02a3-4e84-8441-7016442887b8",
+    "~thread": {
+        "thid": "ecb656ad-e52a-4105-8fda-4af06ba436a7"
+    },
+    "to": "did:mydata:z6MkioNqmrGDEDMA1e5YBH6Tudjt5gQj9kFxzA5DzUwWNS8s",
+    "body": {
+        "status": "revoked",
+        "did": "did:mydata:z6MkwWyUaQvpPin5BLUBVXScbgUgBCtWPMsLynjyDn8JeNEY"
+    },
+    "from": "did:mydata:z6Mkr85Fb3yUoj2PT1BVfFfVmAuuAe38UX9XnD5Eb9PVA8FG",
+    "created_time": "1639284769"
 }
 ```
 
 #### 2.3.2.5	Problem Report
 
-If a problem arises while handling any DIDComm message, ADA service will respond with a problem report message that conforms to ARIES RFC 0035 [9]. An example is given below:
+If a problem arises while handling any DIDComm message, ADA service will respond with a problem report message that conforms to Aries RFC 0035 [9]. An example is given below:
 
 ```json
 {
   "@type": "https://didcomm.org/mydata-did/1.0/problem-report",
-  "@id": "2c8579d3-ecdd-4427-9e2f-7f911917de6c",
+  "@id": "c98aaa94-8bd4-4c8d-9d05-c25ead35dc62",
   "~thread": {
-    "thid": "6a956d0d-b117-41d5-841e-7190ee0e5d5f"
+    "thid": "cf2b1dca-9904-4242-87c6-063745cc86f9"
   },
-"from": "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "to": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-  "description": "DID not found",
-  "description~l10n": {
-    "code": "did-not-found"
-  },
-  "problem_items": [
-    {
-      "did": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E"
-    }
-  ]
+  "to": "did:mydata:z6MkioNqmrGDEDMA1e5YBH6Tudjt5gQj9kFxzA5DzUwWNS8s",
+  "problem-code": "mydata_did_not_found",
+  "explain": "DID not found.",
+  "from": "did:mydata:z6Mkr85Fb3yUoj2PT1BVfFfVmAuuAe38UX9XnD5Eb9PVA8FG",
+  "created_time": "1639284974"
 }
 ```
 
@@ -333,123 +443,62 @@ If a problem arises while handling any DIDComm message, ADA service will respond
 
 ## 3.1	Summary
 
-This specification defines DIDComm protocol for performing CRUD operations on Data Agreements.
+This specification defines DIDComm protocol for performing Read operation on Data Agreements instances (receipts)
 
 ## 3.2	Motivation
 
-We need a standard protocol to perform Create, Read, Update, Delete operations on Data Agreements.
+We need a standard protocol to perform Read operation on Data Agreements.
 
 Data Agreement is an agreement between organisations and individuals in the use of personal data. Data Agreement can have any of the legal basis that is outlined as per data protection law or regulation, such as the GDPR. The agreement with individuals could be with a  Data Source (issuer) or a Data Using Service. 
 
-The focus of this specification is on the Data Agreement, how it is defined and prepared by an organisation wishing to use personal data.
+The focus of this specification is to enable a Data Subject / Auditor to resolve Data Agreement instances from a Data controller's data agreement instance (receipt) registry.
 
 ## 3.3	Tutorial
 
-The protocol described in this document is a request-response protocol [10]. This involves two parties, with the requester` `making the first move, and the responder completing the interaction. The responder role is assumed by ADA microservice. The requester can perform CRUD operations on Data Agreements.
+The protocol described in this document is a request-response protocol [10]. This involves two parties, with the `requester` making the first move, and the responder completing the interaction. The responder role is assumed by ADA microservice hosted by the Data Controller (Data Source or Data Using Service). The requester (Data Subject or Auditor) can perform Read operation on Data Agreement instances.
 
-The following actors identified as part of the Data Agreement specification can assume the requester` `role:
+The following actors identified as part of the Data Agreement specification can assume the `requester` role:
 
-* a **Data Source**, the organisation collecting private data, (typically a data controller).  [SSI: Issuer]
-* a **Data Using Service (DUS)**, an organisation processing personal data from one or more data sources to deliver a service. [SSI: Verifier]
-* an** Assessor r**eviews the practices of an organisation**, **conducts a DPIA and drafts data agreements and inter-company agreements for third parties.
+* **Data Subject**
+* **Auditor**
 
 ### 3.3.1	Interaction
 
-In the data agreement workflow [Ref. ADA Functional Specification for details], the “Definition” and “Preparation” phases involve the operations described in the subchapters. These operations are used by any data protection impact assessment (DPIA) to “convert” DPIA output to standardised data agreements.
+The ADA service will be exposing a DIDComm agent. CRUD operations on DID can then be performed by the requester using available DIDComm messages. The ADA service itself will be allocated a pairwise DID, and a connection invitation message with pairwise DID as one of the recipientKey will be publicly available at an established DID configuration endpoint (`"/.well-known/did-configuration.json"`) of the web server.  A sample configuration is given below:
 
-An ADA service (responder) will be exposing a DIDComm agent. CRUD operations on Data Agreement can then be performed by the requester using available DIDComm messages. The ADA service itself will be allocated a DID and an associated DID document will be publicly available at an established DID configuration endpoint (`"/.well-known/did-configuration.json"`) of the web server. DID configuration document conforms to the DID-CORE specification [1]. The public key specified in the DID configuration document is used for constructing DIDComm encryption envelopes by the requester and this envelope is sent to the DIDComm agent mentioned in the service endpoints section within the DID configuration document to communicate with the responder.
+```json
+{
+  "ServiceEndpoint": "https://happyshopping.com",
+  "RoutingKey": "",
+  "Invitation": {
+    "label": "Happy Shopping AB",
+    "serviceEndpoint": "https://happyshopping.com",
+    "routingKeys": [],
+    "recipientKeys": [
+      "4ZMHW7jX885o6dfXTjff2W8zkDdPXEFrxYauFmJrNwyE"
+    ],
+    "@id": "8e1cc2f6-f2af-41e7-8475-fa99be1c4c99",
+    "@type": "https://didcomm.org/connections/1.0/invitation"
+  }
+}
+```
+
+
+
+The recipient key (public key) specified in the connection invitation is used for constructing DIDComm encryption envelopes by the requester. This envelope is sent to the DIDComm agent mentioned in the service endpoints section within the connection invitation document to communicate with the responder.
 
 ### 3.3.2	Messages
 
 The Data Agreements protocol consists of these messages:
 
-* ``create-data-agreement``
-* ``create-data-agreement-response``
-* ``read-data-agreement``
-* ``read-data-agreement-response``
-* ``update-data-agreement``
-* ``update-data-agreement-response``
-* ``delete-data-agreement``
-* ``delete-data-agreement-response``
-* ``problem-report``
+* `data-agreements/1.0/read-data-agreement`
+* `data-agreements/1.0/read-data-agreement-response`
+* `data-agreements/1.0/problem-report`
 
-#### 3.3.2.1	Create Data Agreement
-
-An organisation (requester) intending to create a data agreement must construct a `create-data-agreement `DIDComm message and encrypt it using the DID and send it to the ADA service (responder). An example of a `create-data-agreement` DIDComm message is:
-
-```json 
-{
-  "@id": "b589c166-e0f0-44eb-9b41-ee2c09b26bec",
-  "@type": "https://didcomm.org/data-agreements/1.0/create-data-agreement",
-  "from": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-  "to": "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "created_time": "1622649143",
-  "body": {
-    "data_agreement": {
-      "@context": "https://schema.igrant.io/data-agreements/v1",
-      "usage_purpose": "Customized shopping experience",
-      "usage_purpose_description": "Collecting user data for offering custom tailored shopping experience",
-      "data_policy": {
-        "data_retention_period": "365"
-      },
-      "personal_data": {
-        "attribute_names": [
-          "Name",
-          "Age"
-        ]
-      },
-      "code_of_conduct": {
-        "dpia_conducted": true,
-        "dpia_passed": true,
-        "dpia_date": "2021-05-08T08:41:59+0000",
-        "dpia_verification_url": "https://org.com/dpia_results.html"
-      },
-      "data_sharing": {
-        "exchange": true,
-        "role": "<null/issuer/verifier>"
-      }
-    }
-  }
-}
-```
-
-On receiving the above message, the ADA service (responder) will store the Data Agreement to a persistence (for e.g. a distributed ledger) and respond with a DIDComm message of type `create-data-agreement-response`. An example is given below:
-
-
-```json
-{
-  "@id": "89bb4c34-c834-4e2a-b2bd-1a459e145100",
-  "@type": "https://didcomm.org/data-agreements/1.0/create-data-agreement-response",
-  "~thread"      	: {
-	"thid": "b589c166-e0f0-44eb-9b41-ee2c09b26bec"
-  },
-  "data_agreement_id": "45988dd2-62b9-4ede-8189-fb99c64b42d1"
-}
-```
-
-
-If a problem arises while handling the `create-data-agreement` message, ADA service will respond with a problem report message that conforms to ARIES RFC 0035 [9]. An example is given below:
-
-
-```json
-{
-  "@type": "https://didcomm.org/data-agreements/1.0/problem-report",
-  "@id": "2c8579d3-ecdd-4427-9e2f-7f911917de6c",
-  "~thread": {
-    "thid": "6a956d0d-b117-41d5-841e-7190ee0e5d5f"
-  },
-  "from": "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "to": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-  "description": "Failed to create data agreement",
-  "description~l10n": {
-    "code": "creation-failure"
-  }
-}
-```
 
 #### 3.3.2.2	Read Data Agreement
 
-An organisation (requester) can perform a read operation on a data agreement that it created. The read operation allows fetching a data agreement by ID. An example of a `read-data-agreement` DIDComm message is:
+An Auditor or a Data Subject can perform a read operation on a data agreement instance from data agreement instance (receipt) registry hosted by Data Controller (Data Source or Data Using Service). The read operation allows fetching a data agreement instance by it's identifier. An example of a `data-agreements/1.0/read-data-agreement` DIDComm message is given below.
 
 ```json
 {
@@ -462,7 +511,7 @@ An organisation (requester) can perform a read operation on a data agreement tha
 }
 ```
 
-An example of a `read-data-agreement-response` DIDComm message is:
+An example of a `read-data-agreement-response` DIDComm message is given below.
 
 
 ```json
@@ -481,51 +530,9 @@ An example of a `read-data-agreement-response` DIDComm message is:
 }
 ```
 
-#### 3.3.2.3	Update Data Agreement
-
-When an organisation performs an update operation on a data agreement, a copy of the data agreement is created and the updates are applied to the copy. The version number is incremented to represent the change.
-
-An example of an `update-data-agreement` DIDComm message is:
-
-```json
-{
-  "@id": "b589c166-e0f0-44eb-9b41-ee2c09b26bec",
-  "@type": "https://didcomm.org/data-agreements/1.0/update-data-agreement",
-  "from": "did:mydata:0:z6MkfiSdYhnLnS6jfwSf2yS2CiwwjZGmFUFL5QbyL2Xu8z2E",
-  "to": "did:mydata:z6MkpFAimMHJSwxWcm9rmt7XHjwkdLFNeZ5eRhxr6b4xK8rw",
-  "created_time": "1622649143",
-  "data_agreement_id": "<data_agreement_id>",
-  "data_agreement": {
-    ...
-  }
-}
-```
-
-On a successful update, an `update-data-agreement-response` message is triggered. This message returns the new data agreement ID. An example is:
-
-```json
-{
-  "@id": "b589c166-e0f0-44eb-9b41-ee2c09b26bec",
-  "@type": "https://didcomm.org/data-agreements/1.0/update-data-agreement-response",
-  "data_agreement_id": "<data_agreement_id>"
-}
-```
-
-#### 3.3.2.4	Delete Data Agreement
-
-When an organisation performs a delete operation on a data agreement, the delete operation doesn’t remove the data agreement from the persistence, instead it marks the data agreement as revoked.
-
-```json
-{
-  "@id": "b589c166-e0f0-44eb-9b41-ee2c09b26bec",
-  "@type": "https://didcomm.org/data-agreements/1.0/delete-data-agreement",
-  "data_agreement_id": "<data_agreement_id>"
-}
-```
-
 #### 3.3.2.5	Problem Report
 
-If a problem arises while handling the `read-data-agreement` message, ADA service will respond with a problem report message that conforms to ARIES RFC 0035 [9]. An example is given below:
+If a problem arises while handling the `read-data-agreement` message, ADA service will respond with a problem report message that conforms to Aries RFC 0035 [9]. An example is given below:
 
 ```json
 {
@@ -686,7 +693,7 @@ On receiving the `offer` message, the Data Subject (responder) is displayed the 
 
 #### 4.2.2.4	Problem Report
 
-Errors might occur in various places. All errors are modeled with problem-report messages. If a problem arises, the agent will respond with a problem report message that conforms to ARIES RFC 0035 [9]. An example is given below:
+Errors might occur in various places. All errors are modeled with problem-report messages. If a problem arises, the agent will respond with a problem report message that conforms to Aries RFC 0035 [9]. An example is given below:
 
 ```json
 {
@@ -792,7 +799,7 @@ ADA service (responder) will respond with a DIDComm message of type `verify-resp
 
 #### 5.3.2.3	Problem Report
 
-Errors might occur in various places. All errors are modeled with problem-report messages. If a problem arises, the agent will respond with a problem report message that conforms to ARIES RFC 0035 [9]. An example is given below:
+Errors might occur in various places. All errors are modeled with problem-report messages. If a problem arises, the agent will respond with a problem report message that conforms to Aries RFC 0035 [9]. An example is given below:
 
 ```json
 {
@@ -936,7 +943,7 @@ On receiving the `request-withdrawal` message, the organisation (responder) must
 
 #### 6.3.2.3	Problem Report
 
-Errors might occur in various places. All errors are modeled with problem-report messages. If a problem arises, the agent will respond with a problem report message that conforms to ARIES RFC 0035 [9]. An example is given below:
+Errors might occur in various places. All errors are modeled with problem-report messages. If a problem arises, the agent will respond with a problem report message that conforms to Aries RFC 0035 [9]. An example is given below:
 
 
 ```json
