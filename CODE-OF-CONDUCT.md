@@ -1,6 +1,6 @@
 # Contributor Code of Conduct
 
-As a lead developer, LCuubed AB (iGrant.io), guide us in our day-to-day interactions and decision-making. Our open source projects are no exception. Trust, respect, collaboration and transparency are core values we believe should live and breathe within our projects. Our community welcomes participants from around the world with different experiences, unique perspectives, and great ideas to share.
+As a lead developer, LCubed AB (iGrant.io) guides us in our day-to-day interactions and decision-making. Our open source projects are no exception. Trust, respect, collaboration and transparency are core values we believe should live and breathe within our projects. Our community welcomes participants from around the world with different experiences, unique perspectives, and great ideas to share.
 
 ## Our Pledge
 
