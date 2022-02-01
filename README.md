@@ -1,5 +1,5 @@
 <h1 align="center">
-    Data Agreements for enabling auditable personal data exchange
+    Automated Data Agreements - Making data transactions trustworthy, auditable and immutable
 </h1>
 
 <p align="center">
