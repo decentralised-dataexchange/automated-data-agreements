@@ -1,5 +1,5 @@
 <h1 align="center">
-    Data Agreements for enabling auditable personal data exchange
+    Automated Data Agreements - Making data transactions trustworthy, auditable and immutable
 </h1>
 
 <p align="center">
@@ -28,9 +28,9 @@ The key deliverables of the project are as given. The table summarises the relea
 
 | Milestone    	| Date             	| Deliverables                                                                                                                                	|
 |:--------------	|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------	|
-| Milestone 01 	| 15 May 2021      	| 1. [Functional specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/functional_specification.md)<br>2. [Interface specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/interface_specification.md) <br>3. [Envisioned interoperability (eSSIF-Lab gitlab)](https://gitlab.grnet.gr/essif-lab/infrastructure_2/igrantio/deliverables/-/blob/master/envisioned_interoperability_with_others.md)                            	|
+| Milestone 01 	| 15 May 2021      	| 1. [Functional specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/functional_specification.md)<br>2. [Interface specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/interface_specification.md) <br>3. [Envisioned interoperability (eSSIF-Lab git)](https://gitlab.grnet.gr/essif-lab/infrastructure_2/igrantio/deliverables/-/blob/master/envisioned_interoperability_with_others.md)                            	|
 | Milestone 02 	| 15 December 2021 	| 1. [Demo](https://youtu.be/Mq4oXEaOTwg)<br>2. [Data Agreement specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/data-agreement-specification.md)<br>3. [Data Agreement DID method specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/did-spec.md)<br>4. [Data Agreement DIDComm protocol specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/didcomm-protocol-spec.md)<br>5. [Data Agreement APIs Rel. 2.0.0](https://app.swaggerhub.com/apis-docs/iGrant.io/ADA/2.0.0)	|
-| Milestone 03 	| 15 January 2022 	| 1. Feasibility report                                                                                                    	|
+| Milestone 03 	| 15 January 2022 	| 1. [Feasibility report (eSSIF-Lab git) ](https://gitlab.grnet.gr/essif-lab/infrastructure_2/igrantio/deliverables/-/blob/master/M9_feasibility_report.md)                                                                                                    	|
 
 ## Contributing
 
