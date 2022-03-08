@@ -1,75 +1,78 @@
 {
-    "@context": [
-      "https://raw.githubusercontent.com/decentralised-dataexchange/automated-data-agreements/main/interface-specs/data-agreement-schema/v1/data-agreement-schema-context.jsonld",
-      "https://w3id.org/security/v2"
-    ],
-    "id": "d7216cb1-aedb-471e-96f7-7fef51dedb76",
-    "version": 1,
-    "template_id": "91be609a-4acd-468f-b37a-0f379893b65c",
-    "template_version": 1,
-    "data_controller_name": "Happy Shopping AB",
-    "data_controller_url": "www.happyshopping.com",
-    "data_policy": {
-      "policy_URL": "https://happyshoping.com/privacy-policy/",
-      "jurisdiction": "Sweden",
-      "industry_sector": "Retail",
-      "data_retention_period": 30,
-      "geographic_restriction": "Europe",
-      "storage_location": "Europe"
+  "@context": [
+    "https://raw.githubusercontent.com/decentralised-dataexchange/automated-data-agreements/main/interface-specs/data-agreement-schema/v1/data-agreement-schema-context.jsonld",
+    "https://w3id.org/security/v2"
+  ],
+  "id": "d7216cb1-aedb-471e-96f7-7fef51dedb76",
+  "version": 1,
+  "template_id": "91be609a-4acd-468f-b37a-0f379893b65c",
+  "template_version": 1,
+  "data_controller_name": "Happy Shopping AB",
+  "data_controller_url": "www.happyshopping.com",
+  "data_policy": {
+    "policy_URL": "https://happyshoping.com/privacy-policy/",
+    "jurisdiction": "Sweden",
+    "industry_sector": "Retail",
+    "data_retention_period": 30,
+    "geographic_restriction": "Europe",
+    "storage_location": "Europe"
+  },
+  "purpose": "Customized shopping experience",
+  "purpose_description": "Collecting user data for offering custom tailored shopping experience",
+  "lawful_basis": "consent",
+  "method_of_use": "data-using-service",
+  "personal_data": [
+    {
+      "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
+      "attribute_name": "Name",
+      "attribute_sensitive": true,
+      "attribute_category": "Name"
     },
-    "purpose": "Customized shopping experience",
-    "purpose_description": "Collecting user data for offering custom tailored shopping experience",
-    "lawful_basis": "consent",
-    "method_of_use": "data-using-service",
-    "personal_data": [
-      {
-        "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-        "attribute_name": "Name",
-        "attribute_sensitive": true,
-        "attribute_category": "Name"
-      },
-      {
-        "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
-        "attribute_name": "Age",
-        "attribute_sensitive": true,
-        "attribute_category": "Age"
-      }
-    ],
-    "dpia": {
-      "dpia_date": "2021-05-08T08:41:59+0000",
-      "dpia_summary_url": "https://org.com/dpia_results.html"
+    {
+      "attribute_id": "f216cb1-aedb-571e-46f7-2fef51dedb54",
+      "attribute_name": "Age",
+      "attribute_sensitive": true,
+      "attribute_category": "Age"
+    }
+  ],
+  "dpia": {
+    "dpia_date": "2021-05-08T08:41:59+0000",
+    "dpia_summary_url": "https://org.com/dpia_results.html"
+  },
+  "event": [
+    {
+      "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
+      "time-stamp": "2021-05-08T08:41:59+0000",
+      "did": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
+      "state": "offer"
     },
-    "event": [
-      {
-        "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
-        "time-stamp": "2021-05-08T08:41:59+0000",
-        "did": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
-        "state": "offer"
-      },
-      {
-        "id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP#2",
-        "time-stamp": "2021-05-08T08:41:59+0000",
-        "did": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
-        "state": "reject"
-      }
-    ],
-    "proof": [
-      {
-        "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
-        "type": "Ed25519Signature2020",
-        "created": "2021-05-08T08:41:59+0000",
-        "verificationMethod": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
-        "proofPurpose": "contractAgreement",
-        "proofValue": "z6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwLz6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwL"
-      },
-      {
-        "id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP#2",
-        "type": "Ed25519Signature2020",
-        "created": "2021-05-08T08:41:59+0000",
-        "verificationMethod": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
-        "proofPurpose": "contractAgreement",
-        "proofValue": "z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZPz6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
-      }
-    ],
-    "principle-did": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
+    {
+      "id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP#2",
+      "time-stamp": "2021-05-08T08:41:59+0000",
+      "did": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
+      "state": "reject"
+    }
+  ],
+  "proof": [
+    {
+      "id": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp#1",
+      "type": "Ed25519Signature2020",
+      "created": "2021-05-08T08:41:59+0000",
+      "verificationMethod": "did:mydata:z6MkiTBz1ymuepAQ4HEHYSF1H8quG5GLVVQR3djdX3mDooWp",
+      "proofPurpose": "contractAgreement",
+      "proofValue": "z6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwLz6MkwW6aqMnjgrhJXFUko3NnZPGzVpkNzhYK7yEhnsibmLwL"
+    },
+    {
+      "id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP#2",
+      "type": "Ed25519Signature2020",
+      "created": "2021-05-08T08:41:59+0000",
+      "verificationMethod": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
+      "proofPurpose": "contractAgreement",
+      "proofValue": "z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZPz6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
+    }
+  ],
+  "data_subject_did": {
+    "@id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
+    "@type": "mydata_did:2the-didmydata-format"
   }
+}
