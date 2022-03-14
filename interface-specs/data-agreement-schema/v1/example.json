@@ -71,8 +71,5 @@
       "proofValue": "z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZPz6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
     }
   ],
-  "data_subject_did": {
-    "@id": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP",
-    "@type": "mydata_did:2the-didmydata-format"
-  }
+  "data_subject_did": "did:mydata:z6MkGskxnGjLrk3gKS2mesDpuwRBokeWcmrgHxUXfnncxiZP"
 }
