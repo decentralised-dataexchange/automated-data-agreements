@@ -24,7 +24,9 @@ This ADA project is an open source conrtibution lead by iGrant.io (Sweden), Lina
 
 ## Release Status
 
-The key deliverables of the project are as given. The table summarises the release status of all the deliverables.
+The project is released for implementation. 
+
+The table summarises the release status of all the deliverables during the NGI-eSSIF Lab project which originally sponsored this work.
 
 | Milestone    	| Date             	| Deliverables                                                                                                                                	|
 |:--------------	|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------	|
