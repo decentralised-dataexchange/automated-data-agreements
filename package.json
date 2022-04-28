@@ -1,0 +1,24 @@
+{
+  "name": "automated-data-agreements",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">     Automated Data Agreements - Making data transactions trustworthy, auditable and immutable </h1>",
+  "main": "index.js",
+  "scripts": {
+    "edit": "node -e \"require('spec-up')()\"",
+    "render": "node -e \"require('spec-up')({ nowatch: true })\"",
+    "dev": "node -e \"require('spec-up')({ dev: true })\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decentralised-dataexchange/automated-data-agreements.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/decentralised-dataexchange/automated-data-agreements/issues"
+  },
+  "homepage": "https://github.com/decentralised-dataexchange/automated-data-agreements#readme",
+  "dependencies": {
+    "spec-up": "^0.10.3"
+  }
+}
