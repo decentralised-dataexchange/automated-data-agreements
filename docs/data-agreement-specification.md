@@ -1,59 +1,32 @@
-# Data Agreement Specification
+# Data Agreement (DA) Specification
+
+**Specification Status:** version 2.1.0 
+
+Released and implemented.
+
+**Latest Draft:** [Avaialble here](https://da.igrant.io)
+
+**Editors:**
+- Mr. Jan Linquist (Linaltec, Sweden)  
+- Ms. Lotta Lundin (iGrant.io, Sweden)  
+- Mr. Lal Chandran (iGrant.io, Sweden)
+
+**Contributors and Reviwers:**
+
+- Mr. George Padayatti (iGrant.io, Sweden)  
+- Dr. David Goodman (iGrant.io, Sweden)  
+- Mr. Pekka Lampelto (PrivacyAnt, Finland)
+
+**Participate:**
+
+- [GitHub repo](https://github.com/decentralised-dataexchange/automated-data-agreements)
+- [File a bug](https://github.com/decentralised-dataexchange/automated-data-agreements/issues)
 
 ## Abstract
 
 A Data Agreement records the conditions for an organization to process personal data in accordance with privacy regulation (e.g. GDPR) captured in a signed receipt given to the individual. To automate creation of the record and increase the trust assurance a Data Protection Impact Assessment may be used to populate the record. 
 
-## Status of This Document
-
-Version 2.1
-
-## Authors
-Mr. Jan Linquist (Linaltec, Sweden)  
-Ms. Lotta Lundin (iGrant.io, Sweden)  
-Mr. Lal Chandran (iGrant.io, Sweden)
-
-## Contributors and Reviwers
-Mr. George Padayatti (iGrant.io, Sweden)  
-Dr. David Goodman (iGrant.io, Sweden)  
-Mr. Pekka Lampelto (PrivacyAnt, Finland)
-
-## Table of contents
-
-- [Data Agreement Specification](#data-agreement-specification)
-  - [Abstract](#abstract)
-  - [Status of This Document](#status-of-this-document)
-  - [Authors](#authors)
-  - [Contributors and Reviwers](#contributors-and-reviwers)
-  - [Table of contents](#table-of-contents)
-- [1.0 Introduction](#10-introduction)
-  - [1.1. Abbreviations](#11-abbreviations)
-  - [1.2. Data Agreement lifecycle actors](#12-data-agreement-lifecycle-actors)
-  - [1.3. Data exchange agreements landscape](#13-data-exchange-agreements-landscape)
-    - [1.3.1. Agreement between an individual and an organisation](#131-agreement-between-an-individual-and-an-organisation)
-    - [1.3.2. Agreement between two organisations](#132-agreement-between-two-organisations)
-  - [1.4.	Data Protection Impact Assessment (DPIA)](#14data-protection-impact-assessment-dpia)
-- [2. Data Agreement functional overview](#2-data-agreement-functional-overview)
-  - [2.1. Data Agreement Lifecycle](#21-data-agreement-lifecycle)
-  - [2.2. Use Cases](#22-use-cases)
-  - [2.3. Sequence diagrams](#23-sequence-diagrams)
-    - [2.3.1. Definition and Preparation phases](#231-definition-and-preparation-phases)
-    - [2.3.2. Negotiation/Capture phase](#232-negotiationcapture-phase)
-      - [2.3.2.1. Issuing credentials (Data Source)](#2321-issuing-credentials-data-source)
-      - [2.3.2.2. Verifying credential (Data Using Service)](#2322-verifying-credential-data-using-service)
-      - [2.3.2.3. Termination](#2323-termination)
-    - [2.3.4. Proof](#234-proof)
-- [3. References](#3-references)
-- [Appendix A: Data Agreement schema](#appendix-a-data-agreement-schema)
-- [Appendix B: DPIA (Risk Assessment)](#appendix-b-dpia-risk-assessment)
-  - [Data Agreement mapping from DPIA](#data-agreement-mapping-from-dpia)
-- [](#)
-- [Appendix C: Standards Input](#appendix-c-standards-input)
-  - [Kantara Schema Reference](#kantara-schema-reference)
-  - [ISO Standards](#iso-standards)
-
-
-# 1.0 Introduction
+# Introduction
 
 This specification describes how a Data Agreement between an organisation and individual is managed in order to capture, in a receipt, the conditions of processing of personal data. The receipt acts as evidence and demonstrates a higher level of accountability and is based on standard schemas. The accountability is further enhanced by directly integrating the Data Agreement with the input from a risk assessment, e.g. Data Protection Impact Assessment.
 
@@ -69,7 +42,7 @@ Chapter 3 provides a list of references.
 
 The Appendix provides additional details that includes Data Agreement Schema (Appendix A), how a DPIA report maps to a Data Agreement (Appendix B) and details on the various input standards used in the proposed Data Agreement Schema including the Kantara Consent Notice, ISO standards etc (Appendix C). 
 
-## 1.1. Abbreviations
+## Abbreviations
 
 | Abbr | Expanded form                                     |
 | :--- | :------------------------------------------------ |
@@ -92,7 +65,7 @@ The Appendix provides additional details that includes Data Agreement Schema (Ap
 | VC   | Verifiable credentials                            |
 | W3C  | World wide web consortium                         |
 
-## 1.2. Data Agreement lifecycle actors
+## Data Agreement lifecycle actors
 
 These actors are involved in the Data Agreement lifecycle.
 
@@ -110,7 +83,7 @@ In addition to these actors to better understand the interworking, these nodes a
 *   **ADA Service** represents the microservices that can be plugged into any service provider wishing to adopt ADA services.
 
 
-## 1.3. Data exchange agreements landscape 
+## Data exchange agreements landscape 
 
 This chapter introduces various agreements and relationships that exist between organisations and individuals, depending on their roles in the personal data usage scenarios in a personal data economy. The various agreements involved can be classified into two broad categories:.
 
@@ -119,13 +92,13 @@ This chapter introduces various agreements and relationships that exist between 
 
 This specification focuses on agreement between an individual and an organisation; the agreement between two organisations is not within the scope of this specification and is mentioned here for the sake of completion. 
 
-### 1.3.1. Agreement between an individual and an organisation
+### Agreement between an individual and an organisation
 
 This is an agreement between organisations and individuals in the use of personal data. We refer to this as the “Data Agreement” which can have any of the legal basis that is outlined as per data protection law or regulation, such as the GDPR. The agreement with individuals could be with a  Data Source (issuer) or a Data Using Service. 
 
 The focus of this specification is on the Data Agreement, how it is defined, prepared by an organisation wishing to use personal data, how it is negotiated with an individual and finally how an auditor is able to audit the data agreement involved in a data transaction. 
 
-### 1.3.2. Agreement between two organisations 
+### Agreement between two organisations 
 
 There can be two forms of agreements between two organisations. 
 
@@ -141,7 +114,7 @@ Here, there is a vertical relationship between an organisation A as a data contr
 
 As depicted in the diagram above, the data agreement with the individual is bound to the top of the hierarchy, i.e. the data controller or organisation.
 
-## 1.4.	Data Protection Impact Assessment (DPIA)
+## Data Protection Impact Assessment (DPIA)
 
 A Data Protection Impact Assessment (DPIA) is a structured process where  an organisation can identify and minimise the data protection risks involved in the use of personal data. It ensures that an organisation is compliant to data regulations, such as the GDPR. 
 
@@ -151,7 +124,7 @@ Some EU Member State data protection authorities, such as the Finnish data prote
 
 Appendix B outlines how a DPIA report can map to a Data Agreement. By integrating the DPIA into the lifecycle of the Data Agreement an organisation can demonstrate how the privacy requirements of accountability, transparency, data sharing and retention procedures are fulfilled. If the DPIA report is part of an online tool it is possible to continuously monitor an organisation's data flows and ensure any internal changes are reflected in the Data Agreement.
 
-# 2. Data Agreement functional overview
+# Data Agreement functional overview
 
 This section provides a functional overview of the Data Agreement and is broken down into:
 
@@ -159,7 +132,7 @@ This section provides a functional overview of the Data Agreement and is broken 
 * Applicable use cases
 *   Overview of how the actors interwork
 
-## 2.1. Data Agreement Lifecycle
+## Data Agreement Lifecycle
 
 The Data Agreement Lifecycle has 4 main phases as described below:
 
@@ -248,7 +221,7 @@ How each actor is involved in the different phases can be found in this table.
 </table>
 
 
-## 2.2. Use Cases
+## Use Cases
 
 These are the use cases covered by this specification. A mapping between the use cases and lifecycle phase can help map to the involved actors described in the previous section.
 
@@ -315,10 +288,10 @@ These are the use cases covered by this specification. A mapping between the use
 
 
 
-## 2.3. Sequence diagrams
+## Sequence diagrams
 
 
-### 2.3.1. Definition and Preparation phases
+### Definition and Preparation phases
 
 “Definition” and “Preparation” phases of the Data Agreements lifecycle have the following functions which can be seen in the sequence diagram.
 
@@ -328,11 +301,11 @@ These are the use cases covered by this specification. A mapping between the use
 
 ![Data Agreement Definition and Preparation](./docs/sequences/data-agreement-preparation.svg)
 
-### 2.3.2. Negotiation/Capture phase
+### Negotiation/Capture phase
 
 In this phase, an Individual can Sign and Revoke (Opt-out) a data agreement which results in a data agreement receipt. The signing can be performed using a unique identifier during the creation of a verifiable credential or when performing proof presentation for example when showing proof of identity. Typically the proof may be expected to be the first step to connect with an organization.
 
-#### 2.3.2.1. Issuing credentials (Data Source)
+#### Issuing credentials (Data Source)
 
 The below sequence diagram shows how the steps of issuing a credential can be used to present and agree on the Data Agreement. The Data Agreement will be presented as an offer and once accepted a receipt is created. The sequence of actions are:
 
@@ -345,7 +318,7 @@ The following diagram is from [Aries 0036 Issue Credential](https://github.com/h
 
 ![Aries issuing Data Agreement flow](./docs/sequences/aries-66-credential.png)
 
-#### 2.3.2.2. Verifying credential (Data Using Service)
+#### Verifying credential (Data Using Service)
 
 The below sequence diagram shows the Data Agreement flows for a verifier or Data Using Service, when requesting data to be shared by the individual. The sequence of actions are:
 
@@ -358,7 +331,7 @@ The following diagram is taken from [Aries 0037 Presentation Proof](https://gith
 
 ![Aries proof Data Agreement flow](./docs/sequences/aries-67-proof.png)
 
-#### 2.3.2.3. Termination
+#### Termination
 
 The Data Agreement may be terminated in a number of ways. Here are a few of the scenarios:
 
@@ -373,7 +346,7 @@ The following diagram is the case for individual requests to terminate scenario 
 
 ![Data Agreement withdrawal](./docs/sequences/data-agreement-withdrawal.svg)
 
-### 2.3.4. Proof
+### Proof
 
 In accordance with GDPR Art. 30, Records of processing activities, a Data Controller (Data Source and DUS) shall record processing activities under its responsibilities. The records shall be available to the individual to inspect in the form of a receipt and provide means of an audit. An audit can be initiated due to the following reasons:
 
@@ -386,7 +359,7 @@ The following sequence is the approach taken when the auditor reviews implementa
 
 ![Data Agreement audit](./docs/sequences/data-agreement-audit.svg)
 
-# 3. References
+# References
 
 [1]  [Data Agreement Interface Specification](https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/interface_specification.md)
 

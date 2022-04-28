@@ -47,78 +47,30 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
                     </header>
       
                     <article id="content">
-                      <h1 id="data-agreement-specification"><a class="toc-anchor" href="#data-agreement-specification" >§</a> Data Agreement Specification</h1>
+                      <h1 id="data-agreement-da-specification"><a class="toc-anchor" href="#data-agreement-da-specification" >§</a> Data Agreement (DA) Specification</h1>
+<p><strong>Specification Status:</strong> version 2.1.0</p>
+<p>Released and implemented.</p>
+<p><strong>Latest Draft:</strong> <a path-0="da.igrant.io"href="https://da.igrant.io" >Avaialble here</a></p>
+<p><strong>Editors:</strong></p>
+<ul>
+<li>Mr. Jan Linquist (Linaltec, Sweden)</li>
+<li>Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)</li>
+<li>Mr. Lal Chandran (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)</li>
+</ul>
+<p><strong>Contributors and Reviwers:</strong></p>
+<ul>
+<li>Mr. George Padayatti (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)</li>
+<li>Dr. David Goodman (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)</li>
+<li>Mr. Pekka Lampelto (PrivacyAnt, Finland)</li>
+</ul>
+<p><strong>Participate:</strong></p>
+<ul>
+<li><a path-0="github.com"path-1="decentralised-dataexchange"path-2="automated-data-agreements"href="https://github.com/decentralised-dataexchange/automated-data-agreements" >GitHub repo</a></li>
+<li><a path-0="github.com"path-1="decentralised-dataexchange"path-2="automated-data-agreements"path-3="issues"href="https://github.com/decentralised-dataexchange/automated-data-agreements/issues" >File a bug</a></li>
+</ul>
 <h2 id="abstract"><a class="toc-anchor" href="#abstract" >§</a> Abstract</h2>
 <p>A Data Agreement records the conditions for an organization to process personal data in accordance with privacy regulation (e.g. GDPR) captured in a signed receipt given to the individual. To automate creation of the record and increase the trust assurance a Data Protection Impact Assessment may be used to populate the record.</p>
-<h2 id="status-of-this-document"><a class="toc-anchor" href="#status-of-this-document" >§</a> Status of This Document</h2>
-<p>Version 2.1</p>
-<h2 id="authors"><a class="toc-anchor" href="#authors" >§</a> Authors</h2>
-<p>Mr. Jan Linquist (Linaltec, Sweden)<br>
-Ms. Lotta Lundin (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)<br>
-Mr. Lal Chandran (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)</p>
-<h2 id="contributors-and-reviwers"><a class="toc-anchor" href="#contributors-and-reviwers" >§</a> Contributors and Reviwers</h2>
-<p>Mr. George Padayatti (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)<br>
-Dr. David Goodman (<a path-0="iGrant.io"href="http://iGrant.io" ><span>iGrant.io</span></a>, Sweden)<br>
-Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
-<h2 id="table-of-contents"><a class="toc-anchor" href="#table-of-contents" >§</a> Table of contents</h2>
-<ul>
-<li><a href="#data-agreement-specification" >Data Agreement Specification</a>
-<ul>
-<li><a href="#abstract" >Abstract</a></li>
-<li><a href="#status-of-this-document" >Status of This Document</a></li>
-<li><a href="#authors" >Authors</a></li>
-<li><a href="#contributors-and-reviwers" >Contributors and Reviwers</a></li>
-<li><a href="#table-of-contents" >Table of contents</a></li>
-</ul>
-</li>
-<li><a href="#10-introduction" >1.0 Introduction</a>
-<ul>
-<li><a href="#11-abbreviations" >1.1. Abbreviations</a></li>
-<li><a href="#12-data-agreement-lifecycle-actors" >1.2. Data Agreement lifecycle actors</a></li>
-<li><a href="#13-data-exchange-agreements-landscape" >1.3. Data exchange agreements landscape</a>
-<ul>
-<li><a href="#131-agreement-between-an-individual-and-an-organisation" >1.3.1. Agreement between an individual and an organisation</a></li>
-<li><a href="#132-agreement-between-two-organisations" >1.3.2. Agreement between two organisations</a></li>
-</ul>
-</li>
-<li><a href="#14data-protection-impact-assessment-dpia" >1.4.	Data Protection Impact Assessment (DPIA)</a></li>
-</ul>
-</li>
-<li><a href="#2-data-agreement-functional-overview" >2. Data Agreement functional overview</a>
-<ul>
-<li><a href="#21-data-agreement-lifecycle" >2.1. Data Agreement Lifecycle</a></li>
-<li><a href="#22-use-cases" >2.2. Use Cases</a></li>
-<li><a href="#23-sequence-diagrams" >2.3. Sequence diagrams</a>
-<ul>
-<li><a href="#231-definition-and-preparation-phases" >2.3.1. Definition and Preparation phases</a></li>
-<li><a href="#232-negotiationcapture-phase" >2.3.2. Negotiation/Capture phase</a>
-<ul>
-<li><a href="#2321-issuing-credentials-data-source" >2.3.2.1. Issuing credentials (Data Source)</a></li>
-<li><a href="#2322-verifying-credential-data-using-service" >2.3.2.2. Verifying credential (Data Using Service)</a></li>
-<li><a href="#2323-termination" >2.3.2.3. Termination</a></li>
-</ul>
-</li>
-<li><a href="#234-proof" >2.3.4. Proof</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#3-references" >3. References</a></li>
-<li><a href="#appendix-a-data-agreement-schema" >Appendix A: Data Agreement schema</a></li>
-<li><a href="#appendix-b-dpia-risk-assessment" >Appendix B: DPIA (Risk Assessment)</a>
-<ul>
-<li><a href="#data-agreement-mapping-from-dpia" >Data Agreement mapping from DPIA</a></li>
-</ul>
-</li>
-<li><a href="#" ></a></li>
-<li><a href="#appendix-c-standards-input" >Appendix C: Standards Input</a>
-<ul>
-<li><a href="#kantara-schema-reference" >Kantara Schema Reference</a></li>
-<li><a href="#iso-standards" >ISO Standards</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="10-introduction"><a class="toc-anchor" href="#10-introduction" >§</a> 1.0 Introduction</h1>
+<h1 id="introduction"><a class="toc-anchor" href="#introduction" >§</a> Introduction</h1>
 <p>This specification describes how a Data Agreement between an organisation and individual is managed in order to capture, in a receipt, the conditions of processing of personal data. The receipt acts as evidence and demonstrates a higher level of accountability and is based on standard schemas. The accountability is further enhanced by directly integrating the Data Agreement with the input from a risk assessment, e.g. Data Protection Impact Assessment.</p>
 <p>In order to create the Data Agreement, and the resulting receipt as proof, a number of steps are required from different actors. This document describes these steps involved and is described as part of a Data Agreement lifecycle.</p>
 <p>This specification is published together with an Interface Specification [1] and a DID Method Specification [2]. For details of the DID Method and Interface Specification please refer to these reference documents.The communication between the actors will be based on DIDComm.</p>
@@ -126,7 +78,7 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 <p>Chapter 2 provides a functional overview of Data Agreements. It also describes the interworking of various actors in the Data Agreement lifecycle.</p>
 <p>Chapter 3 provides a list of references.</p>
 <p>The Appendix provides additional details that includes Data Agreement Schema (Appendix A), how a DPIA report maps to a Data Agreement (Appendix B) and details on the various input standards used in the proposed Data Agreement Schema including the Kantara Consent Notice, ISO standards etc (Appendix C).</p>
-<h2 id="11-abbreviations"><a class="toc-anchor" href="#11-abbreviations" >§</a> 1.1. Abbreviations</h2>
+<h2 id="abbreviations"><a class="toc-anchor" href="#abbreviations" >§</a> Abbreviations</h2>
 <table>
 <thead>
 <tr>
@@ -209,7 +161,7 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 </tr>
 </tbody>
 </table>
-<h2 id="12-data-agreement-lifecycle-actors"><a class="toc-anchor" href="#12-data-agreement-lifecycle-actors" >§</a> 1.2. Data Agreement lifecycle actors</h2>
+<h2 id="data-agreement-lifecycle-actors"><a class="toc-anchor" href="#data-agreement-lifecycle-actors" >§</a> Data Agreement lifecycle actors</h2>
 <p>These actors are involved in the Data Agreement lifecycle.</p>
 <ul>
 <li>a <strong>Data Source</strong>, the organisation collecting private data, (typically a data controller).  [SSI: Issuer]</li>
@@ -223,17 +175,17 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 <li><strong>Assessment Platform</strong> or <strong>DPIA Tool</strong> is used by Assessor to create reports and populate Data Agreements.</li>
 <li><strong>ADA Service</strong> represents the microservices that can be plugged into any service provider wishing to adopt ADA services.</li>
 </ul>
-<h2 id="13-data-exchange-agreements-landscape"><a class="toc-anchor" href="#13-data-exchange-agreements-landscape" >§</a> 1.3. Data exchange agreements landscape</h2>
+<h2 id="data-exchange-agreements-landscape"><a class="toc-anchor" href="#data-exchange-agreements-landscape" >§</a> Data exchange agreements landscape</h2>
 <p>This chapter introduces various agreements and relationships that exist between organisations and individuals, depending on their roles in the personal data usage scenarios in a personal data economy. The various agreements involved can be classified into two broad categories:.</p>
 <ol>
 <li>Agreement between an individual and an organisation</li>
 <li>Agreement between two organisations</li>
 </ol>
 <p>This specification focuses on agreement between an individual and an organisation; the agreement between two organisations is not within the scope of this specification and is mentioned here for the sake of completion.</p>
-<h3 id="131-agreement-between-an-individual-and-an-organisation"><a class="toc-anchor" href="#131-agreement-between-an-individual-and-an-organisation" >§</a> 1.3.1. Agreement between an individual and an organisation</h3>
+<h3 id="agreement-between-an-individual-and-an-organisation"><a class="toc-anchor" href="#agreement-between-an-individual-and-an-organisation" >§</a> Agreement between an individual and an organisation</h3>
 <p>This is an agreement between organisations and individuals in the use of personal data. We refer to this as the “Data Agreement” which can have any of the legal basis that is outlined as per data protection law or regulation, such as the GDPR. The agreement with individuals could be with a  Data Source (issuer) or a Data Using Service.</p>
 <p>The focus of this specification is on the Data Agreement, how it is defined, prepared by an organisation wishing to use personal data, how it is negotiated with an individual and finally how an auditor is able to audit the data agreement involved in a data transaction.</p>
-<h3 id="132-agreement-between-two-organisations"><a class="toc-anchor" href="#132-agreement-between-two-organisations" >§</a> 1.3.2. Agreement between two organisations</h3>
+<h3 id="agreement-between-two-organisations"><a class="toc-anchor" href="#agreement-between-two-organisations" >§</a> Agreement between two organisations</h3>
 <p>There can be two forms of agreements between two organisations.</p>
 <p>The first form of agreement is between organisations where one organisation acts as a Data Source and the other as Data Using Service. In this case, both organisations share the role as data controller and are responsible for managing their compliance requirements. They may have made their own privacy risk assessment, documented in a data protection impact assessment (DPIA) report, and concluded whether any additional mitigation effort was required. This agreement is referred to as <strong>Data Disclosure Agreement</strong>, which, though not yet standardised, captures the agreement between two organisations on how data is shared and what obligation each party has. This can be realised as a contract or in terms of use. The individual (data subject) is engaged with both organisations. For each organisation, there exists a <strong>Data Agreement</strong> with an associated privacy policy that explains the purpose of processing personal data, what personal data is collected, data subject rights, etc.</p>
 <p><img src="./docs/images/data-agreements-ds-dus-2.png" alt=""></p>
@@ -241,19 +193,19 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 <p><img src="./docs/images/data-agreements-org-supplier.png" alt="alt_text"></p>
 <p>Here, there is a vertical relationship between an organisation A as a data controller and their suppliers as  data processors or sub-processors. For a higher level of accountability between these organisations,  a <strong>Data Processing Agreement</strong> is set up, which lays out what routines are required to be in place: for example, data processor’s obligations  in case of data breaches or how rights of the data subject, such as access rights, are supported, among other policies and routines. An auditor should also be able to inspect an organisation, and use the data processing agreement as reference during the inspection.</p>
 <p>As depicted in the diagram above, the data agreement with the individual is bound to the top of the hierarchy, i.e. the data controller or organisation.</p>
-<h2 id="14data-protection-impact-assessment-dpia"><a class="toc-anchor" href="#14data-protection-impact-assessment-dpia" >§</a> 1.4.	Data Protection Impact Assessment (DPIA)</h2>
+<h2 id="data-protection-impact-assessment-dpia"><a class="toc-anchor" href="#data-protection-impact-assessment-dpia" >§</a> Data Protection Impact Assessment (DPIA)</h2>
 <p>A Data Protection Impact Assessment (DPIA) is a structured process where  an organisation can identify and minimise the data protection risks involved in the use of personal data. It ensures that an organisation is compliant to data regulations, such as the GDPR.</p>
 <p>Article 35 of the GDPR requires organisations to conduct DPIAs, especially when the processing is likely to result in high risk to the rights and freedoms of natural persons in the case of extensive use of new technologies and when sensitive personal data is being processed (e.g. health-related data). Organisations can also conduct DPIAs voluntarily, even if the processing does not meet the requirement criteria set out in the GDPR.</p>
 <p>Some EU Member State data protection authorities, such as the Finnish data protection ombudsman, have recommended using dataflow maps when conducting DPIAs. Dataflow maps visualize the flows of personal data across systems, organisations, and jurisdictions, and provide a good overview of the nature and scope of the processing and identify risks.</p>
 <p>Appendix B outlines how a DPIA report can map to a Data Agreement. By integrating the DPIA into the lifecycle of the Data Agreement an organisation can demonstrate how the privacy requirements of accountability, transparency, data sharing and retention procedures are fulfilled. If the DPIA report is part of an online tool it is possible to continuously monitor an organisation’s data flows and ensure any internal changes are reflected in the Data Agreement.</p>
-<h1 id="2-data-agreement-functional-overview"><a class="toc-anchor" href="#2-data-agreement-functional-overview" >§</a> 2. Data Agreement functional overview</h1>
+<h1 id="data-agreement-functional-overview"><a class="toc-anchor" href="#data-agreement-functional-overview" >§</a> Data Agreement functional overview</h1>
 <p>This section provides a functional overview of the Data Agreement and is broken down into:</p>
 <ul>
 <li>Data Agreement lifecycle</li>
 <li>Applicable use cases</li>
 <li>Overview of how the actors interwork</li>
 </ul>
-<h2 id="21-data-agreement-lifecycle"><a class="toc-anchor" href="#21-data-agreement-lifecycle" >§</a> 2.1. Data Agreement Lifecycle</h2>
+<h2 id="data-agreement-lifecycle"><a class="toc-anchor" href="#data-agreement-lifecycle" >§</a> Data Agreement Lifecycle</h2>
 <p>The Data Agreement Lifecycle has 4 main phases as described below:</p>
 <p><img src="./docs/images/data-agreement-workflow.png" alt="Data Agreement workflow"></p>
 <ol>
@@ -337,7 +289,7 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
    </td>
   </tr>
 </table>
-<h2 id="22-use-cases"><a class="toc-anchor" href="#22-use-cases" >§</a> 2.2. Use Cases</h2>
+<h2 id="use-cases"><a class="toc-anchor" href="#use-cases" >§</a> Use Cases</h2>
 <p>These are the use cases covered by this specification. A mapping between the use cases and lifecycle phase can help map to the involved actors described in the previous section.</p>
 <table>
   <tr>
@@ -399,8 +351,8 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
    </td>
   </tr>
 </table>
-<h2 id="23-sequence-diagrams"><a class="toc-anchor" href="#23-sequence-diagrams" >§</a> 2.3. Sequence diagrams</h2>
-<h3 id="231-definition-and-preparation-phases"><a class="toc-anchor" href="#231-definition-and-preparation-phases" >§</a> 2.3.1. Definition and Preparation phases</h3>
+<h2 id="sequence-diagrams"><a class="toc-anchor" href="#sequence-diagrams" >§</a> Sequence diagrams</h2>
+<h3 id="definition-and-preparation-phases"><a class="toc-anchor" href="#definition-and-preparation-phases" >§</a> Definition and Preparation phases</h3>
 <p>“Definition” and “Preparation” phases of the Data Agreements lifecycle have the following functions which can be seen in the sequence diagram.</p>
 <ol>
 <li>
@@ -411,9 +363,9 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 </li>
 </ol>
 <p><img src="./docs/sequences/data-agreement-preparation.svg" alt="Data Agreement Definition and Preparation"></p>
-<h3 id="232-negotiationcapture-phase"><a class="toc-anchor" href="#232-negotiationcapture-phase" >§</a> 2.3.2. Negotiation/Capture phase</h3>
+<h3 id="negotiationcapture-phase"><a class="toc-anchor" href="#negotiationcapture-phase" >§</a> Negotiation/Capture phase</h3>
 <p>In this phase, an Individual can Sign and Revoke (Opt-out) a data agreement which results in a data agreement receipt. The signing can be performed using a unique identifier during the creation of a verifiable credential or when performing proof presentation for example when showing proof of identity. Typically the proof may be expected to be the first step to connect with an organization.</p>
-<h4 id="2321-issuing-credentials-data-source"><a class="toc-anchor" href="#2321-issuing-credentials-data-source" >§</a> 2.3.2.1. Issuing credentials (Data Source)</h4>
+<h4 id="issuing-credentials-data-source"><a class="toc-anchor" href="#issuing-credentials-data-source" >§</a> Issuing credentials (Data Source)</h4>
 <p>The below sequence diagram shows how the steps of issuing a credential can be used to present and agree on the Data Agreement. The Data Agreement will be presented as an offer and once accepted a receipt is created. The sequence of actions are:</p>
 <ol>
 <li>A Data Source offers to issue data and adds a reference to a signed Data Agreement.</li>
@@ -422,7 +374,7 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 <p><img src="./docs/sequences/data-agreement-negotiation-source.svg" alt="SSI Data Agreement and issuing credentials"></p>
 <p>The following diagram is from <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="tree"path-4="master"path-5="features"path-6="0036-issue-credential"href="https://github.com/hyperledger/aries-rfcs/tree/master/features/0036-issue-credential" >Aries 0036 Issue Credential</a> and the text in red represents how a Data Agreement is processed as part of a credentia offer when it is accepted or rejected.</p>
 <p><img src="./docs/sequences/aries-66-credential.png" alt="Aries issuing Data Agreement flow"></p>
-<h4 id="2322-verifying-credential-data-using-service"><a class="toc-anchor" href="#2322-verifying-credential-data-using-service" >§</a> 2.3.2.2. Verifying credential (Data Using Service)</h4>
+<h4 id="verifying-credential-data-using-service"><a class="toc-anchor" href="#verifying-credential-data-using-service" >§</a> Verifying credential (Data Using Service)</h4>
 <p>The below sequence diagram shows the Data Agreement flows for a verifier or Data Using Service, when requesting data to be shared by the individual. The sequence of actions are:</p>
 <ol>
 <li>A Data Using Service makes a request for proof and adds a reference to a signed Data Agreement.</li>
@@ -431,7 +383,7 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 <p><img src="./docs/sequences/data-agreement-negotiation-dus.svg" alt="SSI Data Agreement and verifying credential"></p>
 <p>The following diagram is taken from <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="tree"path-4="master"path-5="features"path-6="0037-present-proof"href="https://github.com/hyperledger/aries-rfcs/tree/master/features/0037-present-proof" >Aries 0037 Presentation Proof</a> and the text in red represents how the Data Agreement is processed in the offer and accepted with the option to reject.</p>
 <p><img src="./docs/sequences/aries-67-proof.png" alt="Aries proof Data Agreement flow"></p>
-<h4 id="2323-termination"><a class="toc-anchor" href="#2323-termination" >§</a> 2.3.2.3. Termination</h4>
+<h4 id="termination"><a class="toc-anchor" href="#termination" >§</a> Termination</h4>
 <p>The Data Agreement may be terminated in a number of ways. Here are a few of the scenarios:</p>
 <ol>
 <li>Data Agreement expired and the service is no longer applicable</li>
@@ -442,7 +394,7 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 <p>Note the erasure may come after termination of the Data Agreement.</p>
 <p>The following diagram is the case for individual requests to terminate scenario 3, individual requests termination.</p>
 <p><img src="./docs/sequences/data-agreement-withdrawal.svg" alt="Data Agreement withdrawal"></p>
-<h3 id="234-proof"><a class="toc-anchor" href="#234-proof" >§</a> 2.3.4. Proof</h3>
+<h3 id="proof"><a class="toc-anchor" href="#proof" >§</a> Proof</h3>
 <p>In accordance with GDPR Art. 30, Records of processing activities, a Data Controller (Data Source and DUS) shall record processing activities under its responsibilities. The records shall be available to the individual to inspect in the form of a receipt and provide means of an audit. An audit can be initiated due to the following reasons:</p>
 <ol>
 <li>Complaint by Data Subject</li>
@@ -451,7 +403,7 @@ Mr. Pekka Lampelto (PrivacyAnt, Finland)</p>
 <p>The complaint by Data Subject will include a copy of the Data Agreement receipt and explanation of the violation by Data Source or DUS.</p>
 <p>The following sequence is the approach taken when the auditor reviews implementation of Data Agreement capture and withdrawal. If the auditor lacks the software to perform the read then a dashboard access is provided by the Data Source or DUS. In case of a Data Subject complaint a reference to the original Data Agreement is shared with the Auditor so the Auditor can perform the same verification.</p>
 <p><img src="./docs/sequences/data-agreement-audit.svg" alt="Data Agreement audit"></p>
-<h1 id="3-references"><a class="toc-anchor" href="#3-references" >§</a> 3. References</h1>
+<h1 id="references"><a class="toc-anchor" href="#references" >§</a> References</h1>
 <p>[1]  <a path-0="github.com"path-1="decentralised-dataexchange"path-2="automated-data-agreements"path-3="blob"path-4="main"path-5="docs"path-6="interface_specification.md"href="https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/interface_specification.md" >Data Agreement Interface Specification</a></p>
 <p>[2]	  <a path-0="github.com"path-1="decentralised-dataexchange"path-2="automated-data-agreements"path-3="blob"path-4="main"path-5="docs"path-6="did-spec.md"href="https://github.com/decentralised-dataexchange/automated-data-agreements/blob/main/docs/did-spec.md" >Data Agreement - DID Method Specification</a></p>
 <p>[3]	 <a path-0="kantarainitiative.org"path-1="file-downloads"path-2="consent-receipt-specification-v1-1-0"path-3=""href="https://kantarainitiative.org/file-downloads/consent-receipt-specification-v1-1-0/" >Kantara Consent Receipt Specification</a></p>
@@ -1275,32 +1227,28 @@ item</p>
                       <div id="toc_list">
                         <ul class="toc">
 <li><a href="#abstract" >Abstract</a></li>
-<li><a href="#status-of-this-document" >Status of This Document</a></li>
-<li><a href="#authors" >Authors</a></li>
-<li><a href="#contributors-and-reviwers" >Contributors and Reviwers</a></li>
-<li><a href="#table-of-contents" >Table of contents</a></li>
-<li><a href="#11-abbreviations" >1.1. Abbreviations</a></li>
-<li><a href="#12-data-agreement-lifecycle-actors" >1.2. Data Agreement lifecycle actors</a></li>
-<li><a href="#13-data-exchange-agreements-landscape" >1.3. Data exchange agreements landscape</a>
+<li><a href="#abbreviations" >Abbreviations</a></li>
+<li><a href="#data-agreement-lifecycle-actors" >Data Agreement lifecycle actors</a></li>
+<li><a href="#data-exchange-agreements-landscape" >Data exchange agreements landscape</a>
 <ul>
-<li><a href="#131-agreement-between-an-individual-and-an-organisation" >1.3.1. Agreement between an individual and an organisation</a></li>
-<li><a href="#132-agreement-between-two-organisations" >1.3.2. Agreement between two organisations</a></li>
+<li><a href="#agreement-between-an-individual-and-an-organisation" >Agreement between an individual and an organisation</a></li>
+<li><a href="#agreement-between-two-organisations" >Agreement between two organisations</a></li>
 </ul>
 </li>
-<li><a href="#14data-protection-impact-assessment-dpia" >1.4.	Data Protection Impact Assessment (DPIA)</a></li>
-<li><a href="#21-data-agreement-lifecycle" >2.1. Data Agreement Lifecycle</a></li>
-<li><a href="#22-use-cases" >2.2. Use Cases</a></li>
-<li><a href="#23-sequence-diagrams" >2.3. Sequence diagrams</a>
+<li><a href="#data-protection-impact-assessment-dpia" >Data Protection Impact Assessment (DPIA)</a></li>
+<li><a href="#data-agreement-lifecycle" >Data Agreement Lifecycle</a></li>
+<li><a href="#use-cases" >Use Cases</a></li>
+<li><a href="#sequence-diagrams" >Sequence diagrams</a>
 <ul>
-<li><a href="#231-definition-and-preparation-phases" >2.3.1. Definition and Preparation phases</a></li>
-<li><a href="#232-negotiationcapture-phase" >2.3.2. Negotiation/Capture phase</a>
+<li><a href="#definition-and-preparation-phases" >Definition and Preparation phases</a></li>
+<li><a href="#negotiationcapture-phase" >Negotiation/Capture phase</a>
 <ul>
-<li><a href="#2321-issuing-credentials-data-source" >2.3.2.1. Issuing credentials (Data Source)</a></li>
-<li><a href="#2322-verifying-credential-data-using-service" >2.3.2.2. Verifying credential (Data Using Service)</a></li>
-<li><a href="#2323-termination" >2.3.2.3. Termination</a></li>
+<li><a href="#issuing-credentials-data-source" >Issuing credentials (Data Source)</a></li>
+<li><a href="#verifying-credential-data-using-service" >Verifying credential (Data Using Service)</a></li>
+<li><a href="#termination" >Termination</a></li>
 </ul>
 </li>
-<li><a href="#234-proof" >2.3.4. Proof</a></li>
+<li><a href="#proof" >Proof</a></li>
 </ul>
 </li>
 <li><a href="#data-agreement-mapping-from-dpia" >Data Agreement mapping from DPIA</a></li>
