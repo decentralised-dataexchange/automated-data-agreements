@@ -104,11 +104,11 @@ There can be two forms of agreements between two organisations.
 
 The first form of agreement is between organisations where one organisation acts as a Data Source and the other as Data Using Service. In this case, both organisations share the role as data controller and are responsible for managing their compliance requirements. They may have made their own privacy risk assessment, documented in a data protection impact assessment (DPIA) report, and concluded whether any additional mitigation effort was required. This agreement is referred to as **Data Disclosure Agreement**, which, though not yet standardised, captures the agreement between two organisations on how data is shared and what obligation each party has. This can be realised as a contract or in terms of use. The individual (data subject) is engaged with both organisations. For each organisation, there exists a **Data Agreement** with an associated privacy policy that explains the purpose of processing personal data, what personal data is collected, data subject rights, etc.
 
-![](./docs/images/data-agreements-ds-dus-2.png) 
+![](images/data-agreements-ds-dus-2.png) 
 
 The second form of an agreement in this category is between an organisation and their suppliers as illustrated below. 
 
-![alt_text](./docs/images/data-agreements-org-supplier.png)
+![alt_text](images/data-agreements-org-supplier.png)
 
 Here, there is a vertical relationship between an organisation A as a data controller and their suppliers as  data processors or sub-processors. For a higher level of accountability between these organisations,  a **Data Processing Agreement** is set up, which lays out what routines are required to be in place: for example, data processor’s obligations  in case of data breaches or how rights of the data subject, such as access rights, are supported, among other policies and routines. An auditor should also be able to inspect an organisation, and use the data processing agreement as reference during the inspection.
 
@@ -136,7 +136,7 @@ This section provides a functional overview of the Data Agreement and is broken 
 
 The Data Agreement Lifecycle has 4 main phases as described below:
 
-![Data Agreement workflow](./docs/images/data-agreement-workflow.png)
+![Data Agreement workflow](images/data-agreement-workflow.png)
 
 1. **Definition**: In this phase, an authority adapts the data agreement schema to a particular industry and/or sector specific data usage as a template. This can then be used by any organisation (Data source or Data Using Service) for a particular data usage purpose. 
 2. **Preparation**: In this phase, an organisation uses an existing data usage template and prepares it to be published towards the individuals. This could be based on a DPIA and could be for internal use of data or for data exchange to a Data Using Service. Once the Data Agreement is prepared,any changes identified from a subsequent DPIA shall update the Data Agreement and go through a new preparation process. When an agreement is updated or terminated, the individuals are notified and a record is created. 
@@ -299,7 +299,7 @@ These are the use cases covered by this specification. A mapping between the use
 
 2. Publish/unpublish Data Agreement(s) towards deployments by ADA Service. When it is published, it's available towards the individual.
 
-![Data Agreement Definition and Preparation](./docs/sequences/data-agreement-preparation.svg)
+![Data Agreement Definition and Preparation](sequences/data-agreement-preparation.svg)
 
 ### Negotiation/Capture phase
 
@@ -312,11 +312,11 @@ The below sequence diagram shows how the steps of issuing a credential can be us
 1. A Data Source offers to issue data and adds a reference to a signed Data Agreement.
 2. Once the user agrees to the data offer and accepts it, the agreement is counter signed and a receipt is created. 
 
-![SSI Data Agreement and issuing credentials](./docs/sequences/data-agreement-negotiation-source.svg)
+![SSI Data Agreement and issuing credentials](sequences/data-agreement-negotiation-source.svg)
 
 The following diagram is from [Aries 0036 Issue Credential](https://github.com/hyperledger/aries-rfcs/tree/master/features/0036-issue-credential) and the text in red represents how a Data Agreement is processed as part of a credentia offer when it is accepted or rejected.
 
-![Aries issuing Data Agreement flow](./docs/sequences/aries-66-credential.png)
+![Aries issuing Data Agreement flow](sequences/aries-66-credential.png)
 
 #### Verifying credential (Data Using Service)
 
@@ -325,11 +325,11 @@ The below sequence diagram shows the Data Agreement flows for a verifier or Data
 1. A Data Using Service makes a request for proof and adds a reference to a signed Data Agreement.
 2. Once the user agrees to the data offer and accepts it, the agreement is counter signed and a receipt is created. 
 
-![SSI Data Agreement and verifying credential](./docs/sequences/data-agreement-negotiation-dus.svg)
+![SSI Data Agreement and verifying credential](sequences/data-agreement-negotiation-dus.svg)
 
 The following diagram is taken from [Aries 0037 Presentation Proof](https://github.com/hyperledger/aries-rfcs/tree/master/features/0037-present-proof ) and the text in red represents how the Data Agreement is processed in the offer and accepted with the option to reject.
 
-![Aries proof Data Agreement flow](./docs/sequences/aries-67-proof.png)
+![Aries proof Data Agreement flow](sequences/aries-67-proof.png)
 
 #### Termination
 
@@ -344,7 +344,7 @@ Note the erasure may come after termination of the Data Agreement.
 
 The following diagram is the case for individual requests to terminate scenario 3, individual requests termination.
 
-![Data Agreement withdrawal](./docs/sequences/data-agreement-withdrawal.svg)
+![Data Agreement withdrawal](sequences/data-agreement-withdrawal.svg)
 
 ### Proof
 
@@ -357,7 +357,7 @@ The complaint by Data Subject will include a copy of the Data Agreement receipt 
 
 The following sequence is the approach taken when the auditor reviews implementation of Data Agreement capture and withdrawal. If the auditor lacks the software to perform the read then a dashboard access is provided by the Data Source or DUS. In case of a Data Subject complaint a reference to the original Data Agreement is shared with the Auditor so the Auditor can perform the same verification.
 
-![Data Agreement audit](./docs/sequences/data-agreement-audit.svg)
+![Data Agreement audit](sequences/data-agreement-audit.svg)
 
 # References
 

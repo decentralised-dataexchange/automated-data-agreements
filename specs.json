@@ -3,8 +3,8 @@
         {
             "title": "Data Agreement Specifications",
             "spec_directory": "./docs",
-            "output_path": "./",
-            "logo": "iGrant_1900_800_Black.png",
+            "output_path": "./docs",
+            "logo": "images/iGrant_1900_800_Black.png",
             "logo_link": "https://da.igrant.io/",
             "markdown_paths": [
                 "data-agreement-specification.md"
