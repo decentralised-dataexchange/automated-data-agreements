@@ -22,6 +22,8 @@ This repository contains the deliverables for Automated Data Agreement (ADA) Pro
 
 This ADA project is an open source conrtibution lead by iGrant.io (Sweden), Linaltec (Sweden) and PrivacyAnt (Finland). Read more on the project at NGI eSSIF-Lab page: https://essif-lab.eu/automated-data-agreements-to-simplify-ssi-work-flows-by-igrant-io/
 
+The Automated Data Agreements solution (ADA) was added to the [Digital Public Goods Alliance Registry](https://digitalpublicgoods.net/registry/automated-data-agreement.html) and recognised as a critical solution contributing to digital public goods (DPGs).
+
 ## Release Status
 
 The first version of the DA specification is released and implemented. The table summarises the key documentations delivered during the NGI-eSSIF Lab project which originally sponsored this work.
