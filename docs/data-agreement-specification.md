@@ -32,16 +32,6 @@ This specification describes how a Data Agreement between an organisation and in
 
 In order to create the Data Agreement, and the resulting receipt as proof, a number of steps are required from different actors. This document describes these steps involved and is described as part of a Data Agreement lifecycle.
 
-This specification is published together with an Interface Specification [1] and a DID Method Specification [2]. For details of the DID Method and Interface Specification please refer to these reference documents.The communication between the actors will be based on DIDComm. 
-
-This chapter provides an introduction to Data Agreement and elaborates on the concepts and terminology included in any kind of personal data usage by an organisation.
-
-Chapter 2 provides a functional overview of Data Agreements. It also describes the interworking of various actors in the Data Agreement lifecycle. 
-
-Chapter 3 provides a list of references.
-
-The Appendix provides additional details that includes Data Agreement Schema (Appendix A), how a DPIA report maps to a Data Agreement (Appendix B) and details on the various input standards used in the proposed Data Agreement Schema including the Kantara Consent Notice, ISO standards etc (Appendix C). 
-
 ## Abbreviations
 
 | Abbr | Expanded form                                     |
