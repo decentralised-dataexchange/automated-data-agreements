@@ -1,8 +1,7 @@
 # Data Agreement (DA) Specification
 
-**Specification Status:** version 2.1.0 
-
-Released and implemented.
+**Specification Status:** 
+version 2.1.0 (Released and implemented)
 
 **Latest Draft:** [Avaialble here](https://da.igrant.io)
 
@@ -22,11 +21,12 @@ Released and implemented.
 - [GitHub repo](https://github.com/decentralised-dataexchange/automated-data-agreements)
 - [File a bug](https://github.com/decentralised-dataexchange/automated-data-agreements/issues)
 
+------------------------------------
 ## Abstract
 
 A Data Agreement records the conditions for an organization to process personal data in accordance with privacy regulation (e.g. GDPR) captured in a signed receipt given to the individual. To automate creation of the record and increase the trust assurance a Data Protection Impact Assessment may be used to populate the record. 
 
-# Introduction
+## Introduction
 
 This specification describes how a Data Agreement between an organisation and individual is managed in order to capture, in a receipt, the conditions of processing of personal data. The receipt acts as evidence and demonstrates a higher level of accountability and is based on standard schemas. The accountability is further enhanced by directly integrating the Data Agreement with the input from a risk assessment, e.g. Data Protection Impact Assessment.
 
@@ -59,8 +59,6 @@ In order to create the Data Agreement, and the resulting receipt as proof, a num
 
 These actors are involved in the Data Agreement lifecycle.
 
-
-
 *   a **Data Source**, the organisation collecting private data, (typically a data controller).  [SSI: Issuer]
 *   a **Data Subject** or **Individual**. [SSI: Holder]
 *   a **Data Using Service (DUS)**, an organisation processing personal data from one or more data sources to deliver a service. [SSI: Verifier]
@@ -71,8 +69,6 @@ In addition to these actors to better understand the interworking, these nodes a
 
 *   **Assessment Platform** or **DPIA Tool** is used by Assessor to create reports and populate Data Agreements.
 *   **ADA Service** represents the microservices that can be plugged into any service provider wishing to adopt ADA services.
-
-
 ## Data exchange agreements landscape 
 
 This chapter introduces various agreements and relationships that exist between organisations and individuals, depending on their roles in the personal data usage scenarios in a personal data economy. The various agreements involved can be classified into two broad categories:.
@@ -340,12 +336,12 @@ The following diagram is the case for individual requests to terminate scenario 
 
 In accordance with GDPR Art. 30, Records of processing activities, a Data Controller (Data Source and DUS) shall record processing activities under its responsibilities. The records shall be available to the individual to inspect in the form of a receipt and provide means of an audit. An audit can be initiated due to the following reasons:
 
-1. Complaint by Data Subject
+1. Complaint by Data Subject (Or Individual)
 2. Review of Data Source or Data Using Service record logs
 
-The complaint by Data Subject will include a copy of the Data Agreement receipt and explanation of the violation by Data Source or DUS.
+The complaint by Data Subject (Or Individual) will include a copy of the Data Agreement receipt and explanation of the violation by Data Source or DUS.
 
-The following sequence is the approach taken when the auditor reviews implementation of Data Agreement capture and withdrawal. If the auditor lacks the software to perform the read then a dashboard access is provided by the Data Source or DUS. In case of a Data Subject complaint a reference to the original Data Agreement is shared with the Auditor so the Auditor can perform the same verification.
+The following sequence is the approach taken when the auditor reviews implementation of Data Agreement capture and withdrawal. If the auditor lacks the software to perform the read then a dashboard access is provided by the Data Source or DUS. In case of a Data Subject complaint, a reference to the original Data Agreement is shared with the Auditor so the Auditor can perform the same verification.
 
 ![Data Agreement audit](sequences/data-agreement-audit.svg)
 
