@@ -3,12 +3,27 @@
         {
             "title": "Data Agreement Specifications",
             "spec_directory": "./docs",
-            "output_path": "./docs",
+            "output_path": "./docs/www",
             "logo": "images/iGrant_1900_800_Black.png",
             "logo_link": "https://da.igrant.io/",
             "markdown_paths": [
                 "data-agreement-specification.md"
             ]
-        }
+        },
+	{
+	    "title": "Data Agreement Protocol Specifications",
+	    "spec_directory": "./docs",
+	    "output_path": "./docs/www/protocol",
+	    "logo": "../images/iGrant_1900_800_Black.png",
+	    "logo_link": "https://da.igrant.io/",
+	    "source": {
+		"host": "github",
+		"account": "decentralised-dataexchange",
+		"repo": "automated-data-agreements"
+	    },
+	    "markdown_paths": [
+		"didcomm-protocol-spec.md"
+	    ]
+	}
     ]
 }

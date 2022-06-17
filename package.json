@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/decentralised-dataexchange/automated-data-agreements#readme",
   "dependencies": {
+    "push-dir": "^0.4.1",
     "spec-up": "^0.10.3"
   }
 }

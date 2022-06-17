@@ -1,0 +1,40 @@
+name: Release changes to GitHub pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Git configuration
+        run: |
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+      
+      - uses: c-hive/gha-npm-cache@v1
+
+      - name: Install JS dependencies
+        run: npm install
+      
+      - name: Update docs html
+        run: |
+          npm run render
+          cp -R docs/images docs/www/
+          if ! (git diff --exit-code origin/main..main > /dev/null) \
+            || ! (git diff --exit-code main > /dev/null) \
+            || ! [[ -z "$(git status --porcelain)" ]] ; then
+            git add .
+            git commit -m "Update docs html"
+            git push origin main
+          fi
+
+      - name: Release changes
+        id: release_changes
+        run: node_modules/push-dir/bin/push-dir.js --dir=docs/www --branch=gh-pages
