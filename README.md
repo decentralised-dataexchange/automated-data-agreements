@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#about">About</a> •
-  <a href="#release-status">Release Status</a> •
+  <a href="#release-status">Release status</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#licensing">Licensing</a>
 </p>
@@ -24,7 +24,7 @@ This ADA project is an open source conrtibution lead by iGrant.io (Sweden), Lina
 
 The Automated Data Agreements solution (ADA) was added to the [Digital Public Goods Alliance Registry](https://digitalpublicgoods.net/registry/automated-data-agreement.html) and recognised as a critical solution contributing to digital public goods (DPGs).
 
-## Release Status (Specifications deliverables)
+## Release status (Specifications deliverables)
 
 The first version of the DA specification is released and implemented. The table summarises the key documentations delivered during the NGI-eSSIF Lab project which originally sponsored this work.
 
