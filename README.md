@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#about">About</a> •
-  <a href="#release-status">Release status</a> •
+  <a href="#release-status-specifications-deliverables">Release status</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#licensing">Licensing</a>
 </p>
