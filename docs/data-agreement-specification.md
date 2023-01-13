@@ -3,7 +3,7 @@
 **Specification Status:** 
 version 2.1.0 (Released and implemented)
 
-**Latest Draft:** [Avaialble here](https://da.igrant.io)
+**Latest version:** [Avaialble here](https://da.igrant.io)
 
 **Editors:**
 - Mr. Jan Linquist (Linaltec, Sweden)  
